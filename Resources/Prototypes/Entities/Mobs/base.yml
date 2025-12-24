@@ -4,6 +4,7 @@
   save: false
   id: BaseControllable
   components:
+  - type: CEZPhysics
   - type: Sprite
     noRot: true
     drawdepth: Mobs
