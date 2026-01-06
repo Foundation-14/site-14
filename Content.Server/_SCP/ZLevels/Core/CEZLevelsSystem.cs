@@ -21,9 +21,15 @@ public sealed partial class CEZLevelsSystem : CESharedZLevelsSystem
     {
         base.Initialize();
         InitView();
-        InitializeActivation();
 
         SubscribeLocalEvent<PostGameMapLoad>(OnGameMapLoad);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        UpdateView(frameTime);
     }
 
     private void OnGameMapLoad(PostGameMapLoad ev)

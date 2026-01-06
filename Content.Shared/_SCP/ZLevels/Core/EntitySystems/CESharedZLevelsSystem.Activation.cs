@@ -4,20 +4,20 @@
  */
 
 using Content.Shared._CE.ZLevels.Core.Components;
-using Content.Shared.Ghost;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 
-namespace Content.Server._CE.ZLevels.Core;
+namespace Content.Shared._CE.ZLevels.Core.EntitySystems;
 
-public sealed partial class CEZLevelsSystem
+public abstract partial class CESharedZLevelsSystem
 {
     private void InitializeActivation()
     {
         SubscribeLocalEvent<CEZPhysicsComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<CEZPhysicsComponent, AnchorStateChangedEvent>(OnAnchorStateChange);
         SubscribeLocalEvent<CEZPhysicsComponent, PhysicsBodyTypeChangedEvent>(OnPhysicsBodyTypeChange);
+        SubscribeLocalEvent<CEZPhysicsComponent, EntParentChangedMessage>(OnParentChanged);
     }
 
     private void OnAnchorStateChange(Entity<CEZPhysicsComponent> ent, ref AnchorStateChangedEvent args)
@@ -28,11 +28,25 @@ public sealed partial class CEZLevelsSystem
     private void OnMapInit(Entity<CEZPhysicsComponent> ent, ref MapInitEvent args)
     {
         CheckActivation(ent);
+
+        if (!TryComp<CEZLevelMapComponent>(Transform(ent).MapUid, out var zLevelMap))
+            return;
+
+        ent.Comp.CurrentZLevel = zLevelMap.Depth;
+        DirtyField(ent, ent.Comp, nameof(CEZPhysicsComponent.CurrentZLevel));
     }
 
     private void OnPhysicsBodyTypeChange(Entity<CEZPhysicsComponent> ent, ref PhysicsBodyTypeChangedEvent args)
     {
         CheckActivation(ent);
+    }
+
+    private void OnParentChanged(Entity<CEZPhysicsComponent> ent, ref EntParentChangedMessage args)
+    {
+        CheckActivation(ent);
+
+        if (ZPhyzQuery.TryComp(args.OldParent, out var oldParentZPhys))
+            SetZPosition((ent, ent), oldParentZPhys.LocalPosition);
     }
 
     private void CheckActivation(Entity<CEZPhysicsComponent> ent)
@@ -42,7 +56,7 @@ public sealed partial class CEZLevelsSystem
 
         var xform = Transform(ent);
 
-        if (HasComp<GhostComponent>(ent))
+        if (xform.ParentUid != xform.MapUid)
         {
             SetActiveStatus(ent, false);
             return;
@@ -68,6 +82,9 @@ public sealed partial class CEZLevelsSystem
 
     private void SetActiveStatus(EntityUid ent, bool active)
     {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
         if (active)
             EnsureComp<CEActiveZPhysicsComponent>(ent);
         else
