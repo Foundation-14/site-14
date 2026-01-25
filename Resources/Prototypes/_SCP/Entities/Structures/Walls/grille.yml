@@ -1,0 +1,101 @@
+- type: entity
+  abstract: true
+  id: SCPBaseStructureGrille
+  parent: BaseStructure
+  name: grille
+  description: A flimsy framework of iron rods.
+  suffix: SCPStructure
+  components:
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path:
+            "/Audio/Weapons/grille_hit.ogg"
+    - type: RCDDeconstructable
+      cost: 6
+      delay: 4
+      fx: EffectRCDDeconstruct4
+    - type: CanBuildWindowOnTop
+    - type: Sprite
+      drawdepth: Walls
+      color: "#656565"
+    - type: Icon
+      state: grille
+      color: "#656565"
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: PerforatedMetallic
+    - type: Electrified
+      requirePower: true
+      noWindowInTile: true
+      highVoltageNode: high
+      mediumVoltageNode: medium
+      lowVoltageNode: low
+    - type: NodeContainer
+      nodes:
+        high:
+          !type:CableDeviceNode
+          nodeGroupID: HVPower
+        medium:
+          !type:CableDeviceNode
+          nodeGroupID: MVPower
+        low:
+          !type:CableDeviceNode
+          nodeGroupID: Apc
+    - type: Physics
+      bodyType: Static
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 50
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+    - type: Appearance
+    - type: AnimationPlayer
+    - type: IconSmooth
+      key: walls
+      base: grille
+
+
+# Base Grille
+- type: entity
+  id: SCPGrille
+  parent: SCPBaseStructureGrille
+  components:
+    - type: Sprite
+      sprite: _SCP/Structures/Grilles/grille.rsi
+    - type: Icon
+      sprite: _SCP/Structures/Grilles/grille.rsi
+    - type: IconSmooth
+      key: walls
+      base: grille
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.45,-0.45,0.45,0.45"
+          layer:
+          - GlassLayer
+
+- type: entity
+  id: SCPGrilleFrame
+  parent: SCPBaseStructureGrille
+  components:
+    - type: Sprite
+      sprite: _SCP/Structures/Grilles/grille-frame.rsi
+    - type: Icon
+      sprite: _SCP/Structures/Grilles/grille-frame.rsi
+    - type: IconSmooth
+      key: walls
+      base: grille_onframe
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.35,-0.35,0.35,0.35"
+          layer:
+          - GlassLayer
