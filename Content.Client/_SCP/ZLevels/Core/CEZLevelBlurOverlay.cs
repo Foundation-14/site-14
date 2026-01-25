@@ -49,7 +49,7 @@ public sealed class CEZLevelBlurOverlay : Overlay
         if (ScreenTexture == null || args.Viewport.Eye == null)
             return;
 
-        var ambientColor = new Vector3(0, 0, 1); //Default blue
+        var ambientColor = new Vector3(0, 0, 0); //Default black
 
         if (_entity.TryGetComponent<MapLightComponent>(args.MapUid, out var mapLight))
         {
