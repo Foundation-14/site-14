@@ -1,0 +1,24 @@
+- type: gameMap
+  id: Site02
+  mapName: Site02
+  mapsBelow:
+  - /Maps/_SCP/Empty.yml
+  mapPath: /Maps/_SCP/Empty.yml # Floor-1
+  mapsAbove:
+  - /Maps/_SCP/Empty.yml
+  - /Maps/_SCP/Empty.yml # Floor-2
+  - /Maps/_SCP/Empty.yml
+  - /Maps/_SCP/Empty.yml # Floor-3
+  - /Maps/_SCP/Empty.yml
+  - /Maps/_SCP/Empty.yml # Floor-4
+  - /Maps/_SCP/Empty.yml
+  minPlayers: 0
+  stations:
+    Site02:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Site02"
+        - type: StationJobs
+          availableJobs:
+            Captain: [ -1, -1 ]

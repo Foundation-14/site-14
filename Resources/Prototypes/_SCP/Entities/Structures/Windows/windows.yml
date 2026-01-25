@@ -1,0 +1,218 @@
+- type: entity
+  abstract: true
+  id: SCPBaseStructureWindow
+  parent: [BaseDeltaPressureGlass, BaseStructure]
+  name: window
+  description: Don't smudge up the glass down there.
+  suffix: SCPStructure
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: IsRoof
+  - type: Rotatable
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmack
+  - type: WallMount
+    arc: 360
+  - type: Tag
+    tags:
+      - ForceFixRotations
+      - Window
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _SCP/Structures/Windows/window.rsi
+  - type: Icon
+    sprite: _SCP/Structures/Windows/window.rsi
+    state: full
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb {}
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Glass
+  - type: ExaminableDamage
+    messages: WindowMessages
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Repairable
+  - type: Airtight
+  - type: IconSmooth
+    key: walls
+    base: window
+  - type: InteractionPopup
+    interactSuccessString: comp-window-knock
+    messagePerceivedByOthers: comp-window-knock
+    interactSuccessSound:
+      path: /Audio/Effects/glass_knock.ogg
+  - type: Appearance
+  - type: DamageVisuals
+    thresholds: [5, 10, 20]
+    damageDivisor: 2
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks.rsi
+  - type: StaticPrice
+    price: 100
+  - type: BlockWeather
+
+# Base Window region
+- type: entity
+  parent: SCPBaseStructureWindow
+  id: SCPWindowDefault
+  name: window
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Windows/window.rsi
+    color: "#6f92a8"
+  - type: Icon
+    sprite: _SCP/Structures/Windows/window.rsi
+    color: "#6f92a8"
+  - type: IconSmooth
+    key: walls
+    base: window
+
+- type: entity
+  parent: SCPBaseStructureWindow
+  id: SCPWindowFrame
+  name: window
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Windows/window_frame.rsi
+    color: "#6f92a8"
+  - type: Icon
+    sprite: _SCP/Structures/Windows/window_frame.rsi
+    color: "#6f92a8"
+  - type: IconSmooth
+    key: walls
+    base: window_onframe
+
+# Reinf Window region
+- type: entity
+  parent: SCPBaseStructureWindow
+  id: SCPWindowReinforced
+  name: reinforced window
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Windows/reinforced_window.rsi
+    color: "#6f92a8"
+  - type: Icon
+    sprite: _SCP/Structures/Windows/reinforced_window.rsi
+    color: "#6f92a8"
+  - type: IconSmooth
+    key: walls
+    base: rwindow
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlassReinforced:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageVisuals
+    thresholds: [5, 10, 20]
+    damageDivisor: 3
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks.rsi
+
+- type: entity
+  parent: SCPBaseStructureWindow
+  id: SCPWindowReinforcedFrame
+  name: reinforced window
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Windows/reinforced_window_frame.rsi
+    color: "#6f92a8"
+  - type: Icon
+    sprite: _SCP/Structures/Windows/reinforced_window_frame.rsi
+    color: "#6f92a8"
+  - type: IconSmooth
+    key: walls
+    base: rwindow_onframe
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlassReinforced:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageVisuals
+    thresholds: [5, 10, 20]
+    damageDivisor: 3
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks.rsi
