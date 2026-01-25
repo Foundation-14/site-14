@@ -104,7 +104,6 @@
     color: "#6f92a8"
   - type: Icon
     sprite: _SCP/Structures/Windows/window.rsi
-    color: "#6f92a8"
   - type: IconSmooth
     key: walls
     base: window
@@ -119,7 +118,6 @@
     color: "#6f92a8"
   - type: Icon
     sprite: _SCP/Structures/Windows/window_frame.rsi
-    color: "#6f92a8"
   - type: IconSmooth
     key: walls
     base: window_onframe
@@ -135,7 +133,6 @@
     color: "#6f92a8"
   - type: Icon
     sprite: _SCP/Structures/Windows/reinforced_window.rsi
-    color: "#6f92a8"
   - type: IconSmooth
     key: walls
     base: rwindow
@@ -181,7 +178,6 @@
     color: "#6f92a8"
   - type: Icon
     sprite: _SCP/Structures/Windows/reinforced_window_frame.rsi
-    color: "#6f92a8"
   - type: IconSmooth
     key: walls
     base: rwindow_onframe

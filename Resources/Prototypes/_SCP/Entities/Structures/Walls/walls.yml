@@ -92,7 +92,6 @@
     drawdepth: WallTops
   - type: Icon
     sprite: _SCP/Structures/Walls/stripe.rsi
-    color: "#c0c0c0"
   - type: IconSmooth
     key: walls
     base: stripe
@@ -121,7 +120,6 @@
     color: "#808080"
   - type: Icon
     sprite: _SCP/Structures/Walls/stripe.rsi
-    color: "#808080"
 
 - type: entity
   parent: SCPStripeWhite
@@ -133,7 +131,6 @@
     color: "#545c68"
   - type: Icon
     sprite: _SCP/Structures/Walls/stripe.rsi
-    color: "#545c68"
 
 - type: entity
   parent: SCPStripeWhite
@@ -145,7 +142,6 @@
     color: "#8d2125"
   - type: Icon
     sprite: _SCP/Structures/Walls/stripe.rsi
-    color: "#8d2125"
 
 - type: entity
   parent: SCPStripeWhite
@@ -157,7 +153,6 @@
     color: "#b95a00"
   - type: Icon
     sprite: _SCP/Structures/Walls/stripe.rsi
-    color: "#b95a00"
 
 - type: entity
   parent: SCPStripeWhite
@@ -169,7 +164,6 @@
     color: "#b19664"
   - type: Icon
     sprite: _SCP/Structures/Walls/stripe.rsi
-    color: "#b19664"
 
 - type: entity
   parent: SCPStripeWhite
@@ -181,7 +175,6 @@
     color: "#917448"
   - type: Icon
     sprite: _SCP/Structures/Walls/stripe.rsi
-    color: "#917448"
 
 - type: entity
   parent: SCPStripeWhite
@@ -193,7 +186,6 @@
     color: "#8daf6a"
   - type: Icon
     sprite: _SCP/Structures/Walls/stripe.rsi
-    color: "#8daf6a"
 
 - type: entity
   parent: SCPStripeWhite
@@ -205,7 +197,6 @@
     color: "#8bbbd5"
   - type: Icon
     sprite: _SCP/Structures/Walls/stripe.rsi
-    color: "#8bbbd5"
 
 - type: entity
   parent: SCPStripeWhite
@@ -217,7 +208,6 @@
     color: "#6a97b0"
   - type: Icon
     sprite: _SCP/Structures/Walls/stripe.rsi
-    color: "#6a97b0"
 
 - type: entity
   parent: SCPStripeWhite
@@ -229,7 +219,6 @@
     color: "#bda2ba"
   - type: Icon
     sprite: _SCP/Structures/Walls/stripe.rsi
-    color: "#bda2ba"
 
 # Frame region
 - type: entity
@@ -242,7 +231,6 @@
     color: "#7F7F75"
   - type: Icon
     sprite: _SCP/Structures/Walls/frame.rsi
-    color: "#7F7F75"
   - type: IconSmooth
     key: walls
     base: frame
@@ -271,7 +259,6 @@
     color: "#7F7F75"
   - type: Icon
     sprite: _SCP/Structures/Walls/metal.rsi
-    color: "#7F7F75"
   - type: IconSmooth
     key: walls
     base: base
@@ -287,7 +274,6 @@
     color: "#505050"
   - type: Icon
     sprite: _SCP/Structures/Walls/metal.rsi
-    color: "#505050"
   - type: IconSmooth
     key: walls
     base: base
@@ -303,7 +289,6 @@
     color: "#223322"
   - type: Icon
     sprite: _SCP/Structures/Walls/metal.rsi
-    color: "#223322"
   - type: IconSmooth
     key: walls
     base: base
@@ -319,7 +304,6 @@
       color: "#7F7F75"
     - type: Icon
       sprite: _SCP/Structures/Walls/base.rsi
-      color: "#7F7F75"
     - type: IconSmooth
       key: walls
       base: base
@@ -348,7 +332,6 @@
     color: "#505050"
   - type: Icon
     sprite: _SCP/Structures/Walls/base.rsi
-    color: "#505050"
   
 - type: entity
   parent: SCPWallSolid
@@ -361,7 +344,6 @@
     color: "#223322"
   - type: Icon
     sprite: _SCP/Structures/Walls/base.rsi
-    color: "#223322"
 
 # ReinforcedWall region
 - type: entity
@@ -374,7 +356,6 @@
       color: "#7F7F75"
     - type: Icon
       sprite: _SCP/Structures/Walls/reinf-over.rsi
-      color: "#7F7F75"
     - type: IconSmooth
       key: walls
       base: reinf_over
@@ -403,7 +384,6 @@
     color: "#505050"
   - type: Icon
     sprite: _SCP/Structures/Walls/reinf-over.rsi
-    color: "#505050"
 
 - type: entity
   parent: SCPWallReinforced
@@ -416,4 +396,3 @@
     color: "#223322"
   - type: Icon
     sprite: _SCP/Structures/Walls/reinf-over.rsi
-    color: "#223322"
