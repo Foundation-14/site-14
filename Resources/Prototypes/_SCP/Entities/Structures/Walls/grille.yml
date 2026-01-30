@@ -17,11 +17,12 @@
       fx: EffectRCDDeconstruct4
     - type: CanBuildWindowOnTop
     - type: Sprite
+      sprite: _SCP/Structures/Grilles/grille.rsi
       drawdepth: Walls
       color: "#656565"
     - type: Icon
+      sprite: _SCP/Structures/Grilles/grille.rsi
       state: grille
-      color: "#656565"
     - type: Damageable
       damageContainer: StructuralInorganic
       damageModifierSet: PerforatedMetallic
