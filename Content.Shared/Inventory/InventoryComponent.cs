@@ -15,7 +15,7 @@ public sealed partial class InventoryComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     [ViewVariables] // use the API method
-    public ProtoId<InventoryTemplatePrototype> TemplateId = "human";
+    public ProtoId<InventoryTemplatePrototype> TemplateId = "SCPhuman"; // SCP-Foundation: Change base tamplate ID. SCPhuman<human
 
     /// <summary>
     /// For setting the TemplateId.
