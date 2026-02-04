@@ -6,6 +6,7 @@
   description: The greatest invention since rocket-propelled grenades.
   placement:
     mode: SnapgridCenter
+  categories: [ ForkFiltered ]
   components:
   - type: Anchorable
     flags:

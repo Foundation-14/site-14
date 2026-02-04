@@ -1,4 +1,4 @@
 - type: entity
   id: CEZLevelEye
   save: false
-  categories: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu, ForkFiltered ]

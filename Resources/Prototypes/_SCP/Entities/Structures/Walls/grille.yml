@@ -5,6 +5,7 @@
   name: grille
   description: A flimsy framework of iron rods.
   suffix: SCPStructure
+  categories: [ ForkFiltered ]
   components:
     - type: MeleeSound
       soundGroups:
@@ -64,11 +65,15 @@
 - type: entity
   id: SCPGrille
   parent: SCPBaseStructureGrille
+  categories: [ ForkFiltered ]
   components:
     - type: Sprite
       sprite: _SCP/Structures/Grilles/grille.rsi
+      drawdepth: Walls
+      color: "#656565"
     - type: Icon
       sprite: _SCP/Structures/Grilles/grille.rsi
+      state: grille
     - type: IconSmooth
       key: walls
       base: grille
@@ -84,11 +89,15 @@
 - type: entity
   id: SCPGrilleFrame
   parent: SCPBaseStructureGrille
+  categories: [ ForkFiltered ]
   components:
     - type: Sprite
       sprite: _SCP/Structures/Grilles/grille-frame.rsi
+      drawdepth: Walls
+      color: "#656565"
     - type: Icon
       sprite: _SCP/Structures/Grilles/grille-frame.rsi
+      state: grille
     - type: IconSmooth
       key: walls
       base: grille_onframe

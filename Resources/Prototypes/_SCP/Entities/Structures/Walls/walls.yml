@@ -9,6 +9,7 @@
     mode: SnapgridCenter
     snap:
     - Wall
+  categories: [ ForkFiltered ]
   components:
     - type: Anchorable
       flags:

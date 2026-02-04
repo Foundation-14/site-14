@@ -4,6 +4,7 @@
   description: 
   suffix: SCP-049
   parent: [ BaseSimpleMob, MobFlammable, MobCombat, MobBloodstream, MobRespirator, InventoryBase, StripableInventoryBase, ShowMedicalIcons ]
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -28,7 +29,7 @@
   - type: StandingState
   - type: Pacified
   - type: FlashImmunity
-    examinable: false
+    showInExamine: false
   - type: UserInterface
     interfaces:
       enum.StrippingUiKey.Key:
