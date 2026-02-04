@@ -88,10 +88,6 @@ public sealed partial class SCP049System : SharedSCP049System
         if (args.Cancelled || args.Handled || !args.Target.HasValue)
             return;
 
-        var mob049Comp = scpEntity.Comp;
-        if (mob049Comp.Zombies.Count >= mob049Comp.MaxZombies)
-            return;
-
         if (!TryComp<MobStateComponent>(args.Target.Value, out var mobStateComponent))
             return;
 

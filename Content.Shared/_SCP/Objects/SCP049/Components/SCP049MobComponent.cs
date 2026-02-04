@@ -14,9 +14,6 @@ public sealed partial class SCPMob049Component : Component
     [AutoNetworkedField, ViewVariables]
     public HashSet<EntityUid> Zombies = [];
 
-    [DataField, AutoNetworkedField]
-    public int MaxZombies = 5;
-
     [ViewVariables(VVAccess.ReadWrite), DataField("targetLockChance")]
     public float TargetLockChance = 0.35f;
 

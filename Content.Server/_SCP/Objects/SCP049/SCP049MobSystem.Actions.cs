@@ -58,12 +58,6 @@ public sealed partial class SCP049System
             }
         }
 
-        if (scpComp.Zombies.Count >= scpComp.MaxZombies)
-        {
-            ShowPopup("scp049-action-max-cap-zombies", target, scpEntity, PopupType.MediumCaution);
-            return;
-        }
-
         var treatmentTime = zombieComp != null
             ? scpComp.RepeatedTreatmentZombieTime
             : scpComp.RepeatedTreatmentTime;
