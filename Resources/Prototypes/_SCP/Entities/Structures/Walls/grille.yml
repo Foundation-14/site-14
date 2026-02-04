@@ -18,12 +18,9 @@
       fx: EffectRCDDeconstruct4
     - type: CanBuildWindowOnTop
     - type: Sprite
-      sprite: _SCP/Structures/Grilles/grille.rsi
       drawdepth: Walls
-      color: "#656565"
     - type: Icon
-      sprite: _SCP/Structures/Grilles/grille.rsi
-      state: grille
+      state: full
     - type: Damageable
       damageContainer: StructuralInorganic
       damageModifierSet: PerforatedMetallic
@@ -69,11 +66,9 @@
   components:
     - type: Sprite
       sprite: _SCP/Structures/Grilles/grille.rsi
-      drawdepth: Walls
       color: "#656565"
     - type: Icon
       sprite: _SCP/Structures/Grilles/grille.rsi
-      state: grille
     - type: IconSmooth
       key: walls
       base: grille
@@ -93,11 +88,9 @@
   components:
     - type: Sprite
       sprite: _SCP/Structures/Grilles/grille-frame.rsi
-      drawdepth: Walls
       color: "#656565"
     - type: Icon
       sprite: _SCP/Structures/Grilles/grille-frame.rsi
-      state: grille
     - type: IconSmooth
       key: walls
       base: grille_onframe
