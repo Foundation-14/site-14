@@ -7,8 +7,8 @@ using Content.Shared._SCP.SCP049;
 using Content.Shared._SCP.SCP049.Components;
 using Content.Shared._SCP.SCP049.SharedSystem;
 using Content.Shared.Administration.Systems;
-using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
+using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -80,7 +80,7 @@ public sealed partial class SCP049System
 
     private bool TryRepeatedTreatment(Entity<MobStateComponent> zombieEntity, Entity<SCPMob049Component> scpEntity)
     {
-        if (!HasComp<HumanoidAppearanceComponent>(zombieEntity))
+        if (!HasComp<HumanoidProfileComponent>(zombieEntity))
             return false;
 
         return RepeatedTreatment(zombieEntity, scpEntity);

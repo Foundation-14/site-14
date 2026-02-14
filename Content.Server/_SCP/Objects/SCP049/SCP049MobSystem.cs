@@ -78,7 +78,7 @@ public sealed partial class SCP049System : SharedSCP049System
     {
         return target != ent.Owner 
             && _mobSystem.IsAlive(target) 
-            && HasComp<HumanoidAppearanceComponent>(target) 
+            && HasComp<HumanoidProfileComponent>(target) 
             && !HasComp<SCPTarget049Component>(target) 
             && !HasComp<SCPZombie049Component>(target);
     }
