@@ -59,7 +59,7 @@
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.5
+    baseWalkSpeed: 4.5
     baseSprintSpeed: 3.5
   - type: MobThresholds
     thresholds:
