@@ -2,8 +2,7 @@ using Content.Server.Actions;
 using Content.Shared._SCP.SCP049;
 using Content.Shared._SCP.SCP049.Components;
 using Content.Shared._SCP.SCP049.SharedSystem;
-using Content.Server.Humanoid.Systems;
-using Content.Server.Humanoid.Components;
+using Content.Shared.Humanoid;
 using Content.Shared.Popups;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
@@ -79,7 +78,7 @@ public sealed partial class SCP049System : SharedSCP049System
     {
         return target != ent.Owner 
             && _mobSystem.IsAlive(target) 
-            && HasComp<RandomHumanoidAppearanceComponent>(target) 
+            && HasComp<HumanoidProfileComponent>(target) 
             && !HasComp<SCPTarget049Component>(target) 
             && !HasComp<SCPZombie049Component>(target);
     }
