@@ -80,7 +80,7 @@ public sealed partial class SCP049System
 
     private bool TryRepeatedTreatment(Entity<MobStateComponent> zombieEntity, Entity<SCPMob049Component> scpEntity)
     {
-        if (!HasComp<HumanoidAppearanceComponent>(zombieEntity))
+        if (!HasComp<RandomHumanoidAppearanceComponent>(zombieEntity))
             return false;
 
         return RepeatedTreatment(zombieEntity, scpEntity);
