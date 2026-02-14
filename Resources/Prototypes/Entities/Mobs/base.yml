@@ -4,6 +4,8 @@
   save: false
   id: BaseControllable
   components:
+  - type: CEZPhysics # SCP-Foundation
+  - type: SCPPestilence # SCP-Foundation
   - type: Sprite
     noRot: true
     drawdepth: Mobs

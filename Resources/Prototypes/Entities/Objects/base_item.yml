@@ -3,6 +3,7 @@
   id: BaseItem
   abstract: true
   components:
+  - type: CEZPhysics
   - type: Item
     size: Small
   - type: Animateable

@@ -158,7 +158,7 @@
     tags:
     - CanPilot
     - FootstepSound
-    - DoorBumpOpener
+    # - DoorBumpOpener # SCP-Foundation
     - AnomalyHost
 
 - type: entity

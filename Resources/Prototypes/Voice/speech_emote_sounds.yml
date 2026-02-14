@@ -521,7 +521,7 @@
 - type: emoteSounds
   id: Zombie
   sound:
-    collection: ZombieScreams
+    collection: SCP0492Screams # SCP-Foundation: SCP0492Screams<ZombieScreams
     params:
       variation: 0.125
 

@@ -1,0 +1,62 @@
+- type: entity
+  id: ActionScp049StopLife
+  categories: [ HideSpawnMenu ]
+  name: Stop Life
+  components:
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _SCP/Actions/scp-049.rsi
+      state: kill
+    itemIconStyle: NoItem
+    priority: 12
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    event: !type:Scp049StopLifeAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+
+- type: entity
+  id: ActionScp049TargetLock
+  categories: [ HideSpawnMenu ]
+  name: Target Lock
+  components:
+  - type: Action
+    useDelay: 20
+    icon:
+      sprite: _SCP/Actions/scp-049.rsi
+      state: targetlock
+    itemIconStyle: NoItem
+    priority: 12
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    event: !type:Scp049TargetLockAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+
+- type: entity
+  id: ActionScp049RepeatedTreatment
+  categories: [ HideSpawnMenu ]
+  name: Repeated Treatment
+  components:
+  - type: Action
+    useDelay: 25
+    icon:
+      sprite: _SCP/Actions/scp-049.rsi
+      state: treatment
+    itemIconStyle: NoItem
+    priority: 12
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    event: !type:Scp049RepeatedTreatmentAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState

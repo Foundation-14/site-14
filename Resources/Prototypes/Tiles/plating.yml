@@ -91,6 +91,7 @@
   id: Lattice
   name: tiles-lattice
   sprite: /Textures/Tiles/lattice.png
+  transparent: true # SCP-Foundation
   baseTurf: Space
   isSubfloor: true
   deconstructTools: [ Cutting ]
@@ -108,5 +109,6 @@
   parent: Lattice
   name: tiles-lattice-train
   sprite: /Textures/Tiles/latticeTrain.png
+  transparent: true # SCP-Foundation
   footstepSounds:
     collection: FootstepPlating

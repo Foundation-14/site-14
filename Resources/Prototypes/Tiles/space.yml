@@ -1,7 +1,9 @@
 - type: tile
   id: Space
   name: tiles-space
-  friction: 0
+  #friction: 0 # SCP-Foundation
+  weather: true # SCP-Foundation
+  transparent: true # SCP-Foundation
   isSubfloor: true
   isSpace: true
   sturdy: false

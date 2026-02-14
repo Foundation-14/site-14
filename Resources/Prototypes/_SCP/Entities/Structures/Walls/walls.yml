@@ -1,0 +1,399 @@
+- type: entity
+  abstract: true
+  parent: BaseStructure
+  id: SCPBaseStructureWall
+  name: basewall
+  description: Keeps the air in and the greytide out.
+  suffix: SCPStructure
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  categories: [ ForkFiltered ]
+  components:
+    - type: Anchorable
+      flags:
+      - Anchorable
+    - type: Rotatable
+    - type: RangedDamageSound
+      soundGroups:
+        Brute:
+          collection:
+            MetalBulletImpact
+      soundTypes:
+        Heat:
+          collection:
+            MetalLaserImpact
+    - type: ExaminableDamage
+      messages: WindowMessages
+    - type: Tag
+      tags:
+      - Wall
+    - type: IsRoof
+    - type: Sprite
+      drawdepth: Walls
+    - type: Icon
+      state: full
+    - type: Damageable
+      damageContainer: StructuralInorganic
+      damageModifierSet: StructuralMetallic
+    - type: Physics
+      bodyType: Static
+    - type: StaticPrice
+      price: 75
+    - type: BlockWeather
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 250
+          behaviors:
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                SheetSteel1:
+                  min: 1
+                  max: 3
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+    - type: Repairable
+
+- type: entity
+  abstract: true
+  parent: SCPBaseStructureWall
+  id: SCPBaseWall
+  components:
+    - type: Occluder
+    - type: Airtight
+    - type: RadiationBlocker
+      resistance: 2
+    - type: SunShadowCast
+    - type: PlacementReplacement
+      key: walls
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.5"
+          mask:
+          - FullTileMask
+          layer:
+          - WallLayer
+          density: 1000
+
+# Stripe region
+- type: entity
+  parent: SCPBaseStructureWall
+  id: SCPStripeWhite
+  name: white stripe
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/stripe.rsi
+    color: "#c0c0c0"
+    drawdepth: WallTops
+  - type: Icon
+    sprite: _SCP/Structures/Walls/stripe.rsi
+  - type: IconSmooth
+    key: walls
+    base: stripe
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/poster_broken.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: SCPStripeWhite
+  id: SCPStripeGrey
+  name: grey stripe
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/stripe.rsi
+    color: "#808080"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/stripe.rsi
+
+- type: entity
+  parent: SCPStripeWhite
+  id: SCPStripeGunmetal
+  name: gunmetal stripe
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/stripe.rsi
+    color: "#545c68"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/stripe.rsi
+
+- type: entity
+  parent: SCPStripeWhite
+  id: SCPStripeRed
+  name: red stripe
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/stripe.rsi
+    color: "#8d2125"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/stripe.rsi
+
+- type: entity
+  parent: SCPStripeWhite
+  id: SCPStripeOrange
+  name: orange stripe
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/stripe.rsi
+    color: "#b95a00"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/stripe.rsi
+
+- type: entity
+  parent: SCPStripeWhite
+  id: SCPStripeYellow
+  name: yellow stripe
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/stripe.rsi
+    color: "#b19664"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/stripe.rsi
+
+- type: entity
+  parent: SCPStripeWhite
+  id: SCPStripeBrown
+  name: brown stripe
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/stripe.rsi
+    color: "#917448"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/stripe.rsi
+
+- type: entity
+  parent: SCPStripeWhite
+  id: SCPStripeGreen
+  name: green stripe
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/stripe.rsi
+    color: "#8daf6a"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/stripe.rsi
+
+- type: entity
+  parent: SCPStripeWhite
+  id: SCPStripePaleBlue
+  name: pale blue stripe
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/stripe.rsi
+    color: "#8bbbd5"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/stripe.rsi
+
+- type: entity
+  parent: SCPStripeWhite
+  id: SCPStripeBlue
+  name: blue stripe
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/stripe.rsi
+    color: "#6a97b0"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/stripe.rsi
+
+- type: entity
+  parent: SCPStripeWhite
+  id: SCPStripeMauve
+  name: mauve stripe
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/stripe.rsi
+    color: "#bda2ba"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/stripe.rsi
+
+# Frame region
+- type: entity
+  parent: SCPBaseStructureWall
+  id: SCPWallFrame
+  name: solid frame
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/frame.rsi
+    color: "#7F7F75"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/frame.rsi
+  - type: IconSmooth
+    key: walls
+    base: frame
+  - type: Climbable
+    delay: 5.0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 80
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
+# MetalWall region
+- type: entity
+  parent: SCPBaseWall
+  id: SCPWallMetal
+  name: metal wall
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/metal.rsi
+    color: "#7F7F75"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/metal.rsi
+  - type: IconSmooth
+    key: walls
+    base: base
+
+- type: entity
+  parent: SCPBaseWall
+  id: SCPWallMetalMetallic
+  name: metal wall
+  suffix: SCPStructure, Metallic
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/metal.rsi
+    color: "#505050"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/metal.rsi
+  - type: IconSmooth
+    key: walls
+    base: base
+
+- type: entity
+  parent: SCPBaseWall
+  id: SCPWallMetalGreen
+  name: metal wall
+  suffix: SCPStructure, Green
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/metal.rsi
+    color: "#223322"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/metal.rsi
+  - type: IconSmooth
+    key: walls
+    base: base
+
+# SolidWall region
+- type: entity
+  parent: SCPBaseWall
+  id: SCPWallSolid
+  name: solid wall
+  components:
+    - type: Sprite
+      sprite: _SCP/Structures/Walls/base.rsi
+      color: "#7F7F75"
+    - type: Icon
+      sprite: _SCP/Structures/Walls/base.rsi
+    - type: IconSmooth
+      key: walls
+      base: base
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 500
+          behaviors:
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                SheetSteel1:
+                  min: 1
+                  max: 3
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+
+- type: entity
+  parent: SCPWallSolid
+  id: SCPWallSolidMetallic
+  name: solid wall
+  suffix: SCPStructure, Metallic
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/base.rsi
+    color: "#505050"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/base.rsi
+  
+- type: entity
+  parent: SCPWallSolid
+  id: SCPWallSolidGreen
+  name: solid wall
+  suffix: SCPStructure, Green
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/base.rsi
+    color: "#223322"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/base.rsi
+
+# ReinforcedWall region
+- type: entity
+  parent: SCPBaseWall
+  id: SCPWallReinforced
+  name: reinforced wall
+  components:
+    - type: Sprite
+      sprite: _SCP/Structures/Walls/reinf-over.rsi
+      color: "#7F7F75"
+    - type: Icon
+      sprite: _SCP/Structures/Walls/reinf-over.rsi
+    - type: IconSmooth
+      key: walls
+      base: reinf_over
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 750
+          behaviors:
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                SheetSteel1:
+                  min: 1
+                  max: 4
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+
+- type: entity
+  parent: SCPWallReinforced
+  id: SCPWallReinforcedMetallic
+  name: reinforced wall
+  suffix: SCPStructure, Metallic
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/reinf-over.rsi
+    color: "#505050"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/reinf-over.rsi
+
+- type: entity
+  parent: SCPWallReinforced
+  id: SCPWallReinforcedGreen
+  name: reinforced wall
+  suffix: SCPStructure, Green
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/reinf-over.rsi
+    color: "#223322"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/reinf-over.rsi

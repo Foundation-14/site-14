@@ -1192,6 +1192,7 @@
   name: tiles-glass-floor
   sprite: /Textures/Tiles/glass.png
   variants: 4
+  transparent: true # SCP-Foundation
   placementVariants:
   - 1.0
   - 1.0
@@ -1207,6 +1208,7 @@
   name: tiles-reinforced-glass-floor
   sprite: /Textures/Tiles/rglass.png
   variants: 4
+  transparent: true # SCP-Foundation
   placementVariants:
   - 1.0
   - 1.0

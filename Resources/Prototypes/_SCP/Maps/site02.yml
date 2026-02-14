@@ -1,0 +1,68 @@
+- type: gameMap
+  id: Site02
+  mapName: Site02
+  mapPath: /Maps/_SCP/Empty.yml
+  minPlayers: 0
+  stations:
+    Site02:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Site02"
+        - type: StationJobs
+          availableJobs:
+            Captain: [ -1, -1 ]
+        - type: CEStationZLevels
+          mapsAbove:
+            - /Maps/_SCP/Empty.yml
+          mapsBelow:
+            - /Maps/_SCP/Empty.yml
+            - /Maps/_SCP/Empty.yml
+            - /Maps/_SCP/Empty.yml
+            - /Maps/_SCP/Empty.yml
+            - /Maps/_SCP/Empty.yml
+          zLevelsComponentOverrides:
+            - type: MapAtmosphere
+              space: False
+              mixture:
+                volume: 2500
+                immutable: True
+                temperature: 293.15
+                moles:
+                  Oxygen: 21.824879
+                  Nitrogen: 82.10312
+            - type: Parallax
+              parallax: CESky
+            - type: SunShadowCycle
+              offset: 100
+              duration: 300
+            - type: LightCycle
+              offset: 100
+              duration: 300
+              originalColor: "#75e3ff"
+            - type: CEZLevelMapRoof
+            - type: SunShadow
+            - type: MapLight
+              ambientLightColor: "#75e3ff"
+
+- type: zMap
+  id: EmptyAtmosphere
+  maps:
+  - /Maps/_SCP/Empty.yml
+  - /Maps/_SCP/Empty.yml
+  - /Maps/_SCP/Empty.yml
+  - /Maps/_SCP/Empty.yml
+  - /Maps/_SCP/Empty.yml
+  - /Maps/_SCP/Empty.yml
+  - /Maps/_SCP/Empty.yml
+  components:
+    - type: MapAtmosphere
+      space: False
+      mixture:
+        volume: 2500
+        immutable: True
+        temperature: 293.15
+        moles:
+          Oxygen: 21.824879
+          Nitrogen: 82.10312
+    - type: CEZLevelMapRoof
