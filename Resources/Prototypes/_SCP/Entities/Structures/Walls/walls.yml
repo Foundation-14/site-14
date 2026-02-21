@@ -249,6 +249,33 @@
         layer:
         - TableLayer
 
+- type: entity
+  parent: SCPBaseStructureWall
+  id: SCPWallFrameMetallic
+  name: solid frame
+  components:
+  - type: Sprite
+    sprite: _SCP/Structures/Walls/frame.rsi
+    color: "#505050"
+  - type: Icon
+    sprite: _SCP/Structures/Walls/frame.rsi
+  - type: IconSmooth
+    key: walls
+    base: frame
+  - type: Climbable
+    delay: 5.0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 80
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
 # MetalWall region
 - type: entity
   parent: SCPBaseWall

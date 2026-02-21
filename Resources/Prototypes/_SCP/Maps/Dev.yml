@@ -1,10 +1,10 @@
 - type: gameMap
-  id: ZMappingTest
-  mapName: ZMappingTest
+  id: ZMappingDev
+  mapName: ZMappingDev
   mapPath: /Maps/_SCP/SCPDev/SCPDev0.yml
   minPlayers: 0
   stations:
-    Dev:
+    ZMappingDev:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
