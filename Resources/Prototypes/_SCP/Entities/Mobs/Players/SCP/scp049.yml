@@ -1,0 +1,107 @@
+- type: entity
+  id: Scp049
+  name: object
+  description: 
+  suffix: SCP-049
+  parent: [ BaseSimpleMob, MobFlammable, MobCombat, MobBloodstream, MobRespirator, InventoryBase, StripableInventoryBase, ShowMedicalIcons ]
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _SCP/Entities/Mobs/Players/SCP/scp049.rsi
+    layers: 
+      - state: mob
+      - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+        color: "#ffffff"
+        sprite: Objects/Misc/handcuffs.rsi
+        state: body-overlay-2
+        visible: false
+  - type: SCPMob049
+  - type: Hands
+  - type: Body
+  - type: InitialBody
+    organs:
+      Torso: OrganHumanTorso
+      Head: OrganHumanHead
+      ArmLeft: OrganHumanArmLeft
+      ArmRight: OrganHumanArmRight
+      HandRight: OrganHumanHandRight
+      HandLeft: OrganHumanHandLeft
+      LegLeft: OrganHumanLegLeft
+      LegRight: OrganHumanLegRight
+      FootLeft: OrganHumanFootLeft
+      FootRight: OrganHumanFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganHumanStomach
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Human
+  - type: Inventory
+    templateId: scp049
+  - type: ComplexInteraction
+  - type: Buckle
+  - type: Stripping
+  - type: StandingState
+  - type: Pacified
+  - type: FlashImmunity
+    showInExamine: false
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4.5
+    baseSprintSpeed: 3.5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Critical
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      250: 0.95
+      300: 0.75
+      350: 0.6
+  - type: Pullable
+  - type: Puller
+    needsHands: true
+  - type: Speech
+  - type: Appearance
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: Perishable
+  - type: AmbientSound
+    enabled: true
+    volume: -3
+    range: 13
+    sound:
+      path: /Audio/_SCP/SCP049/breath.ogg
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: SCP049FootstepCollection
+  - type: Tag
+    tags:
+    - FootstepSound
+    - CannotSuicide
+  - type: Cuffable
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 550
+    damage:
+      groups:
+        Brute: -1.5
+        Burn: -3
+        Airloss: -3
+        Toxin: -9
+        Genetic: -9

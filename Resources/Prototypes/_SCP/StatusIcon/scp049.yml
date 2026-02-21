@@ -1,0 +1,5 @@
+- type: factionIcon
+  id: Scp049TargetIcon
+  icon:
+    sprite: /Textures/_SCP/Interface/scp049_icons.rsi
+    state: target_icon
