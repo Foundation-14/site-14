@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://github.com/Foundation-19/Foundation-19/blob/b751720b8848036645b9049d60d8f67e81fbacfe/icons/turf/wall_masks.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "grille0",
+      "directions": 4
+    },
+    {
+      "name": "grille1",
+      "directions": 4
+    },
+    {
+      "name": "grille2",
+      "directions": 4
+    },
+    {
+      "name": "grille3",
+      "directions": 4
+    },
+    {
+      "name": "grille4",
+      "directions": 4
+    },
+    {
+      "name": "grille5",
+      "directions": 4
+    },
+    {
+      "name": "grille6",
+      "directions": 4
+    },
+    {
+      "name": "grille7",
+      "directions": 4
+    },
+    {
+      "name": "full"
+    },
+    {
+      "name": "broken"
+    }
+  ]
+}

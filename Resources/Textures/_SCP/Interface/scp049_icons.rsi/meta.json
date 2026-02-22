@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "Make for Foundation-14",
+  "size": {
+    "x": 8,
+    "y": 8
+  },
+  "states": [
+    {
+      "name": "target_icon",
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    }
+  ]
+}

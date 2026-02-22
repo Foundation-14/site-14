@@ -2,8 +2,9 @@
 # Straight in-game baby
 lobbyenabled = false
 # Dev map for faster loading & convenience
-map = "Dev"
+map = "ZMappingDev" ## SCP-Foundation
 role_timers = false
+admin_job_tracking = true
 role_loadout_timers = false
 
 [events]
@@ -16,8 +17,10 @@ quick_lottery = true
 [gateway]
 generator_enabled = false
 
-[movement]
-mob_pushing = true
+## SCP-Foundation-start
+#[movement]
+#mob_pushing = true
+## SCP-Foundation-end
 
 [physics]
 # Makes mapping annoying
@@ -41,6 +44,8 @@ see_own_notes = true
 new_player_threshold = 120
 
 [ic]
-random_characters = true
-random_species_weights = ""
+## SCP-Foundation-start
+#random_characters = true
+#random_species_weights = ""
+## SCP-Foundation-end
 ssd_sleep_time = 3600
