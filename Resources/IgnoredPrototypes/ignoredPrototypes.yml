@@ -6,3 +6,8 @@
 #
 # - /Prototypes/Guidebook
 # - /Prototypes/Catalog/uplink_catalog.yml
+
+# SCP-Foundation-start
+- /Prototypes/Entities/Mobs/Customization/Markings/cat_parts.yml
+- /Prototypes/Entities/Mobs/Customization/Markings/ears.yml
+# SCP-Foundation-end
