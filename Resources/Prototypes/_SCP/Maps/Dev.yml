@@ -1,0 +1,30 @@
+- type: gameMap
+  id: ZMappingDev
+  mapName: ZMappingDev
+  mapPath: /Maps/_SCP/SCPDev/SCPDev0.yml
+  minPlayers: 0
+  stations:
+    ZMappingDev:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Dev"
+        - type: StationJobs
+          availableJobs:
+            Captain: [ -1, -1 ]
+        - type: CEStationZLevels
+          mapsAbove:
+            - /Maps/_SCP/SCPDev/SCPDev1.yml
+            - /Maps/_SCP/SCPDev/SCPDev2.yml
+            - /Maps/_SCP/SCPDev/SCPDev3.yml
+          zLevelsComponentOverrides:
+            - type: MapAtmosphere
+              space: False
+              mixture:
+                volume: 2500
+                immutable: True
+                temperature: 293.15
+                moles:
+                  Oxygen: 21.824879
+                  Nitrogen: 82.10312
+            - type: CEZLevelMapRoof

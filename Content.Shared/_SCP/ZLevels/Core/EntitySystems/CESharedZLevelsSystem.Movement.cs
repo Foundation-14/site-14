@@ -5,11 +5,8 @@
 
 using System.Numerics;
 using Content.Shared._CE.ZLevels.Core.Components;
-using Content.Shared.Chasm;
-using Content.Shared.Inventory;
 using Content.Shared.Throwing;
 using JetBrains.Annotations;
-using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
@@ -152,7 +149,7 @@ public abstract partial class CESharedZLevelsSystem
 
             if (zPhys.LocalPosition < 0) //Need teleport to ZLevel down
             {
-                if (TryMoveDownOrChasm(uid))
+                if (TryMoveDown(uid))
                 {
                     zPhys.LocalPosition += 1;
 
@@ -445,31 +442,6 @@ public abstract partial class CESharedZLevelsSystem
     {
         return TryMove(ent, -1);
     }
-
-    [PublicAPI]
-    public bool TryMoveDownOrChasm(EntityUid ent)
-    {
-        if (TryMoveDown(ent))
-            return true;
-
-        //welp, that default Chasm behavior. Not really good, but ok for now.
-        if (HasComp<ChasmFallingComponent>(ent))
-            return false; //Already falling
-
-        var attempt = new CEZLevelChasmAttempt(ent);
-        RaiseLocalEvent(ent, attempt);
-
-        if (attempt.Cancelled)
-            return false;
-
-        var audio = new SoundPathSpecifier("/Audio/Effects/falling.ogg");
-        _audio.PlayPredicted(audio, Transform(ent).Coordinates, ent);
-        var falling = AddComp<ChasmFallingComponent>(ent);
-        falling.NextDeletionTime = _timing.CurTime + falling.DeletionTime;
-        _blocker.UpdateCanMove(ent);
-
-        return false;
-    }
 }
 
 /// <summary>
@@ -500,15 +472,6 @@ public struct CEZLevelMapMoveEvent(int offset, int level)
     public int Offset = offset;
 
     public int CurrentZLevel = level;
-}
-
-/// <summary>
-///Called upon the essence before attempting to fall into the abyss
-/// </summary>
-public sealed class CEZLevelChasmAttempt(EntityUid falled) : CancellableEntityEventArgs, IInventoryRelayEvent
-{
-    public EntityUid Falled = falled;
-    public SlotFlags TargetSlots => SlotFlags.All;
 }
 
 /// <summary>
