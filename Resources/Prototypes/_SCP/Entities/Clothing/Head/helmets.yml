@@ -3,6 +3,7 @@
   id: SCPClothingHeadHelmetMedium
   name: medium helmet
   description: Standard security gear. Protects the head from impacts.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _SCP/Clothing/Head/Helmets/medium_helmet.rsi
@@ -24,6 +25,7 @@
   id: SCPClothingHeadHelmetHard
   name: hard helmet
   description: Standard security gear. Protects the head from impacts.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _SCP/Clothing/Head/Helmets/hard_helmet.rsi

@@ -1,26 +1,55 @@
-﻿"Changes: Sprites":
+﻿":construction: Карты":
 - changed-files:
-  - any-glob-to-any-file: '**/*.rsi/*.png'
+  - any-glob-to-any-file: "Resources/Maps/**/*.yml"
 
-"Changes: Map":
+":art: Спрайты":
 - changed-files:
   - any-glob-to-any-file:
-    - 'Resources/Maps/**/*.yml'
-    - 'Resources/Prototypes/Maps/**/*.yml'
+    - "**/*.rsi/*.png"
+    - "**/*.rsi/*.json"
 
-"Changes: UI":
+":iphone: Интерфейс":
 - changed-files:
-  - any-glob-to-any-file: '**/*.xaml*'
+  - any-glob-to-any-file: "**/*.xaml*"
 
-"Changes: Shaders":
+":chart_with_upwards_trend: C#":
+- changed-files:
+  - any-glob-to-any-file: "**/*.cs"
+
+":art: Шейдеры":
 - changed-files:
   - any-glob-to-any-file: '**/*.swsl'
 
-"Changes: Audio":
+":musical_note: Аудио":
 - changed-files:
   - any-glob-to-any-file: '**/*.ogg'
 
-"Changes: No C#":
+":chart_with_downwards_trend: Без C#":
 - changed-files:
-  # Equiv to any-glob-to-all as long as this has one matcher. If ALL changed files are not C# files, then apply label.
   - all-globs-to-all-files: "!**/*.cs"
+
+":book: Документация":
+- changed-files:
+  - any-glob-to-any-file:
+    - "**/*.xml"
+    - "**/*.md"
+
+":page_facing_up: Локализация":
+- changed-files:
+  - any-glob-to-any-file: "Resources/Locale/**/*.ftl"
+
+":baby_chick: Прототипы":
+- all:
+  - changed-files:
+    - any-glob-to-any-file: "**/*.yml"
+    - all-globs-to-any-file:
+      - "!Resources/Maps/**/*.yml"
+      - "!Resources/Prototypes/Maps/**/*.yml"
+
+":surfer: Миграция Файлов":
+- changed-files:
+  - any-glob-to-any-file: "Content.Server.Database/Migrations/**/*.cs"
+
+":alien: SCP-Foundation":
+- changed-files:
+  - all-globs-to-all-files: "!**/_SCP/**"

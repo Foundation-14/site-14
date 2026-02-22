@@ -3,6 +3,7 @@
   id: SCPClothingOuterArmorLight
   name: light vest
   description: A standard Type I armored vest that provides decent protection against most types of damage.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _SCP/Clothing/OuterClothing/Armor/light_armor.rsi
@@ -23,6 +24,7 @@
   id: SCPClothingOuterArmorMedium
   name: medium vest
   description: A standard Type I armored vest that provides decent protection against most types of damage.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _SCP/Clothing/OuterClothing/Armor/medium_armor.rsi
@@ -43,6 +45,7 @@
   id: SCPClothingOuterArmorHard
   name: hard vest
   description: A standard Type I armored vest that provides decent protection against most types of damage.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _SCP/Clothing/OuterClothing/Armor/hard_armor.rsi
