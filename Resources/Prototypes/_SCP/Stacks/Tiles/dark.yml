@@ -1,0 +1,53 @@
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileDark
+  name: stack-dark-tile
+  spawn: SCPFloorTileItemDark
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileDarkCorner
+  name: stack-dark-tile
+  spawn: SCPFloorTileItemDarkCorner
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileDarkGrid
+  name: stack-dark-tile
+  spawn: SCPFloorTileItemDarkGrid
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileDarkHorizontal
+  name: stack-dark-tile
+  spawn: SCPFloorTileItemDarkHorizontal
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileDarkMono
+  name: stack-dark-tile
+  spawn: SCPFloorTileItemDarkMono
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileDarkRidged
+  name: stack-dark-tile
+  spawn: SCPFloorTileItemDarkRidged
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileDarkSmall
+  name: stack-dark-tile
+  spawn: SCPFloorTileItemDarkSmall
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileDarkVertical
+  name: stack-dark-tile
+  spawn: SCPFloorTileItemDarkVertical
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileDarkTiled
+  name: stack-dark-tile
+  spawn: SCPFloorTileItemDarkTiled

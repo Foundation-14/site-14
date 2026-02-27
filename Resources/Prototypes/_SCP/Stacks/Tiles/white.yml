@@ -1,0 +1,53 @@
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileWhite
+  name: stack-white-tile
+  spawn: SCPFloorTileItemWhite
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileWhiteCorner
+  name: stack-white-tile
+  spawn: SCPFloorTileItemWhiteCorner
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileWhiteGrid
+  name: stack-white-tile
+  spawn: SCPFloorTileItemWhiteGrid
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileWhiteHorizontal
+  name: stack-white-tile
+  spawn: SCPFloorTileItemWhiteHorizontal
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileWhiteMono
+  name: stack-white-tile
+  spawn: SCPFloorTileItemWhiteMono
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileWhiteRidged
+  name: stack-white-tile
+  spawn: SCPFloorTileItemWhiteRidged
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileWhiteSmall
+  name: stack-white-tile
+  spawn: SCPFloorTileItemWhiteSmall
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileWhiteVertical
+  name: stack-white-tile
+  spawn: SCPFloorTileItemWhiteVertical
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileWhiteTiled
+  name: stack-white-tile
+  spawn: SCPFloorTileItemWhiteTiled

@@ -30,6 +30,12 @@
   parent: BaseStationTile
   name: tiles-steel-floor
   sprite: /Textures/_SCP/Tiles/steel.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   itemDrop: FloorTileItemSteel
 
 - type: tile
@@ -249,6 +255,12 @@
   parent: BaseStationTile
   name: tiles-white-floor
   sprite: /Textures/_SCP/Tiles/white.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhite
@@ -427,6 +439,12 @@
   parent: BaseStationTile
   name: tiles-dark-floor
   sprite: /Textures/_SCP/Tiles/dark.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDark
@@ -2013,3 +2031,222 @@
     collection: FootstepTile
   friction: 0.8
   itemDrop: FloorTileItemUraniumMarble
+
+# Foundation region
+## Steel
+- type: tile
+  id: FoundationFloorSteel
+  parent: BaseStationTile
+  name: tiles-steel-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/steel.png
+  itemDrop: SCPFloorTileItemSteel
+
+- type: tile
+  id: FoundationFloorSteelCorner
+  parent: BaseStationTile
+  name: tiles-steel-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/steel_corner.png
+  itemDrop: SCPFloorTileItemSteelCorner
+
+- type: tile
+  id: FoundationFloorSteelDirty
+  parent: BaseStationTile
+  name: tiles-steel-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/steel_dirty.png
+  itemDrop: SCPFloorTileItemSteel
+
+- type: tile
+  id: FoundationFloorSteelGrid
+  parent: BaseStationTile
+  name: tiles-steel-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/steel_grid.png
+  itemDrop: SCPFloorTileItemSteelGrid
+
+- type: tile
+  id: FoundationFloorSteelHorizontal
+  parent: BaseStationTile
+  name: tiles-steel-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/steel_horizontal.png
+  itemDrop: SCPFloorTileItemSteelHorizontal
+
+- type: tile
+  id: FoundationFloorSteelMono
+  parent: BaseStationTile
+  name: tiles-steel-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/steel_monofloor.png
+  itemDrop: SCPFloorTileItemSteelMono
+
+- type: tile
+  id: FoundationFloorSteelRidged
+  parent: BaseStationTile
+  name: tiles-steel-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/steel_ridged.png
+  itemDrop: SCPFloorTileItemSteelRidged
+
+- type: tile
+  id: FoundationFloorSteelSmall
+  parent: BaseStationTile
+  name: tiles-steel-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/steel_small.png
+  itemDrop: SCPFloorTileItemSteelSmall
+
+- type: tile
+  id: FoundationFloorSteelVertical
+  parent: BaseStationTile
+  name: tiles-steel-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/steel_vertical.png
+  itemDrop: SCPFloorTileItemSteelVertical
+
+- type: tile
+  id: FoundationFloorSteelTiled
+  parent: BaseStationTile
+  name: tiles-steel-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/tiled.png
+  itemDrop: SCPFloorTileItemSteelTiled
+
+## Dark
+- type: tile
+  id: FoundationFloorDark
+  parent: BaseStationTile
+  name: tiles-dark-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/dark.png
+  itemDrop: SCPFloorTileItemDark
+
+- type: tile
+  id: FoundationFloorDarkCorner
+  parent: BaseStationTile
+  name: tiles-dark-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/dark_corner.png
+  itemDrop: SCPFloorTileItemDarkCorner
+
+- type: tile
+  id: FoundationFloorDarkGrid
+  parent: BaseStationTile
+  name: tiles-dark-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/dark_grid.png
+  itemDrop: SCPFloorTileItemDarkGrid
+
+- type: tile
+  id: FoundationFloorDarkHorizontal
+  parent: BaseStationTile
+  name: tiles-dark-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/dark_horizontal.png
+  itemDrop: SCPFloorTileItemDarkHorizontal
+
+- type: tile
+  id: FoundationFloorDarkMono
+  parent: BaseStationTile
+  name: tiles-dark-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/dark_monofloor.png
+  itemDrop: SCPFloorTileItemDarkMono
+
+- type: tile
+  id: FoundationFloorDarkRidged
+  parent: BaseStationTile
+  name: tiles-dark-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/dark_ridged.png
+  itemDrop: SCPFloorTileItemDarkRidged
+
+- type: tile
+  id: FoundationFloorDarkSmall
+  parent: BaseStationTile
+  name: tiles-dark-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/dark_small.png
+  itemDrop: SCPFloorTileItemDarkSmall
+
+- type: tile
+  id: FoundationFloorDarkVertical
+  parent: BaseStationTile
+  name: tiles-dark-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/dark_vertical.png
+  itemDrop: SCPFloorTileItemDarkVertical
+
+- type: tile
+  id: FoundationFloorDarkTiled
+  parent: BaseStationTile
+  name: tiles-dark-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/tiled_dark.png
+  itemDrop: SCPFloorTileItemDarkTiled
+
+## White
+- type: tile
+  id: FoundationFloorWhite
+  parent: BaseStationTile
+  name: tiles-white-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/white.png
+  itemDrop: SCPFloorTileItemWhite
+
+- type: tile
+  id: FoundationFloorWhiteCorner
+  parent: BaseStationTile
+  name: tiles-white-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/white_corner.png
+  itemDrop: SCPFloorTileItemWhiteCorner
+
+- type: tile
+  id: FoundationFloorWhiteGrid
+  parent: BaseStationTile
+  name: tiles-white-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/white_grid.png
+  itemDrop: SCPFloorTileItemWhiteGrid
+
+- type: tile
+  id: FoundationFloorWhiteHorizontal
+  parent: BaseStationTile
+  name: tiles-white-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/white_horizontal.png
+  itemDrop: SCPFloorTileItemWhiteHorizontal
+
+- type: tile
+  id: FoundationFloorWhiteMono
+  parent: BaseStationTile
+  name: tiles-white-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/white_monofloor.png
+  itemDrop: SCPFloorTileItemWhiteMono
+
+- type: tile
+  id: FoundationFloorWhiteRidged
+  parent: BaseStationTile
+  name: tiles-white-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/white_ridged.png
+  itemDrop: SCPFloorTileItemWhiteRidged
+
+- type: tile
+  id: FoundationFloorWhiteSmall
+  parent: BaseStationTile
+  name: tiles-white-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/white_small.png
+  itemDrop: SCPFloorTileItemWhiteSmall
+
+- type: tile
+  id: FoundationFloorWhiteVertical
+  parent: BaseStationTile
+  name: tiles-white-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/white_vertical.png
+  itemDrop: SCPFloorTileItemWhiteVertical
+
+- type: tile
+  id: FoundationFloorWhiteTiled
+  parent: BaseStationTile
+  name: tiles-white-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/tiled_white.png
+  itemDrop: SCPFloorTileItemWhiteTiled
+
+## Misc
+- type: tile
+  id: FoundationFloorAsteroidIronsandBorderless
+  name: tiles-asteroid-ironsand-borderless
+  sprite: /Textures/_SCP/Tiles/Foundation/asteroidplating.png
+  baseTurf: Space
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: FoundationFloorKafel
+  parent: BaseStationTile
+  name: tiles-white-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/kafel_full.png
+  itemDrop: SCPFloorTileItemKafel
