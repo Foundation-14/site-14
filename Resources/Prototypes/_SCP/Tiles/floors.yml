@@ -6,7 +6,7 @@
   footstepSounds:
     collection: FootstepFloor
   heatCapacity: 10000
-  baseTurf: Plating
+  baseTurf: FoundationPlating
   baseWhitelist:
   - PlatingBrass
   - FloorAsteroidIronsand
@@ -2042,11 +2042,32 @@
   itemDrop: SCPFloorTileItemSteel
 
 - type: tile
-  id: FoundationFloorSteelCorner
+  id: FoundationFloorSteelCornerS
   parent: BaseStationTile
   name: tiles-steel-floor
-  sprite: /Textures/_SCP/Tiles/Foundation/steel_corner.png
-  itemDrop: SCPFloorTileItemSteelCorner
+  sprite: /Textures/_SCP/Tiles/Foundation/steel_corner_s.png
+  itemDrop: SCPFloorTileItemSteelCornerS
+
+- type: tile
+  id: FoundationFloorSteelCornerN
+  parent: BaseStationTile
+  name: tiles-steel-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/steel_corner_n.png
+  itemDrop: SCPFloorTileItemSteelCornerN
+
+- type: tile
+  id: FoundationFloorSteelCornerE
+  parent: BaseStationTile
+  name: tiles-steel-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/steel_corner_e.png
+  itemDrop: SCPFloorTileItemSteelCornerE
+
+- type: tile
+  id: FoundationFloorSteelCornerW
+  parent: BaseStationTile
+  name: tiles-steel-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/steel_corner_w.png
+  itemDrop: SCPFloorTileItemSteelCornerW
 
 - type: tile
   id: FoundationFloorSteelDirty
@@ -2073,7 +2094,7 @@
   id: FoundationFloorSteelMono
   parent: BaseStationTile
   name: tiles-steel-floor
-  sprite: /Textures/_SCP/Tiles/Foundation/steel_monofloor.png
+  sprite: /Textures/_SCP/Tiles/Foundation/monotile.png
   itemDrop: SCPFloorTileItemSteelMono
 
 - type: tile
@@ -2113,11 +2134,32 @@
   itemDrop: SCPFloorTileItemDark
 
 - type: tile
-  id: FoundationFloorDarkCorner
+  id: FoundationFloorDarkCornerS
   parent: BaseStationTile
   name: tiles-dark-floor
-  sprite: /Textures/_SCP/Tiles/Foundation/dark_corner.png
-  itemDrop: SCPFloorTileItemDarkCorner
+  sprite: /Textures/_SCP/Tiles/Foundation/dark_corner_s.png
+  itemDrop: SCPFloorTileItemDarkCornerS
+
+- type: tile
+  id: FoundationFloorDarkCornerN
+  parent: BaseStationTile
+  name: tiles-dark-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/dark_corner_n.png
+  itemDrop: SCPFloorTileItemDarkCornerN
+
+- type: tile
+  id: FoundationFloorDarkCornerE
+  parent: BaseStationTile
+  name: tiles-dark-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/dark_corner_e.png
+  itemDrop: SCPFloorTileItemDarkCornerE
+
+- type: tile
+  id: FoundationFloorDarkCornerW
+  parent: BaseStationTile
+  name: tiles-dark-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/dark_corner_w.png
+  itemDrop: SCPFloorTileItemDarkCornerW
 
 - type: tile
   id: FoundationFloorDarkGrid
@@ -2137,7 +2179,7 @@
   id: FoundationFloorDarkMono
   parent: BaseStationTile
   name: tiles-dark-floor
-  sprite: /Textures/_SCP/Tiles/Foundation/dark_monofloor.png
+  sprite: /Textures/_SCP/Tiles/Foundation/monotiledark.png
   itemDrop: SCPFloorTileItemDarkMono
 
 - type: tile
@@ -2177,11 +2219,32 @@
   itemDrop: SCPFloorTileItemWhite
 
 - type: tile
-  id: FoundationFloorWhiteCorner
+  id: FoundationFloorWhiteCornerS
   parent: BaseStationTile
   name: tiles-white-floor
-  sprite: /Textures/_SCP/Tiles/Foundation/white_corner.png
-  itemDrop: SCPFloorTileItemWhiteCorner
+  sprite: /Textures/_SCP/Tiles/Foundation/white_corner_s.png
+  itemDrop: SCPFloorTileItemWhiteCornerS
+
+- type: tile
+  id: FoundationFloorWhiteCornerN
+  parent: BaseStationTile
+  name: tiles-white-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/white_corner_n.png
+  itemDrop: SCPFloorTileItemWhiteCornerN
+
+- type: tile
+  id: FoundationFloorWhiteCornerE
+  parent: BaseStationTile
+  name: tiles-white-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/white_corner_e.png
+  itemDrop: SCPFloorTileItemWhiteCornerE
+
+- type: tile
+  id: FoundationFloorWhiteCornerW
+  parent: BaseStationTile
+  name: tiles-white-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/white_corner_w.png
+  itemDrop: SCPFloorTileItemWhiteCornerW
 
 - type: tile
   id: FoundationFloorWhiteGrid
@@ -2201,7 +2264,7 @@
   id: FoundationFloorWhiteMono
   parent: BaseStationTile
   name: tiles-white-floor
-  sprite: /Textures/_SCP/Tiles/Foundation/white_monofloor.png
+  sprite: /Textures/_SCP/Tiles/Foundation/monotilewhite.png
   itemDrop: SCPFloorTileItemWhiteMono
 
 - type: tile

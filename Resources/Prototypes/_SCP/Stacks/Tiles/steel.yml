@@ -6,9 +6,27 @@
 
 - type: stack
   parent: BaseTileStack
-  id: SCPFloorTileSteelCorner
+  id: SCPFloorTileSteelCornerS
   name: stack-steel-tile
-  spawn: SCPFloorTileItemSteelCorner
+  spawn: SCPFloorTileItemSteelCornerS
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelCornerN
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelCornerN
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelCornerE
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelCornerE
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelCornerW
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelCornerW
 
 - type: stack
   parent: BaseTileStack

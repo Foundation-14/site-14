@@ -63,7 +63,7 @@
 - type: entity
   name: steel tile
   parent: FloorTileItemBase
-  id: SCPFloorTileItemSteelCorner
+  id: SCPFloorTileItemSteelCornerS
   components:
   - type: Sprite
     state: steel
@@ -74,7 +74,55 @@
       - Plating
       - FloorSteel
   - type: Stack
-    stackType: SCPFloorTileSteelCorner
+    stackType: SCPFloorTileSteelCornerS
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelCornerN
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSteel
+  - type: Stack
+    stackType: SCPFloorTileSteelCornerN
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelCornerE
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSteel
+  - type: Stack
+    stackType: SCPFloorTileSteelCornerE
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelCornerW
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSteel
+  - type: Stack
+    stackType: SCPFloorTileSteelCornerW
 
 - type: entity
   name: steel tile
@@ -208,7 +256,7 @@
 - type: entity
   name: steel tile
   parent: FloorTileItemBase
-  id: SCPFloorTileItemDarkCorner
+  id: SCPFloorTileItemDarkCornerS
   components:
   - type: Sprite
     state: steel
@@ -219,7 +267,55 @@
       - Plating
       - FloorDark
   - type: Stack
-    stackType: SCPFloorTileDarkCorner
+    stackType: SCPFloorTileDarkCornerS
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkCornerN
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorDark
+  - type: Stack
+    stackType: SCPFloorTileDarkCornerN
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkCornerE
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorDark
+  - type: Stack
+    stackType: SCPFloorTileDarkCornerE
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkCornerW
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorDark
+  - type: Stack
+    stackType: SCPFloorTileDarkCornerW
 
 - type: entity
   name: steel tile
@@ -353,7 +449,7 @@
 - type: entity
   name: steel tile
   parent: FloorTileItemBase
-  id: SCPFloorTileItemWhiteCorner
+  id: SCPFloorTileItemWhiteCornerS
   components:
   - type: Sprite
     state: steel
@@ -364,7 +460,55 @@
       - Plating
       - FloorWhite
   - type: Stack
-    stackType: SCPFloorTileWhiteCorner
+    stackType: SCPFloorTileWhiteCornerS
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteCornerN
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorWhite
+  - type: Stack
+    stackType: SCPFloorTileWhiteCornerN
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteCornerE
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorWhite
+  - type: Stack
+    stackType: SCPFloorTileWhiteCornerE
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteCornerW
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorWhite
+  - type: Stack
+    stackType: SCPFloorTileWhiteCornerW
 
 - type: entity
   name: steel tile

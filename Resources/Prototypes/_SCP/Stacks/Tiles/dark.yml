@@ -6,9 +6,27 @@
 
 - type: stack
   parent: BaseTileStack
-  id: SCPFloorTileDarkCorner
+  id: SCPFloorTileDarkCornerS
   name: stack-dark-tile
-  spawn: SCPFloorTileItemDarkCorner
+  spawn: SCPFloorTileItemDarkCornerS
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileDarkCornerN
+  name: stack-dark-tile
+  spawn: SCPFloorTileItemDarkCornerN
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileDarkCornerE
+  name: stack-dark-tile
+  spawn: SCPFloorTileItemDarkCornerE
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileDarkCornerW
+  name: stack-dark-tile
+  spawn: SCPFloorTileItemDarkCornerW
 
 - type: stack
   parent: BaseTileStack
