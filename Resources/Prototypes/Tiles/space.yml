@@ -1,11 +1,12 @@
-- type: tile
-  id: Space
-  name: tiles-space
-  #friction: 0 # SCP-Foundation
-  weather: true # SCP-Foundation
-  transparent: true # SCP-Foundation
-  isSubfloor: true
-  isSpace: true
-  sturdy: false
-  thermalConductivity: 0.4
-  heatCapacity: 700000
+# SCP-Foundation : Ignore
+
+# - type: tile
+#   id: Space
+#   name: tiles-space
+#   friction: 0
+#   weather: false
+#   isSubfloor: true
+#   isSpace: true
+#   sturdy: false
+#   thermalConductivity: 0.4
+#   heatCapacity: 700000

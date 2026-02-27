@@ -1,9 +1,9 @@
 - type: soundCollection
   id: SCP049FootstepCollection
   files:
-  - /Audio/_SCP/SCP049/step_metal0.ogg
-  - /Audio/_SCP/SCP049/step_metal1.ogg
-  - /Audio/_SCP/SCP049/step_metal2.ogg
+  - /Audio/_SCP/Effects/Footsteps/NPCs/049/StepMetal0.ogg
+  - /Audio/_SCP/Effects/Footsteps/NPCs/049/StepMetal1.ogg
+  - /Audio/_SCP/Effects/Footsteps/NPCs/049/StepMetal2.ogg
 
 - type: soundCollection
   id: SCP0492Screams

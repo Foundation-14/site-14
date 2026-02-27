@@ -1,0 +1,269 @@
+- type: soundCollection
+  id: FootstepCarpet
+  files:
+  - /Audio/_SCP/Effects/Footsteps/StepCloth0.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepCloth1.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepCloth2.ogg
+
+- type: soundCollection
+  id: FootstepWood
+  files:
+  - /Audio/Effects/Footsteps/wood1.ogg
+  - /Audio/Effects/Footsteps/wood2.ogg
+  - /Audio/Effects/Footsteps/wood3.ogg
+  - /Audio/Effects/Footsteps/wood4.ogg
+  - /Audio/Effects/Footsteps/wood5.ogg
+
+- type: soundCollection
+  id: FootstepCatwalk
+  files:
+  - /Audio/_SCP/Effects/Footsteps/RunMetal0.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal1.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal2.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal3.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal4.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal5.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal6.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal7.ogg
+
+- type: soundCollection
+  id: FootstepFloor
+  files:
+  - /Audio/_SCP/Effects/Footsteps/StepMetal0.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal1.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal2.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal3.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal4.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal5.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal6.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal7.ogg
+
+- type: soundCollection
+  id: FootstepHull
+  files:
+  - /Audio/_SCP/Effects/Footsteps/StepMetal0.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal1.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal2.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal3.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal4.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal5.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal6.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal7.ogg
+
+- type: soundCollection
+  id: FootstepPlating
+  files:
+  - /Audio/_SCP/Effects/Footsteps/RunMetal0.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal1.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal2.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal3.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal4.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal5.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal6.ogg
+  - /Audio/_SCP/Effects/Footsteps/RunMetal7.ogg
+
+- type: soundCollection
+  id: FootstepTile
+  files:
+  - /Audio/_SCP/Effects/Footsteps/StepMetal0.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal1.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal2.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal3.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal4.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal5.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal6.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepMetal7.ogg
+
+- type: soundCollection
+  id: FootstepSlime
+  files:
+  - /Audio/Effects/Footsteps/slime1.ogg
+  - /Audio/Effects/Footsteps/slime2.ogg
+  - /Audio/Effects/Footsteps/slime3.ogg
+  - /Audio/Effects/Footsteps/slime4.ogg
+
+- type: soundCollection
+  id: FootstepClown
+  files:
+  - /Audio/Effects/Footsteps/clownstep1.ogg
+  - /Audio/Effects/Footsteps/clownstep2.ogg
+
+- type: soundCollection
+  id: FootstepJester
+  files:
+  - /Audio/Effects/Footsteps/jesterstep1.ogg
+  - /Audio/Effects/Footsteps/jesterstep2.ogg
+
+- type: soundCollection
+  id: FootstepSkates
+  files:
+  - /Audio/Items/Toys/skates.ogg
+
+- type: soundCollection
+  id: FootstepDuck
+  files:
+  - /Audio/Items/Toys/quack.ogg
+
+- type: soundCollection
+  id: FootstepLizardSlippers
+  files:
+  - /Audio/Items/Toys/weh.ogg
+
+- type: soundCollection
+  id: FootstepHeavy
+  files:
+  - /Audio/_SCP/Effects/Footsteps/NPCs/MTF/StepMetal0.ogg
+  - /Audio/_SCP/Effects/Footsteps/NPCs/MTF/StepMetal1.ogg
+  - /Audio/_SCP/Effects/Footsteps/NPCs/MTF/StepMetal2.ogg
+
+- type: soundCollection
+  id: FootstepAsteroid
+  files:
+  - /Audio/Effects/Footsteps/asteroid1.ogg
+  - /Audio/Effects/Footsteps/asteroid2.ogg
+  - /Audio/Effects/Footsteps/asteroid3.ogg
+  - /Audio/Effects/Footsteps/asteroid4.ogg
+  - /Audio/Effects/Footsteps/asteroid5.ogg
+
+- type: soundCollection
+  id: FootstepSnow
+  files:
+  - /Audio/Effects/Footsteps/snowstep1.ogg
+  - /Audio/Effects/Footsteps/snowstep2.ogg
+  - /Audio/Effects/Footsteps/snowstep3.ogg
+  - /Audio/Effects/Footsteps/snowstep4.ogg
+
+- type: soundCollection
+  id: FootstepGrass
+  files:
+  - /Audio/_SCP/Effects/Footsteps/StepForest0.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepForest1.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepForest2.ogg
+
+- type: soundCollection
+  id: FootstepWater
+  files:
+    - /Audio/Effects/Footsteps/water1.ogg
+    - /Audio/Effects/Footsteps/water2.ogg
+    - /Audio/Effects/Footsteps/water3.ogg
+    - /Audio/Effects/Footsteps/water4.ogg
+
+- type: soundCollection
+  id: BarestepHard
+  files:
+  - /Audio/Effects/Footsteps/hardbarefoot1.ogg
+  - /Audio/Effects/Footsteps/hardbarefoot2.ogg
+  - /Audio/Effects/Footsteps/hardbarefoot3.ogg
+  - /Audio/Effects/Footsteps/hardbarefoot4.ogg
+  - /Audio/Effects/Footsteps/hardbarefoot5.ogg
+
+- type: soundCollection
+  id: BarestepCarpet
+  files:
+  - /Audio/Effects/Footsteps/carpetbarefoot1.ogg
+  - /Audio/Effects/Footsteps/carpetbarefoot2.ogg
+  - /Audio/Effects/Footsteps/carpetbarefoot3.ogg
+  - /Audio/Effects/Footsteps/carpetbarefoot4.ogg
+  - /Audio/Effects/Footsteps/carpetbarefoot5.ogg
+
+- type: soundCollection
+  id: BarestepWood
+  files:
+  - /Audio/Effects/Footsteps/woodbarefoot1.ogg
+  - /Audio/Effects/Footsteps/woodbarefoot2.ogg
+  - /Audio/Effects/Footsteps/woodbarefoot3.ogg
+  - /Audio/Effects/Footsteps/woodbarefoot4.ogg
+  - /Audio/Effects/Footsteps/woodbarefoot5.ogg
+
+- type: soundCollection
+  id: FootstepBounce
+  files:
+  - /Audio/Effects/Footsteps/bounce.ogg
+
+- type: soundCollection
+  id: FootstepClownFast
+  files:
+  - /Audio/Effects/Footsteps/clownspiderstep1.ogg
+  - /Audio/Effects/Footsteps/clownspiderstep2.ogg
+
+- type: soundCollection
+  id: FootstepThud
+  files:
+  - /Audio/Effects/Footsteps/largethud.ogg
+
+- type: soundCollection
+  id: FootstepSnake
+  files:
+  - /Audio/Effects/Footsteps/snake1.ogg
+  - /Audio/Effects/Footsteps/snake2.ogg
+  - /Audio/Effects/Footsteps/snake3.ogg
+
+- type: soundCollection
+  id: FootstepBells
+  files:
+  - /Audio/Effects/Footsteps/bells1.ogg
+  - /Audio/Effects/Footsteps/bells2.ogg
+  - /Audio/Effects/Footsteps/bells3.ogg
+  - /Audio/Effects/Footsteps/bells4.ogg
+  - /Audio/Effects/Footsteps/bells5.ogg
+
+- type: soundCollection
+  id: FootstepSlip
+  files:
+  - /Audio/Effects/slip.ogg
+
+- type: soundCollection
+  id: FootstepPuddle
+  files:
+  - /Audio/_SCP/Effects/Footsteps/StepFluid0.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepFluid1.ogg
+
+- type: soundCollection
+  id: FootstepBlood
+  files:
+  - /Audio/Effects/Footsteps/blood1.ogg
+  - /Audio/Effects/Footsteps/blood2.ogg
+  - /Audio/Effects/Footsteps/blood3.ogg
+  - /Audio/Effects/Footsteps/blood4.ogg
+  - /Audio/Effects/Footsteps/blood5.ogg
+
+- type: soundCollection
+  id: FootstepSticky
+  files:
+  - /Audio/Effects/Footsteps/meatslap.ogg
+
+- type: soundCollection
+  id: FootstepSpurs
+  files:
+  - /Audio/Effects/Footsteps/spurs1.ogg
+  - /Audio/Effects/Footsteps/spurs2.ogg
+  - /Audio/Effects/Footsteps/spurs3.ogg
+
+- type: soundCollection
+  id: FootstepBorg
+  files:
+  - /Audio/Effects/Footsteps/borgwalk1.ogg
+
+- type: soundCollection
+  id: FootstepXenoborg
+  files:
+  - /Audio/Effects/Footsteps/borgwalk3.ogg
+
+- type: soundCollection
+  id: FootstepHoverBorg
+  files:
+  - /Audio/Effects/Footsteps/borgwalk2.ogg
+
+- type: soundCollection
+  id: FootstepHoverXenoborg
+  files:
+  - /Audio/Effects/Footsteps/borgwalk4.ogg
+
+- type: soundCollection
+  id: FootstepHighHeels
+  files:
+  - /Audio/Effects/Footsteps/heelsclack1.ogg
+  - /Audio/Effects/Footsteps/heelsclack2.ogg
+  - /Audio/Effects/Footsteps/heelsclack3.ogg
+  - /Audio/Effects/Footsteps/heelsclack4.ogg
+  - /Audio/Effects/Footsteps/heelsclack5.ogg

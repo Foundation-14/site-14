@@ -56,6 +56,14 @@
           tags:
           - Knife
           - Sidearm
+  # SCP-Foundation-start : port sounds
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHeavy
+      params:
+        volume: -7
+        variation: 0.09
+  # SCP-Foundation-end
 
 - type: entity
   abstract: true
