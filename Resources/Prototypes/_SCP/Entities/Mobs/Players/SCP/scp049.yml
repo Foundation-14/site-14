@@ -1,38 +1,28 @@
 - type: entity
-  id: Scp049
+  id: MobScp049
   name: object
   description: 
   suffix: SCP-049
-  parent: [ BaseSimpleMob, MobFlammable, MobCombat, MobBloodstream, MobRespirator, InventoryBase, StripableInventoryBase, ShowMedicalIcons ]
+  parent: [ BaseSimpleMob, MobFlammable, MobCombat, MobRespirator, InventoryBase, StripableInventoryBase, ShowMedicalIcons ]
   categories: [ ForkFiltered ]
   components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: _SCP/Entities/Mobs/Players/SCP/scp049.rsi
-    layers: 
-      - state: mob
-      - map: ["enum.HumanoidVisualLayers.Handcuffs"]
-        color: "#ffffff"
-        sprite: Objects/Misc/handcuffs.rsi
-        state: body-overlay-2
-        visible: false
   - type: SCPMob049
+  - type: StatusIcon
+    bounds: -0.5,-0.5,0.5,0.5
   - type: Hands
+    activeHandId: right
+    hands:
+      right:
+        location: Right
+      left:
+        location: Left
+    sortedHands:
+    - right
+    - left
   - type: Body
   - type: InitialBody
     organs:
-      Torso: OrganHumanTorso
-      Head: OrganHumanHead
-      ArmLeft: OrganHumanArmLeft
-      ArmRight: OrganHumanArmRight
-      HandRight: OrganHumanHandRight
-      HandLeft: OrganHumanHandLeft
-      LegLeft: OrganHumanLegLeft
-      LegRight: OrganHumanLegRight
-      FootLeft: OrganHumanFootLeft
-      FootRight: OrganHumanFootRight
       Brain: OrganHumanBrain
-      Eyes: OrganHumanEyes
       Tongue: OrganHumanTongue
       Appendix: OrganHumanAppendix
       Ears: OrganHumanEars
@@ -41,6 +31,17 @@
       Stomach: OrganHumanStomach
       Liver: OrganHumanLiver
       Kidneys: OrganHumanKidneys
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _SCP/Entities/Mobs/Players/SCP/scp049.rsi
+    layers: 
+      - state: mob
+        map: [ "enum.DamageStateVisualLayers.Base" ]
+      - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+        color: "#ffffff"
+        sprite: Objects/Misc/handcuffs.rsi
+        state: body-overlay-2
+        visible: false
   - type: HumanoidProfile
     species: Human
   - type: Inventory
