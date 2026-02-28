@@ -1,0 +1,71 @@
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteel
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteel
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelCornerS
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelCornerS
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelCornerN
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelCornerN
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelCornerE
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelCornerE
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelCornerW
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelCornerW
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelGrid
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelGrid
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelHorizontal
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelHorizontal
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelMono
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelMono
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelRidged
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelRidged
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelSmall
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelSmall
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelVertical
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelVertical
+
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileSteelTiled
+  name: stack-steel-tile
+  spawn: SCPFloorTileItemSteelTiled

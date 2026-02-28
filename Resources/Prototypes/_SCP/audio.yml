@@ -1,0 +1,60 @@
+- type: ambientMusic
+  id: General
+  sound:
+    params:
+      volume: -12
+    collection: AmbienceGeneral
+  rules: AlwaysTrue
+
+- type: soundCollection
+  id: AmbienceGeneral
+  files:
+    - /Audio/_SCP/Ambience/General/Ambient0.ogg
+    - /Audio/_SCP/Ambience/General/Ambient1.ogg
+    - /Audio/_SCP/Ambience/General/Ambient3.ogg
+    - /Audio/_SCP/Ambience/General/Ambient4.ogg
+    - /Audio/_SCP/Ambience/General/Ambient5.ogg
+    - /Audio/_SCP/Ambience/General/Ambient6.ogg
+    - /Audio/_SCP/Ambience/General/Ambient7.ogg
+    - /Audio/_SCP/Ambience/General/Ambient8.ogg
+    - /Audio/_SCP/Ambience/General/Ambient9.ogg
+    - /Audio/_SCP/Ambience/General/Ambient10.ogg
+
+    - /Audio/_SCP/Ambience/Zone1/Ambient0.ogg
+    - /Audio/_SCP/Ambience/Zone1/Ambient1.ogg
+    - /Audio/_SCP/Ambience/Zone1/Ambient3.ogg
+    - /Audio/_SCP/Ambience/Zone1/Ambient4.ogg
+    - /Audio/_SCP/Ambience/Zone1/Ambient5.ogg
+    - /Audio/_SCP/Ambience/Zone1/Ambient6.ogg
+    - /Audio/_SCP/Ambience/Zone1/Ambient7.ogg
+    - /Audio/_SCP/Ambience/Zone1/Ambient8.ogg
+
+    - /Audio/_SCP/Ambience/Zone2/Ambient0.ogg
+    - /Audio/_SCP/Ambience/Zone2/Ambient1.ogg
+    - /Audio/_SCP/Ambience/Zone2/Ambient3.ogg
+    - /Audio/_SCP/Ambience/Zone2/Ambient4.ogg
+    - /Audio/_SCP/Ambience/Zone2/Ambient5.ogg
+    - /Audio/_SCP/Ambience/Zone2/Ambient6.ogg
+    - /Audio/_SCP/Ambience/Zone2/Ambient7.ogg
+    - /Audio/_SCP/Ambience/Zone2/Ambient8.ogg
+    - /Audio/_SCP/Ambience/Zone2/Ambient9.ogg
+    - /Audio/_SCP/Ambience/Zone2/Ambient10.ogg
+    - /Audio/_SCP/Ambience/Zone2/ToZone2.ogg
+
+    - /Audio/_SCP/Ambience/Zone3/Ambient0.ogg
+    - /Audio/_SCP/Ambience/Zone3/Ambient1.ogg
+    - /Audio/_SCP/Ambience/Zone3/Ambient3.ogg
+    - /Audio/_SCP/Ambience/Zone3/Ambient4.ogg
+    - /Audio/_SCP/Ambience/Zone3/Ambient5.ogg
+    - /Audio/_SCP/Ambience/Zone3/Ambient6.ogg
+    - /Audio/_SCP/Ambience/Zone3/Ambient7.ogg
+    - /Audio/_SCP/Ambience/Zone3/Ambient8.ogg
+    - /Audio/_SCP/Ambience/Zone3/Ambient9.ogg
+    - /Audio/_SCP/Ambience/Zone3/Ambient10.ogg
+    - /Audio/_SCP/Ambience/Zone3/Ambient11.ogg
+    - /Audio/_SCP/Ambience/Zone3/ToZone3.ogg
+
+- type: rules
+  id: AlwaysTrue
+  rules:
+    - !type:AlwaysTrueRule

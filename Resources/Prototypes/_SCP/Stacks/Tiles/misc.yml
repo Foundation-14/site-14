@@ -1,0 +1,5 @@
+- type: stack
+  parent: BaseTileStack
+  id: SCPFloorTileKafel
+  name: stack-white-tile
+  spawn: SCPFloorTileItemKafel

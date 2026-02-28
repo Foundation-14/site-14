@@ -1,0 +1,640 @@
+- type: entity
+  parent: BaseItem
+  id: SCPFloorTileItemBase
+  description: These could work as a pretty decent throwing weapon.
+  abstract: true
+  suffix: SCPStructure
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _SCP/Objects/Tiles/tile.rsi
+  - type: Item
+    sprite: _SCP/Objects/Tiles/tile.rsi
+    size: Normal
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: Stack
+    count: 1
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -8
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
+
+## Steel tile
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteel
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorSteel
+  - type: Stack
+    stackType: SCPFloorTileSteel
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelCornerS
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorSteelCornerS
+  - type: Stack
+    stackType: SCPFloorTileSteelCornerS
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelCornerN
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorSteelCornerN
+  - type: Stack
+    stackType: SCPFloorTileSteelCornerN
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelCornerE
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorSteelCornerE
+  - type: Stack
+    stackType: SCPFloorTileSteelCornerE
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelCornerW
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorSteelCornerW
+  - type: Stack
+    stackType: SCPFloorTileSteelCornerW
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelGrid
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorSteelGrid
+  - type: Stack
+    stackType: SCPFloorTileSteelGrid
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelHorizontal
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorSteelHorizontal
+  - type: Stack
+    stackType: SCPFloorTileSteelHorizontal
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelMono
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorSteelMono
+  - type: Stack
+    stackType: SCPFloorTileSteelMono
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelRidged
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorSteelRidged
+  - type: Stack
+    stackType: SCPFloorTileSteelRidged
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelSmall
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorSteelSmall
+  - type: Stack
+    stackType: SCPFloorTileSteelSmall
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelVertical
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorSteelVertical
+  - type: Stack
+    stackType: SCPFloorTileSteelVertical
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemSteelTiled
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorSteelTiled
+  - type: Stack
+    stackType: SCPFloorTileSteelTiled
+
+## Dark tile
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDark
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorDark
+  - type: Stack
+    stackType: SCPFloorTileDark
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkCornerS
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorDarkCornerS
+  - type: Stack
+    stackType: SCPFloorTileDarkCornerS
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkCornerN
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorDarkCornerN
+  - type: Stack
+    stackType: SCPFloorTileDarkCornerN
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkCornerE
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorDarkCornerE
+  - type: Stack
+    stackType: SCPFloorTileDarkCornerE
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkCornerW
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorDarkCornerW
+  - type: Stack
+    stackType: SCPFloorTileDarkCornerW
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkGrid
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorDarkGrid
+  - type: Stack
+    stackType: SCPFloorTileDarkGrid
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkHorizontal
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorDarkHorizontal
+  - type: Stack
+    stackType: SCPFloorTileDarkHorizontal
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkMono
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorDarkMono
+  - type: Stack
+    stackType: SCPFloorTileDarkMono
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkRidged
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorDarkRidged
+  - type: Stack
+    stackType: SCPFloorTileDarkRidged
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkSmall
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorDarkSmall
+  - type: Stack
+    stackType: SCPFloorTileDarkSmall
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkVertical
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorDarkVertical
+  - type: Stack
+    stackType: SCPFloorTileDarkVertical
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemDarkTiled
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorDarkTiled
+  - type: Stack
+    stackType: SCPFloorTileDarkTiled
+
+## White tile
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhite
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorWhite
+  - type: Stack
+    stackType: SCPFloorTileWhite
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteCornerS
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorWhiteCornerS
+  - type: Stack
+    stackType: SCPFloorTileWhiteCornerS
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteCornerN
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorWhiteCornerN
+  - type: Stack
+    stackType: SCPFloorTileWhiteCornerN
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteCornerE
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorWhiteCornerE
+  - type: Stack
+    stackType: SCPFloorTileWhiteCornerE
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteCornerW
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorWhiteCornerW
+  - type: Stack
+    stackType: SCPFloorTileWhiteCornerW
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteGrid
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorWhiteGrid
+  - type: Stack
+    stackType: SCPFloorTileWhiteGrid
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteHorizontal
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorWhiteHorizontal
+  - type: Stack
+    stackType: SCPFloorTileWhiteHorizontal
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteMono
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorWhiteMono
+  - type: Stack
+    stackType: SCPFloorTileWhiteMono
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteRidged
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorWhiteRidged
+  - type: Stack
+    stackType: SCPFloorTileWhiteRidged
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteSmall
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorWhiteSmall
+  - type: Stack
+    stackType: SCPFloorTileWhiteSmall
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteVertical
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorWhiteVertical
+  - type: Stack
+    stackType: SCPFloorTileWhiteVertical
+
+- type: entity
+  name: steel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemWhiteTiled
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorWhiteTiled
+  - type: Stack
+    stackType: SCPFloorTileWhiteTiled
+
+## Misc
+- type: entity
+  name: kafel tile
+  parent: FloorTileItemBase
+  id: SCPFloorTileItemKafel
+  components:
+  - type: Sprite
+    state: steel
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FoundationFloorKafel
+  - type: Stack
+    stackType: SCPFloorTileKafel
