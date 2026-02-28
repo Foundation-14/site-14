@@ -56,7 +56,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorSteel
+      - FoundationFloorSteel
   - type: Stack
     stackType: SCPFloorTileSteel
 
@@ -72,7 +72,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorSteel
+      - FoundationFloorSteelCornerS
   - type: Stack
     stackType: SCPFloorTileSteelCornerS
 
@@ -88,7 +88,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorSteel
+      - FoundationFloorSteelCornerN
   - type: Stack
     stackType: SCPFloorTileSteelCornerN
 
@@ -104,7 +104,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorSteel
+      - FoundationFloorSteelCornerE
   - type: Stack
     stackType: SCPFloorTileSteelCornerE
 
@@ -120,7 +120,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorSteel
+      - FoundationFloorSteelCornerW
   - type: Stack
     stackType: SCPFloorTileSteelCornerW
 
@@ -136,7 +136,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorSteel
+      - FoundationFloorSteelGrid
   - type: Stack
     stackType: SCPFloorTileSteelGrid
 
@@ -152,7 +152,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorSteel
+      - FoundationFloorSteelHorizontal
   - type: Stack
     stackType: SCPFloorTileSteelHorizontal
 
@@ -168,7 +168,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorSteel
+      - FoundationFloorSteelMono
   - type: Stack
     stackType: SCPFloorTileSteelMono
 
@@ -184,7 +184,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorSteel
+      - FoundationFloorSteelRidged
   - type: Stack
     stackType: SCPFloorTileSteelRidged
 
@@ -200,7 +200,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorSteel
+      - FoundationFloorSteelSmall
   - type: Stack
     stackType: SCPFloorTileSteelSmall
 
@@ -216,7 +216,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorSteel
+      - FoundationFloorSteelVertical
   - type: Stack
     stackType: SCPFloorTileSteelVertical
 
@@ -232,7 +232,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorSteel
+      - FoundationFloorSteelTiled
   - type: Stack
     stackType: SCPFloorTileSteelTiled
 
@@ -249,7 +249,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorDark
+      - FoundationFloorDark
   - type: Stack
     stackType: SCPFloorTileDark
 
@@ -265,7 +265,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorDark
+      - FoundationFloorDarkCornerS
   - type: Stack
     stackType: SCPFloorTileDarkCornerS
 
@@ -281,7 +281,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorDark
+      - FoundationFloorDarkCornerN
   - type: Stack
     stackType: SCPFloorTileDarkCornerN
 
@@ -297,7 +297,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorDark
+      - FoundationFloorDarkCornerE
   - type: Stack
     stackType: SCPFloorTileDarkCornerE
 
@@ -313,7 +313,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorDark
+      - FoundationFloorDarkCornerW
   - type: Stack
     stackType: SCPFloorTileDarkCornerW
 
@@ -329,7 +329,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorDark
+      - FoundationFloorDarkGrid
   - type: Stack
     stackType: SCPFloorTileDarkGrid
 
@@ -345,7 +345,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorDark
+      - FoundationFloorDarkHorizontal
   - type: Stack
     stackType: SCPFloorTileDarkHorizontal
 
@@ -361,7 +361,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorDark
+      - FoundationFloorDarkMono
   - type: Stack
     stackType: SCPFloorTileDarkMono
 
@@ -377,7 +377,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorDark
+      - FoundationFloorDarkRidged
   - type: Stack
     stackType: SCPFloorTileDarkRidged
 
@@ -393,7 +393,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorDark
+      - FoundationFloorDarkSmall
   - type: Stack
     stackType: SCPFloorTileDarkSmall
 
@@ -409,7 +409,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorDark
+      - FoundationFloorDarkVertical
   - type: Stack
     stackType: SCPFloorTileDarkVertical
 
@@ -425,7 +425,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorDark
+      - FoundationFloorDarkTiled
   - type: Stack
     stackType: SCPFloorTileDarkTiled
 
@@ -442,7 +442,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWhite
+      - FoundationFloorWhite
   - type: Stack
     stackType: SCPFloorTileWhite
 
@@ -458,7 +458,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWhite
+      - FoundationFloorWhiteCornerS
   - type: Stack
     stackType: SCPFloorTileWhiteCornerS
 
@@ -474,7 +474,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWhite
+      - FoundationFloorWhiteCornerN
   - type: Stack
     stackType: SCPFloorTileWhiteCornerN
 
@@ -490,7 +490,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWhite
+      - FoundationFloorWhiteCornerE
   - type: Stack
     stackType: SCPFloorTileWhiteCornerE
 
@@ -506,7 +506,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWhite
+      - FoundationFloorWhiteCornerW
   - type: Stack
     stackType: SCPFloorTileWhiteCornerW
 
@@ -522,7 +522,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWhite
+      - FoundationFloorWhiteGrid
   - type: Stack
     stackType: SCPFloorTileWhiteGrid
 
@@ -538,7 +538,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWhite
+      - FoundationFloorWhiteHorizontal
   - type: Stack
     stackType: SCPFloorTileWhiteHorizontal
 
@@ -554,7 +554,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWhite
+      - FoundationFloorWhiteMono
   - type: Stack
     stackType: SCPFloorTileWhiteMono
 
@@ -570,7 +570,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWhite
+      - FoundationFloorWhiteRidged
   - type: Stack
     stackType: SCPFloorTileWhiteRidged
 
@@ -586,7 +586,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWhite
+      - FoundationFloorWhiteSmall
   - type: Stack
     stackType: SCPFloorTileWhiteSmall
 
@@ -602,7 +602,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWhite
+      - FoundationFloorWhiteVertical
   - type: Stack
     stackType: SCPFloorTileWhiteVertical
 
@@ -618,7 +618,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWhite
+      - FoundationFloorWhiteTiled
   - type: Stack
     stackType: SCPFloorTileWhiteTiled
 
@@ -635,6 +635,6 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorWhite
+      - FoundationFloorKafel
   - type: Stack
     stackType: SCPFloorTileKafel
