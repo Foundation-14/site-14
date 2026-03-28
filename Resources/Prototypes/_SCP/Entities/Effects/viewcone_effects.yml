@@ -1,0 +1,29 @@
+- type: entity
+  id: SCPBaseViewconeEffect
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SCPViewconeOccludable
+    inverted: true
+    overrideBaseAlpha: true
+  - type: Sprite
+    sprite: _SCP/Effects/viewcone_effects.rsi
+    drawdepth: Effects
+    noRot: true
+    color: '#FFFFFF00'
+    loop: false
+  - type: Transform
+    anchored: true
+  - type: TimedDespawn
+    lifetime: 3.0
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  id: SCPViewconeEffectFootstep
+  parent: SCPBaseViewconeEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: footstep

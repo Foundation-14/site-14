@@ -4,6 +4,7 @@
   save: false
   id: BaseControllable
   components:
+  - type: SCPViewconeOccludable # SCP-Foundation
   - type: CEZPhysics # SCP-Foundation
   - type: SCPPestilence # SCP-Foundation
   - type: Sprite
@@ -70,6 +71,7 @@
   id: MobDamageable
   abstract: true
   components:
+  - type: SCPViewcone # SCP-Foundation
   - type: Damageable
     damageContainer: Biological
   - type: Destructible

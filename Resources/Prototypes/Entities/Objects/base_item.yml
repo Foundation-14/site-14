@@ -44,7 +44,9 @@
     drawdepth: Items
     noRot: false
   - type: Pullable
+    fixedRotation: true # SCP-Foundation
   - type: DamageExaminable
+  - type: SCPViewconeOccludable # SCP-Foundation
 
 - type: entity
   name: "storage item"

@@ -194,7 +194,7 @@ public sealed partial class ScalingViewport
                 Angle rotation = _fallbackEye.Rotation * -1;
                 var offset = rotation.ToWorldVec() * CEClientZLevelsSystem.ZLevelOffset * depth;
 
-                viewport.Eye = new ZEye(lowestDepth, depth, lookUp)
+                viewport.Eye = new ZEye(lowestDepth, depth, lookUp, _fallbackEye, _player.LocalEntity)
                 {
                     Position = new MapCoordinates(_fallbackEye.Position.Position, mapComp.MapId),
                     DrawFov = _fallbackEye.DrawFov && depth >= 0,
@@ -224,10 +224,12 @@ public sealed partial class ScalingViewport
         viewport.Eye = Eye;
     }
 
-    public sealed class ZEye(int lowest, int depth, int high) : Robust.Shared.Graphics.Eye
+    public sealed class ZEye(int lowest, int depth, int high, IEye originalEye, EntityUid? originalEntity = null) : Robust.Shared.Graphics.Eye
     {
         public int LowestDepth = lowest;
         public int Depth = depth;
         public int HighestDepth = high;
+        public IEye OriginalEye = originalEye;
+        public EntityUid? OriginalEntity = originalEntity;
     }
 }
