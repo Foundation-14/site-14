@@ -6,7 +6,11 @@
   parent: [ BaseSimpleMob, MobFlammable, MobCombat, MobRespirator, InventoryBase, StripableInventoryBase, ShowMedicalIcons ]
   categories: [ ForkFiltered ]
   components:
+  - type: SCPViewcone
+    coneAngle: 270
   - type: SCPMob049
+  - type: Stamina
+    baseCritThreshold: 300
   - type: StatusIcon
     bounds: -0.5,-0.5,0.5,0.5
   - type: Hands
@@ -98,7 +102,7 @@
     allowedStates:
     - Alive
     - Critical
-    damageCap: 550
+    damageCap: 100000
     damage:
       groups:
         Brute: -1.5

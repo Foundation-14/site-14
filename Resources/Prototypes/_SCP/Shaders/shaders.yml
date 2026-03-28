@@ -2,3 +2,8 @@
   id: CEZBlur
   kind: source
   path: "/Textures/_SCP/Shaders/zblur.swsl"
+
+- type: shader
+  id: Viewcone
+  kind: source
+  path: "/Textures/_SCP/Shaders/viewcone.swsl"
