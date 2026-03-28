@@ -25,6 +25,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using PullableComponent = Content.Shared.Movement.Pulling.Components.PullableComponent;
+// SCP-Foundation-Start
+using Content.Shared._SCP.Viewcone;
+// SCP-Foundation-End
 
 namespace Content.Shared.Movement.Systems;
 
@@ -47,6 +50,9 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] private   readonly SharedGravitySystem _gravity = default!;
     [Dependency] private   readonly SharedTransformSystem _transform = default!;
     [Dependency] private   readonly TagSystem _tags = default!;
+    // SCP-Foundation-Start
+    [Dependency] private   readonly SCPViewconeEffectSystem _viewconeEffect = default!;
+    // SCP-Foundation-End
 
     protected EntityQuery<CanMoveInAirComponent> CanMoveInAirQuery;
     protected EntityQuery<FootstepModifierComponent> FootstepModifierQuery;
@@ -66,6 +72,10 @@ public abstract partial class SharedMoverController : VirtualController
     protected EntityQuery<TransformComponent> XformQuery;
 
     private static readonly ProtoId<TagPrototype> FootstepSoundTag = "FootstepSound";
+
+    // SCP-Foundation-Start
+    private static readonly EntProtoId ESFootstepViewconeEffect = "SCPViewconeEffectFootstep";
+    // SCP-Foundation-End
 
     private bool _relativeMovement;
     private float _minDamping;
@@ -379,6 +389,10 @@ public abstract partial class SharedMoverController : VirtualController
                 {
                     _audio.PlayPredicted(sound, uid, uid, audioParams);
                 }
+
+                // SCP-Foundation-Start
+                _viewconeEffect.SpawnEffect(uid, ESFootstepViewconeEffect, wishDir.ToWorldAngle());
+                // SCP-Foundation-End
             }
         }
     }
