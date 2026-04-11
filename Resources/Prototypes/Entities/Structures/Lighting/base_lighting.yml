@@ -22,7 +22,8 @@
     graph: LightFixture
     node: tubeLight
   - type: Sprite
-    sprite: Structures/Wallmounts/Lighting/light_tube.rsi
+    sprite: _SCP/Structures/Wallmounts/Lighting/light_tube.rsi # SCP-Foundation
+    offset: 0, 0.9 # SCP-Foundation
     drawdepth: WallMountedItems
     layers:
     - map: ["enum.PoweredLightLayers.Base"]
@@ -98,7 +99,8 @@
   parent: AlwaysPoweredWallLight
   components:
   - type: Sprite
-    sprite: Structures/Wallmounts/Lighting/light_tube.rsi
+    sprite: _SCP/Structures/Wallmounts/Lighting/light_tube.rsi # SCP-Foundation
+    offset: 0, 0.9 # SCP-Foundation
     state: empty
   - type: PointLight
     enabled: false
@@ -261,7 +263,8 @@
       sound:
         path: /Audio/Ambience/Objects/light_hum.ogg
     - type: Sprite
-      sprite: Structures/Wallmounts/Lighting/light_small.rsi
+      sprite: _SCP/Structures/Wallmounts/Lighting/light_small.rsi # SCP-Foundation
+      offset: 0, 0.9 # SCP-Foundation
       state: base
     - type: PointLight
       energy: 1.0
@@ -315,7 +318,8 @@
   parent: SmallLight
   components:
   - type: Sprite
-    sprite: Structures/Wallmounts/Lighting/light_small.rsi
+    sprite: _SCP/Structures/Wallmounts/Lighting/light_small.rsi # SCP-Foundation
+    offset: 0, 0.9 # SCP-Foundation
     state: empty
   - type: AmbientSound
     enabled: false

@@ -4,6 +4,7 @@
   id: SCPClothingUniformBase
   categories: [ ForkFiltered ]
 
+# Fond
 - type: entity
   parent: SCPClothingUniformBase
   id: SCPClothingUniformClassD
@@ -138,8 +139,8 @@
 
 - type: entity
   parent: SCPClothingUniformBase
-  id: SCPClothingUniformRRT
-  name: RRT's uniform
+  id: SCPClothingUniformMTFEpsilon11
+  name: tactical uniform
   description: The one who protects but faster.
   components:
   - type: Sprite
@@ -150,10 +151,34 @@
 - type: entity
   parent: SCPClothingUniformBase
   id: SCPClothingUniformMTF
-  name: MTF's uniform
+  name: tactical uniform
   description: The one who protects but superior.
   components:
   - type: Sprite
     sprite: _SCP/Clothing/Uniforms/MTF.rsi
   - type: Clothing
     sprite: _SCP/Clothing/Uniforms/MTF.rsi
+
+# GOC
+- type: entity
+  parent: SCPClothingUniformBase
+  id: SCPClothingUniformGOC
+  name: tactical uniform
+  description: The one who attacks and surpasses.
+  components:
+  - type: Sprite
+    sprite: _SCP/Clothing/Uniforms/GOC.rsi
+  - type: Clothing
+    sprite: _SCP/Clothing/Uniforms/GOC.rsi
+
+# CI
+- type: entity
+  parent: SCPClothingUniformBase
+  id: SCPClothingUniformCI
+  name: tactical uniform
+  description: The one who attacks and surpasses.
+  components:
+  - type: Sprite
+    sprite: _SCP/Clothing/Uniforms/CI.rsi
+  - type: Clothing
+    sprite: _SCP/Clothing/Uniforms/CI.rsi

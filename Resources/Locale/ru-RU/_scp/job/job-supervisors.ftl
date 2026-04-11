@@ -1,0 +1,14 @@
+job-supervisors-scp-administrator = Администратору
+job-supervisors-scp-o5 = совету О5
+job-supervisors-scp-ethics = комитету по этике
+job-supervisors-scp-o4 = штабу О4
+job-supervisors-scp-sitedirector = директору зоны
+job-supervisors-scp-sitemeneger = главе персонала
+job-supervisors-scp-hos = главе службы безопасности
+job-supervisors-scp-ce = старшему инженеру
+job-supervisors-scp-cmo = главному врачу
+job-supervisors-scp-qm = бригадиру
+job-supervisors-scp-rd = научному руководителю
+job-supervisors-scp-hire = своим нанимателям
+job-supervisors-scp-everyone = вообще всем
+job-supervisors-scp-nobody = никому

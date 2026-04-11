@@ -1,0 +1,19 @@
+- type: job
+  id: SCPClassD
+  name: job-name-d-class
+  description: job-description-d-class
+  playTimeTracker: JobClassD
+  startingGear: SCPClassDGear
+  icon: "JobIconPassenger"
+  supervisors: job-supervisors-everyone
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: SCPPestilence
+      infectionChanceBonus: 0.5
+
+- type: startingGear
+  id: SCPClassDGear
+  equipment:
+    jumpsuit: SCPClothingUniformClassD
+    shoes: ClothingShoesColorBlack

@@ -105,7 +105,7 @@
     damageCap: 100000
     damage:
       groups:
-        Brute: -1.5
+        Brute: -3
         Burn: -3
         Airloss: -3
         Toxin: -9
