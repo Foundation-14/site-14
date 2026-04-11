@@ -104,6 +104,10 @@
     interactSuccessSound:
       collection: FenceRattle
   - type: BlockWeather
+  # Foundation-14
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
 
 - type: entity
   id: ShuttersNormal

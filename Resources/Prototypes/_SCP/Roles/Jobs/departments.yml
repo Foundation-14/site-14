@@ -1,0 +1,8 @@
+- type: department
+  id: BlockD
+  name: department-scp-BlockD
+  description: department-scp-BlockD-description
+  color: "#A46106"
+  weight: -10
+  roles:
+  - SCPClassD

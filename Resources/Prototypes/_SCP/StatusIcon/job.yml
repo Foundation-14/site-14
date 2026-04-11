@@ -1,0 +1,15 @@
+- type: jobIcon
+  parent: JobIcon
+  id: SCPJobIconClassD
+  icon:
+    sprite: &icon-rsi /Textures/_SCP/Interface/Misc/job_icons.rsi
+    state: ClassD
+  jobName: job-name-d-class
+
+# - type: jobIcon
+#   parent: JobIcon
+#   id: SCPJobIconShaftMiner
+#   icon:
+#     sprite: *icon-rsi
+#     state: ShaftMiner
+#   jobName: job-name-salvagespec

@@ -7,9 +7,9 @@
   components:
   - type: Sprite
     drawdepth: SmallObjects
-    sprite: Structures/Walls/railing.rsi
+    sprite: _SCP/Structures/Walls/railing.rsi # SCP-Foundation
   - type: Icon
-    sprite: Structures/Walls/railing.rsi
+    sprite: _SCP/Structures/Walls/railing.rsi # SCP-Foundation
   - type: Physics
     bodyType: Static
   - type: InteractionOutline
@@ -38,10 +38,10 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,-0.25"
+          bounds: "-0.49,-0.49,0.49,-0.425" # SCP-Foundation
         density: 1000
         mask:
-        - TableMask
+        - MidImpassable # SCP-Foundation
         layer:
         - TableLayer
   - type: Destructible
@@ -84,19 +84,19 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,-0.25"
+          bounds: "-0.49,-0.49,0.49,-0.425" # SCP-Foundation
         density: 1000
         mask:
-        - TableMask
+        - MidImpassable # SCP-Foundation
         layer:
         - TableLayer
       fix2:
         shape:
           !type:PhysShapeAabb
-          bounds: "0.25,-0.49,0.49,0.49"
+          bounds: "0.49,0.49,0.425,-0.49" # SCP-Foundation
         density: 1000
         mask:
-        - TableMask
+        - MidImpassable # SCP-Foundation
         layer:
         - TableLayer
   - type: Destructible
@@ -139,10 +139,10 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.49,0.25,-0.25,0.49"
+          bounds: "-0.49,0.49,-0.425,0.425" # SCP-Foundation
         density: 1000
         mask:
-        - TableMask
+        - MidImpassable # SCP-Foundation
         layer:
         - TableLayer
   - type: Destructible
@@ -185,28 +185,28 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,-0.25"
+          bounds: "-0.49,-0.49,0.49,-0.425" # SCP-Foundation
         density: 1000
         mask:
-          - TableMask
+          - MidImpassable # SCP-Foundation
         layer:
           - TableLayer
       fix2:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,-0.25,0.49"
+          bounds: "-0.49,-0.49,-0.425,0.49" # SCP-Foundation
         density: 1000
         mask:
-          - TableMask
+          - MidImpassable # SCP-Foundation
         layer:
           - TableLayer
       fix3:
         shape:
           !type:PhysShapeAabb
-          bounds: "0.25,-0.49,0.49,0.49"
+          bounds: "0.425,-0.49,0.49,0.49" # SCP-Foundation
         density: 1000
         mask:
-          - TableMask
+          - MidImpassable # SCP-Foundation
         layer:
           - TableLayer
   - type: Destructible

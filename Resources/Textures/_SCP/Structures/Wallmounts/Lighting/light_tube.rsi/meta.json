@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from commit https://github.com/Aurorastation/Aurora.3/raw/68892b7fb01916b34b10b8d9363af7742f8378b6/icons/obj/machinery/light.dmi and edited by Ubaser.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "broken",
+      "directions": 4
+    },
+    {
+      "name": "burned",
+      "directions": 4
+    },
+    {
+      "name": "base",
+      "directions": 4
+    },
+    {
+      "name": "empty",
+      "directions": 4
+    },
+	{
+      "name": "glow",
+      "directions": 4
+    }
+  ]
+}
