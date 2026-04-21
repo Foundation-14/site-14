@@ -8,4 +8,4 @@
 - type: soundCollection
   id: SCP0492Screams
   files:
-    - /Audio/_SCP/SCP049/zombie_breath.ogg
+    - /Audio/_SCP/Effects/SCP049/zombie_breath.ogg
