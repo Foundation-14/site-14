@@ -1,0 +1,25 @@
+- type: soundCollection
+  id: SCP939FootstepCollection
+  files:
+  - /Audio/_SCP/Effects/Footsteps/NPCs/939/StepMetal0.ogg
+  - /Audio/_SCP/Effects/Footsteps/NPCs/939/StepMetal1.ogg
+  - /Audio/_SCP/Effects/Footsteps/NPCs/939/StepMetal2.ogg
+  - /Audio/_SCP/Effects/Footsteps/NPCs/939/StepMetal3.ogg
+
+- type: soundCollection
+  id: SCP939Breath
+  files:
+  - /Audio/_SCP/Effects/SCP939/Idle/sound0.ogg
+  - /Audio/_SCP/Effects/SCP939/Idle/sound1.ogg
+  - /Audio/_SCP/Effects/SCP939/Idle/sound2.ogg
+  - /Audio/_SCP/Effects/SCP939/Idle/sound3.ogg
+  - /Audio/_SCP/Effects/SCP939/Idle/sound4.ogg
+  - /Audio/_SCP/Effects/SCP939/Idle/sound5.ogg
+  - /Audio/_SCP/Effects/SCP939/Idle/sound6.ogg
+  - /Audio/_SCP/Effects/SCP939/Idle/sound7.ogg
+  - /Audio/_SCP/Effects/SCP939/Idle/sound8.ogg
+
+- type: soundCollection
+  id: SCP939Hit
+  files:
+  - /Audio/_SCP/Effects/SCP939/Hit/Damage12.ogg

@@ -1,0 +1,80 @@
+- type: entity
+  id: MobScp939
+  name: object
+  description: 
+  suffix: SCP-939
+  parent: [ BaseSimpleMob, MobFlammable, MobCombat, InventoryBase, StripableInventoryBase ]
+  categories: [ ForkFiltered ]
+  components:
+  - type: SCPViewcone
+    coneAngle: -360
+  - type: Stamina
+    baseCritThreshold: 3000
+  - type: StatusIcon
+    bounds: -0.5,-0.5,0.5,0.5
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+      collection: SCP939Hit
+      params:
+        variation: 0.128
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Blunt: 20
+        Slash: 20
+        Structural: 80
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _SCP/Entities/Mobs/Players/SCP/scp939.rsi
+    layers: 
+      - state: mob
+        map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: ComplexInteraction
+  - type: Buckle
+  - type: Stripping
+  - type: StandingState
+  - type: FlashImmunity
+    showInExamine: false
+    enabled: false
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 2.5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      950: Critical
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      700: 0.95
+      800: 0.75
+      900: 0.6
+  - type: Pullable
+  - type: Puller
+    needsHands: false
+  - type: Speech
+  - type: Appearance
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: Perishable
+  - type: AmbientSound
+    enabled: true
+    volume: -7
+    range: 7
+    sound:
+      collection: SCP939Breath
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: SCP939FootstepCollection
+  - type: Tag
+    tags:
+    - FootstepSound
+    - CannotSuicide

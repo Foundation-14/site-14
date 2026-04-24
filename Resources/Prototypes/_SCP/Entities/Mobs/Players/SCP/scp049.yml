@@ -8,6 +8,8 @@
   components:
   - type: SCPViewcone
     coneAngle: 270
+    coneIgnoreRadius: 0.85
+    coneIgnoreFeather: 0.05
   - type: SCPMob049
   - type: Stamina
     baseCritThreshold: 300
@@ -86,13 +88,19 @@
   - type: Perishable
   - type: AmbientSound
     enabled: true
-    volume: -3
-    range: 13
+    range: 8
+    volume: 0
     sound:
-      path: /Audio/_SCP/SCP049/breath.ogg
+      path: /Audio/_SCP/Effects/SCP049/breath.ogg
+      params:
+        volume: -5
+        maxDistance: 7
   - type: FootstepModifier
     footstepSoundCollection:
       collection: SCP049FootstepCollection
+      params:
+        volume: -5
+        maxDistance: 7
   - type: Tag
     tags:
     - FootstepSound
