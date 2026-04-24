@@ -153,7 +153,10 @@ namespace Content.Server.Atmos.EntitySystems
                     {
                         var direction = (AtmosDirection) (1 << j);
                         if (!otherTile.AdjacentBits.IsFlagSet(direction)) continue;
-                        var tile2 = otherTile.AdjacentTiles[j]!;
+                        // SCP-Foundation-Start
+                        var tile2 = otherTile.AdjacentTiles[j];
+                        if (tile2 == null) continue;
+                        // SCP-Foundation-End
                         DebugTools.Assert(tile2.AdjacentBits.IsFlagSet(direction.GetOpposite()));
 
                         // skip anything that isn't part of our current processing block.
@@ -173,9 +176,15 @@ namespace Content.Server.Atmos.EntitySystems
                         var direction = (AtmosDirection) (1 << j);
                         if (!eligibleDirections.IsFlagSet(direction)) continue;
 
+                        // SCP-Foundation-Start
+                        var adjTile = otherTile.AdjacentTiles[j];
+                        if (adjTile == null)
+                            continue;
+                        // SCP-Foundation-End
+
                         AdjustEqMovement(otherTile, direction, molesToMove);
                         otherTile.MonstermosInfo.MoleDelta -= molesToMove;
-                        otherTile.AdjacentTiles[j]!.MonstermosInfo.MoleDelta += molesToMove;
+                        adjTile.MonstermosInfo.MoleDelta += molesToMove; // SCP-Foundation
                     }
                 }
 
@@ -225,7 +234,10 @@ namespace Content.Server.Atmos.EntitySystems
                                 break; // We're done here now. Let's not do more work than needed.
 
                             var otherTile2 = otherTile.AdjacentTiles[k];
-                            if (otherTile2 == null || otherTile2.MonstermosInfo.LastQueueCycle != queueCycle) continue;
+                            // SCP-Foundation-Start
+                            if (otherTile2 == null || otherTile2.AdjacentBits == 0 || otherTile2.MonstermosInfo.LastQueueCycle != queueCycle) 
+                                continue;
+                            // SCP-Foundation-End
                             DebugTools.Assert(otherTile2.AdjacentBits.IsFlagSet(direction.GetOpposite()));
                             if (otherTile2.MonstermosInfo.LastSlowQueueCycle == queueCycleSlow) continue;
                             _equalizeQueue[queueLength++] = otherTile2;
@@ -259,9 +271,18 @@ namespace Content.Server.Atmos.EntitySystems
                         var otherTile = _equalizeQueue[i];
                         if (otherTile.MonstermosInfo.CurrentTransferAmount != 0 && otherTile.MonstermosInfo.CurrentTransferDirection != AtmosDirection.Invalid)
                         {
+                            // SCP-Foundation-Start
+                            var adjIdx = otherTile.MonstermosInfo.CurrentTransferDirection.ToIndex();
+                            var adjTile = otherTile.AdjacentTiles[adjIdx];
+                            if (adjTile == null)
+                            {
+                                otherTile.MonstermosInfo.CurrentTransferAmount = 0;
+                                continue;
+                            }
+                            // SCP-Foundation-End
+
                             AdjustEqMovement(otherTile, otherTile.MonstermosInfo.CurrentTransferDirection, otherTile.MonstermosInfo.CurrentTransferAmount);
-                            otherTile.AdjacentTiles[otherTile.MonstermosInfo.CurrentTransferDirection.ToIndex()]!
-                                .MonstermosInfo.CurrentTransferAmount += otherTile.MonstermosInfo.CurrentTransferAmount;
+                            adjTile.MonstermosInfo.CurrentTransferAmount += otherTile.MonstermosInfo.CurrentTransferAmount; // SCP-Foundation
                             otherTile.MonstermosInfo.CurrentTransferAmount = 0;
                         }
                     }
@@ -326,7 +347,18 @@ namespace Content.Server.Atmos.EntitySystems
                         if (otherTile.MonstermosInfo.CurrentTransferAmount == 0 || otherTile.MonstermosInfo.CurrentTransferDirection == AtmosDirection.Invalid)
                             continue;
 
+                        // SCP-Foundation-Start
+                        var adjIdx = otherTile.MonstermosInfo.CurrentTransferDirection.ToIndex();
+                        var adjTile = otherTile.AdjacentTiles[adjIdx];
+                        if (adjTile == null)
+                        {
+                            otherTile.MonstermosInfo.CurrentTransferAmount = 0;
+                            continue;
+                        }
+                        // SCP-Foundation-End
+
                         AdjustEqMovement(otherTile, otherTile.MonstermosInfo.CurrentTransferDirection, otherTile.MonstermosInfo.CurrentTransferAmount);
+                        adjTile.MonstermosInfo.CurrentTransferAmount += otherTile.MonstermosInfo.CurrentTransferAmount; // SCP-Foundation
 
                         otherTile.AdjacentTiles[otherTile.MonstermosInfo.CurrentTransferDirection.ToIndex()]!
                             .MonstermosInfo.CurrentTransferAmount += otherTile.MonstermosInfo.CurrentTransferAmount;
@@ -615,6 +647,11 @@ namespace Content.Server.Atmos.EntitySystems
             Entity<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent> ent,
             TileAtmosphere tile)
         {
+            // SCP-Foundation-Start
+            if (tile.Air == null)
+                return;
+            // SCP-Foundation-End
+
             Span<float> transferDirections = stackalloc float[Atmospherics.Directions];
             var hasTransferDirs = false;
             for (var i = 0; i < Atmospherics.Directions; i++)
@@ -639,7 +676,7 @@ namespace Content.Server.Atmos.EntitySystems
                 if (amount <= 0) continue;
 
                 // Everything that calls this method already ensures that Air will not be null.
-                if (tile.Air!.TotalMoles < amount)
+                if (tile.Air.TotalMoles < amount) // SCP-Foundation
                     FinalizeEqNeighbors(ent, tile, transferDirections);
 
                 otherTile.MonstermosInfo[i.ToOppositeDir()] = 0;
@@ -660,7 +697,14 @@ namespace Content.Server.Atmos.EntitySystems
                 var amount = transferDirs[i];
                 // Since AdjacentBits is set, AdjacentTiles[i] wouldn't be null, and neither would its air.
                 if(amount < 0 && tile.AdjacentBits.IsFlagSet(direction))
-                    FinalizeEq(ent, tile.AdjacentTiles[i]!);  // A bit of recursion if needed.
+                {
+                    // SCP-Foundation-Start
+                    var neighbor = tile.AdjacentTiles[i];
+                    if (neighbor?.Air == null)
+                        continue;
+                    FinalizeEq(ent, neighbor);
+                    // SCP-Foundation-End
+                }
             }
         }
 
