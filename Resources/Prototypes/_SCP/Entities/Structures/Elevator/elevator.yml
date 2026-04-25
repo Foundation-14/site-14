@@ -1,0 +1,32 @@
+- type: entity
+  parent: MarkerBase
+  id: Elevator
+  name: Лифт
+  suffix: 3x3
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+  - type: DeviceLinkSink
+    ports:
+      - CallElevator
+      - ReviewElevator
+  - type: Elevator
+    soundElevatorNoActive:
+      path: /Audio/_SCP/Effects/Elevator/elevator_noactive.ogg
+    soundElevator:
+      path: /Audio/_SCP/Effects/Elevator/elevator_running.ogg
+
+- type: entity
+  parent: BaseItem
+  id: ElevatorConnector
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Atmos/gasanalyzer.rsi
+    layers:
+      - state: icon
+        map: ["analyzer"]
+  - type: ElevatorConnector

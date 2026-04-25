@@ -1,0 +1,9 @@
+- type: sinkPort
+  id: CallElevator
+  name: signal-port-name-call-elevator
+  description: signal-port-description-call-elevator
+
+- type: sinkPort
+  id: ReviewElevator
+  name: signal-port-name-review-elevator
+  description: signal-port-description-review-elevator
