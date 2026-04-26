@@ -189,7 +189,7 @@ public sealed class CEGameMapMappingZNetworkCommand : LocalizedEntityCommands
         //TODO: Autosaves
 
         shell.ExecuteCommand($"tp 0 0 {defaultMapEnt.Value.Comp.MapId}");
-        shell.RemoteExecuteCommand("mappingclientsidesetup");
+        // shell.RemoteExecuteCommand("mappingclientsidesetup"); // SCP-Foundation
         foreach (var mapId in createdMaps)
         {
             DebugTools.Assert(_map.IsPaused(mapId));
