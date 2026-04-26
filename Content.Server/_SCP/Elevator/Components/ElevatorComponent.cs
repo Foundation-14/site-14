@@ -16,6 +16,8 @@ public sealed partial class ElevatorComponent : Component
     public string ReviewElevatorPort = "ReviewElevator";
 
     [DataField]
+    public string? ElevatorGroupId;
+
     [ViewVariables(VVAccess.ReadWrite)]
     public EntityUid? ConnectElevator;
 
@@ -76,9 +78,9 @@ public sealed partial class ElevatorComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan? DepartureTime = null;
 
-    [DataField]
+    [ViewVariables]
     public EntityUid? CurrentFloor;
 
-    [DataField]
+    [ViewVariables]
     public EntityUid? CalledFrom;
 }

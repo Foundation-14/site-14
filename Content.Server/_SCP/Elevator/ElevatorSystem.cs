@@ -8,6 +8,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Content.Server._SCP.Elevator;
@@ -22,11 +23,13 @@ public sealed class ElevatorSystem : EntitySystem
     [Dependency] private readonly DoorSystem _doorSystem = default!;
     [Dependency] private readonly DeviceLinkSystem _signalSystem = default!;
 
+    private readonly Dictionary<string, List<EntityUid>> _pendingGroups = new();
+
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<ElevatorComponent, SignalReceivedEvent>(OnSignalReceived);
         SubscribeLocalEvent<ElevatorComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<ElevatorComponent, SignalReceivedEvent>(OnSignalReceived);
     }
 
     public override void Update(float frameTime)
@@ -43,11 +46,13 @@ public sealed class ElevatorSystem : EntitySystem
             {
                 if (component.CalledFrom != null)
                 {
+                    Log.Info($"Elevator {uid}: opening door of called-from floor {component.CalledFrom}");
                     OpenElevatorDoor(component.CalledFrom.Value);
                     component.CalledFrom = null;
                 }
                 else if (component.ConnectElevator != null)
                 {
+                    Log.Info($"Elevator {uid}: opening door of partner floor {component.ConnectElevator}");
                     OpenElevatorDoor(component.ConnectElevator.Value);
                 }
 
@@ -76,6 +81,44 @@ public sealed class ElevatorSystem : EntitySystem
     private void OnInit(EntityUid uid, ElevatorComponent component, ComponentInit args)
     {
         _signalSystem.EnsureSinkPorts(uid, component.CallElevatorPort, component.ReviewElevatorPort);
+
+        if (!string.IsNullOrEmpty(component.ElevatorGroupId))
+        {
+            if (!_pendingGroups.TryGetValue(component.ElevatorGroupId, out var list))
+            {
+                list = new List<EntityUid>();
+                _pendingGroups[component.ElevatorGroupId] = list;
+            }
+
+            list.Add(uid);
+
+            if (list.Count == 2)
+            {
+                var first = list[0];
+                var second = list[1];
+
+                if (TryComp<ElevatorComponent>(first, out var firstComp))
+                {
+                    firstComp.ConnectElevator = second;
+                    if (firstComp.ElevatorDoor != null && firstComp.CurrentFloor == null)
+                        firstComp.CurrentFloor = second;
+                }
+
+                if (TryComp<ElevatorComponent>(second, out var secondComp))
+                {
+                    secondComp.ConnectElevator = first;
+                    if (secondComp.ElevatorDoor != null && secondComp.CurrentFloor == null)
+                        secondComp.CurrentFloor = first;
+                }
+
+                _pendingGroups.Remove(component.ElevatorGroupId);
+                Log.Info($"Elevator group '{component.ElevatorGroupId}' linked: {first} <-> {second}");
+            }
+            else if (list.Count > 2)
+            {
+                Log.Error($"Elevator group '{component.ElevatorGroupId}' has more than 2 members!");
+            }
+        }
     }
 
     private void OnSignalReceived(EntityUid uid, ElevatorComponent component, ref SignalReceivedEvent args)
@@ -95,13 +138,11 @@ public sealed class ElevatorSystem : EntitySystem
         {
             if (component.ConnectElevator != null)
             {
-                var cabinUid = component.ConnectElevator.Value;
-                if (!TryComp<ElevatorComponent>(cabinUid, out var cabinComp))
+                if (!TryComp<ElevatorComponent>(component.ConnectElevator.Value, out var cabinComp))
                     return;
 
                 cabinComp.CalledFrom = uid;
-
-                TryRunning(cabinUid, cabinComp);
+                TryRunning(component.ConnectElevator.Value, cabinComp);
             }
         }
     }
@@ -170,6 +211,23 @@ public sealed class ElevatorSystem : EntitySystem
         return true;
     }
 
+    public void TryLinkElevators(EntityUid first, EntityUid second)
+    {
+        if (!TryComp<ElevatorComponent>(first, out var firstComp) ||
+            !TryComp<ElevatorComponent>(second, out var secondComp))
+            return;
+
+        firstComp.ConnectElevator = second;
+        secondComp.ConnectElevator = first;
+
+        if (firstComp.ElevatorDoor != null && firstComp.CurrentFloor == null)
+            firstComp.CurrentFloor = second;
+        if (secondComp.ElevatorDoor != null && secondComp.CurrentFloor == null)
+            secondComp.CurrentFloor = first;
+
+        Log.Info($"Elevators manually linked: {first} <-> {second}");
+    }
+
     private void OpenElevatorDoor(EntityUid uid, ElevatorComponent? component = null)
     {
         if (!Resolve(uid, ref component))
@@ -191,21 +249,24 @@ public sealed class ElevatorSystem : EntitySystem
 
     private void Running(EntityUid uid, ElevatorComponent component)
     {
-        if (component.ConnectElevator == null) return;
-        if (component.ElevatorDoor == null) return;
+        if (component.ConnectElevator == null)
+            return;
+
+        if (component.ElevatorDoor == null)
+            return;
 
         if (!TryComp<ElevatorComponent>(component.ConnectElevator, out var partnerComp))
             return;
 
-        var originStation = component.CurrentFloor ?? component.ConnectElevator.Value;
-        if (!TryComp<ElevatorComponent>(originStation, out var originComp))
+        var originFloor = component.CurrentFloor ?? component.ConnectElevator.Value;
+        if (!TryComp<ElevatorComponent>(originFloor, out var originComp))
             return;
 
-        var destinationStation = component.CalledFrom ?? component.ConnectElevator.Value;
-        if (!TryComp<ElevatorComponent>(destinationStation, out var destComp))
+        var destinationFloor = component.CalledFrom ?? component.ConnectElevator.Value;
+        if (!TryComp<ElevatorComponent>(destinationFloor, out var destComp))
             return;
 
-        if (!TryCloseElevatorDoor(uid, component) || !TryCloseElevatorDoor(originStation, originComp))
+        if (!TryCloseElevatorDoor(uid, component) || !TryCloseElevatorDoor(originFloor, originComp))
         {
             if (component.SoundElevatorNoActive != null)
                 _audio.PlayPvs(component.SoundElevatorNoActive, uid);
@@ -242,31 +303,32 @@ public sealed class ElevatorSystem : EntitySystem
             return;
         }
 
-        component.CalledFrom = destinationStation;
-
+        component.CalledFrom = destinationFloor;
         component.IsWaitingToDepart = true;
         component.DepartureTime = _timing.CurTime + TimeSpan.FromSeconds(component.DoorCloseDelay);
 
         if (component.SoundElevator != null)
         {
             _audio.PlayPvs(component.SoundElevator, uid);
-            _audio.PlayPvs(component.SoundElevator, destinationStation);
+            _audio.PlayPvs(component.SoundElevator, destinationFloor);
         }
     }
 
     private void ExecuteDeparture(EntityUid uid, ElevatorComponent component)
     {
-        if (!component.IsWaitingToDepart) return;
+        if (!component.IsWaitingToDepart)
+            return;
 
         component.IsWaitingToDepart = false;
         component.DepartureTime = null;
 
-        var destinationStation = component.CalledFrom;
-        if (destinationStation == null) return;
+        var destinationFloor = component.CalledFrom;
+        if (destinationFloor == null)
+            return;
 
-        if (!TryComp<ElevatorComponent>(destinationStation.Value, out var destComp)) return;
+        if (!TryComp<ElevatorComponent>(destinationFloor.Value, out var destComp))
+            return;
 
-        // Проверка, что двери всё ещё закрыты (как раньше) ...
         if (component.ElevatorDoor != null && TryComp<DoorComponent>(component.ElevatorDoor, out var door1) && door1.State != DoorState.Closed)
         {
             _popup.PopupEntity(Loc.GetString("elevator-door-opened-during-wait"), uid, PopupType.MediumCaution);
@@ -279,11 +341,11 @@ public sealed class ElevatorSystem : EntitySystem
         {
             _popup.PopupEntity(Loc.GetString("elevator-door-opened-during-wait"), uid, PopupType.MediumCaution);
             OpenElevatorDoor(uid, component);
-            OpenElevatorDoor(destinationStation.Value, destComp);
+            OpenElevatorDoor(destinationFloor.Value, destComp);
             return;
         }
 
-        var elevatorReceivingCoords = Transform(destinationStation.Value).Coordinates;
+        var elevatorReceivingCoords = Transform(destinationFloor.Value).Coordinates;
 
         var entsDoor = _lookup.GetEntitiesInRange<PhysicsComponent>(
             _transform.GetMapCoordinates(component.ElevatorDoor!.Value, Transform(component.ElevatorDoor.Value)),
@@ -314,7 +376,7 @@ public sealed class ElevatorSystem : EntitySystem
             _transform.AttachToGridOrMap(ent.Owner);
         }
 
-        component.CurrentFloor = destinationStation;
+        component.CurrentFloor = destinationFloor;
 
         component.IsActive = false;
         destComp.IsActive = false;

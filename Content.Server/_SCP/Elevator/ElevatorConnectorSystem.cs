@@ -3,6 +3,7 @@ using Content.Shared.Doors.Components;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using System;
 
 namespace Content.Server._SCP.Elevator;
 
@@ -13,65 +14,74 @@ public sealed class ElevatorConnectorSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
-        SubscribeLocalEvent<ElevatorConnectorComponent, AfterInteractEvent>(OnScannerAfterInteract);
-        SubscribeLocalEvent<ElevatorConnectorComponent, UseInHandEvent>(OnAfterInteract);
+        SubscribeLocalEvent<ElevatorConnectorComponent, AfterInteractEvent>(OnAfterInteract);
+        SubscribeLocalEvent<ElevatorConnectorComponent, UseInHandEvent>(OnUseInHand);
     }
 
-    private void OnAfterInteract(EntityUid uid, ElevatorConnectorComponent component, UseInHandEvent args)
+    private void OnUseInHand(EntityUid uid, ElevatorConnectorComponent component, UseInHandEvent args)
     {
-        component.Door = null;
-        component.Elevator = null;
-
+        component.FirstElevator = null;
+        component.PendingDoor = null;
         _popup.PopupEntity(Loc.GetString("connector-reset"), args.User, args.User);
     }
 
-    private void OnScannerAfterInteract(EntityUid uid, ElevatorConnectorComponent component, AfterInteractEvent args)
+    private void OnAfterInteract(EntityUid uid, ElevatorConnectorComponent component, AfterInteractEvent args)
     {
         if (args.Target is not { } target)
             return;
 
-        if (TryComp<DoorComponent>(args.Target, out _))
+        if (TryComp<ElevatorComponent>(target, out _))
         {
-            if (component.Door != null)
+            if (component.FirstElevator == null)
             {
-                return;
+                component.FirstElevator = target;
+                _popup.PopupEntity(Loc.GetString("connector-first-elevator"), args.User, args.User);
+            }
+            else if (component.FirstElevator == target)
+            {
+                _popup.PopupEntity(Loc.GetString("connector-same-elevator"), args.User, args.User);
             }
             else
             {
-                component.Door = args.Target;
-                _popup.PopupEntity(Loc.GetString("connector-first-door"), args.User, args.User);
-                return;
+                var groupId = $"ElevatorGroup_{Guid.NewGuid().ToString("N").Substring(0, 8)}";
+                if (TryComp<ElevatorComponent>(component.FirstElevator.Value, out var firstComp))
+                    firstComp.ElevatorGroupId = groupId;
+                if (TryComp<ElevatorComponent>(target, out var secondComp))
+                    secondComp.ElevatorGroupId = groupId;
+
+                var elevatorSystem = EntitySystem.Get<ElevatorSystem>();
+                elevatorSystem.TryLinkElevators(component.FirstElevator.Value, target);
+
+                _popup.PopupEntity(Loc.GetString("connector-second-elevator"), args.User, args.User);
+                component.FirstElevator = null;
             }
+            return;
         }
 
-        if (TryComp<ElevatorComponent>(args.Target, out var elevator))
+        if (TryComp<DoorComponent>(target, out _))
         {
-            if (component.Door != null)
+            if (component.FirstElevator != null)
             {
-                elevator.ElevatorDoor = component.Door;
-                component.Door = null;
-                _popup.PopupEntity(Loc.GetString("connector-second-door"), args.User, args.User);
-                return;
-            }
-
-            if (component.Elevator != null)
-            {
-                if (TryComp<ElevatorComponent>(component.Elevator.Value, out var elevator2))
+                if (TryComp<ElevatorComponent>(component.FirstElevator.Value, out var elev))
                 {
-                    elevator.ConnectElevator = component.Elevator;
-                    elevator2.ConnectElevator = args.Target;
+                    elev.ElevatorDoor = target;
+                    _popup.PopupEntity(Loc.GetString("connector-door-linked"), args.User, args.User);
+                    component.FirstElevator = null;
                 }
-                component.Elevator = null;
-                _popup.PopupEntity(Loc.GetString("connector-second-elevator"), args.User, args.User);
-                return;
             }
             else
             {
-                component.Elevator = args.Target;
-                _popup.PopupEntity(Loc.GetString("connector-first-elevator"), args.User, args.User);
-                return;
+                component.PendingDoor = target;
+                _popup.PopupEntity(Loc.GetString("connector-door-pending"), args.User, args.User);
             }
+            return;
+        }
+
+        if (component.PendingDoor != null && TryComp<ElevatorComponent>(target, out var pendingElev))
+        {
+            pendingElev.ElevatorDoor = component.PendingDoor;
+            _popup.PopupEntity(Loc.GetString("connector-door-linked"), args.User, args.User);
+            component.PendingDoor = null;
         }
     }
 }

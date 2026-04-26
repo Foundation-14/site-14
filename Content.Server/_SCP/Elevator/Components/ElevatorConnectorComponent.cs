@@ -7,6 +7,12 @@ public sealed partial class ElevatorConnectorComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public EntityUid? Elevator;
 
+    [ViewVariables]
+    public EntityUid? FirstElevator;
+
+    [ViewVariables]
+    public EntityUid? PendingDoor;
+
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
     public EntityUid? Door;
