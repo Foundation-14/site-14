@@ -1,0 +1,34 @@
+- type: entity
+  id: MobScp173
+  name: object
+  description: 
+  suffix: SCP-173
+  parent: [ BaseSimpleMob ]
+  categories: [ ForkFiltered ]
+  components:
+  - type: ComplexInteraction
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _SCP/Entities/Mobs/Players/SCP/scp173.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: mob
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0
+    baseSprintSpeed: 0
+  - type: SCP173
+    soundSCP173Blind:
+      collection: SCP173Blind
+    soundDamage:
+      collection: SCP173Damage
+    soundStepNoises:
+      collection: SCP173Noises
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      2000: Dead
+  - type: BlinkingTrigger

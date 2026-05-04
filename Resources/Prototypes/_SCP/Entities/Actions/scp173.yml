@@ -1,0 +1,36 @@
+- type: entity
+  id: ActionSCP173Blind
+  name: Blind
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 30
+    icon:
+      sprite: Interface/Actions/voice-mask.rsi
+      state: icon
+    itemIconStyle: NoItem
+    priority: 13
+  - type: InstantAction
+    icon:
+      sprite: Interface/Actions/voice-mask.rsi
+      state: icon
+    event: !type:SCP173BlindEvent
+
+- type: entity
+  id: ActionSCP173Dash
+  name: Dash
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 0
+    icon:
+      sprite: Interface/Actions/actions_mecha.rsi
+      state: mech_damtype_brute
+    itemIconStyle: NoItem
+    priority: 12
+  - type: TargetAction
+    range: 16
+    repeat: false
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:SCP173PointSelectEvent

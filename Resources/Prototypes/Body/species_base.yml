@@ -158,8 +158,13 @@
     tags:
     - CanPilot
     - FootstepSound
-    # - DoorBumpOpener # SCP-Foundation
     - AnomalyHost
+    # - DoorBumpOpener # SCP-Foundation
+  - type: SCPViewcone # SCP-Foundation
+  - type: Blinking # SCP-Foundation
+  - type: SCPViewconeOccludable # SCP-Foundation
+  - type: CEZPhysics # SCP-Foundation
+  - type: SCPPestilence # SCP-Foundation
 
 - type: entity
   abstract: true

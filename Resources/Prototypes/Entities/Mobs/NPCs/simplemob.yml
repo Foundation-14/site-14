@@ -31,6 +31,8 @@
     - DoorBumpOpener
     - StunImmune
   - type: Blindable
+  - type: SCPViewconeOccludable # SCP-Foundation
+  - type: CEZPhysics # SCP-Foundation
 
 - type: entity
   abstract: true
