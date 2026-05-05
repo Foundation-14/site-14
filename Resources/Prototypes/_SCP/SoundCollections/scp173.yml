@@ -1,0 +1,21 @@
+- type: soundCollection
+  id: SCP173Damage
+  files:
+  - /Audio/_SCP/Effects/SCP173/necksnap1.ogg
+  - /Audio/_SCP/Effects/SCP173/necksnap2.ogg
+  - /Audio/_SCP/Effects/SCP173/necksnap3.ogg
+
+- type: soundCollection
+  id: SCP173Noises
+  files:
+  - /Audio/_SCP/Effects/SCP173/step_noises1.ogg
+  - /Audio/_SCP/Effects/SCP173/step_noises2.ogg
+  - /Audio/_SCP/Effects/SCP173/step_noises3.ogg
+
+- type: soundCollection
+  id: SCP173Blind
+  files:
+  - /Audio/_SCP/Effects/SCP173/boo1.ogg
+  - /Audio/_SCP/Effects/SCP173/boo2.ogg
+  - /Audio/_SCP/Effects/SCP173/boo3.ogg
+  - /Audio/_SCP/Effects/SCP173/boo4.ogg
