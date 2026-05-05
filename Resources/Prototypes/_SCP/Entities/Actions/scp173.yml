@@ -11,9 +11,6 @@
     itemIconStyle: NoItem
     priority: 13
   - type: InstantAction
-    icon:
-      sprite: Interface/Actions/voice-mask.rsi
-      state: icon
     event: !type:SCP173BlindEvent
 
 - type: entity
