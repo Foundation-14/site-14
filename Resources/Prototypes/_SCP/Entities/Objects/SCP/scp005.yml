@@ -1,0 +1,16 @@
+﻿- type: entity
+  id: ObjectScp005
+  name: object
+  parent: BaseItem
+  suffix: SCP-005
+  components:
+  - type: Sprite
+    sprite: _SCP/Objects/SCP/scp005.rsi
+    state: icon
+  - type: Item
+    size: Small
+  - type: Access
+    groups:
+    - AllAccess
+    tags:
+    - CentralCommand
