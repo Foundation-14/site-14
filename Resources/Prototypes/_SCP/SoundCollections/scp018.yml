@@ -1,0 +1,6 @@
+- type: soundCollection
+  id: SCP018BounceCollection
+  files:
+  - /Audio/_SCP/Effects/SCP018/bounce1.ogg
+  - /Audio/_SCP/Effects/SCP018/bounce2.ogg
+  - /Audio/_SCP/Effects/SCP018/bounce3.ogg

@@ -17,6 +17,7 @@
     fixtureID: fix1
     keyOut: OnCollide
   - type: Physics
+    inertia: 1
     bodyType: Dynamic
   - type: StaminaDamageOnTrigger
     stamina: 20
@@ -31,6 +32,10 @@
     keysIn:
       - OnCollide
     targetUser: true
+  - type: SpawnOnTrigger
+    keysIn: [ OnCollide ]
+    proto: CEDustEffect
+    targetUser: false
   - type: TileFrictionModifier
     modifier: 0
   - type: Fixtures
@@ -46,7 +51,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 30
+        damage: 60
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -54,3 +59,10 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Damageable
+  - type: EmitSoundOnCollide
+    minimumVelocity: 1
+    sound:
+      collection: SCP018BounceCollection
+  - type: EmitSoundOnLand
+    sound:
+      collection: SCP018BounceCollection
