@@ -17,7 +17,6 @@
     fixtureID: fix1
     keyOut: OnCollide
   - type: Physics
-    inertia: 1
     bodyType: Dynamic
   - type: StaminaDamageOnTrigger
     stamina: 20
@@ -60,7 +59,6 @@
         acts: ["Destruction"]
   - type: Damageable
   - type: EmitSoundOnCollide
-    minimumVelocity: 1
     sound:
       collection: SCP018BounceCollection
   - type: EmitSoundOnLand
