@@ -1,0 +1,56 @@
+﻿- type: entity
+  parent: BaseItem
+  id: Scp018
+  suffix: SCP-018
+  name: object
+  components:
+  - type: Sprite
+    sprite: _SCP/Objects/SCP/scp018.rsi
+    state: icon
+    scale: 0.5, 0.5
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+  - type: TriggerOnCollide
+    fixtureID: fix1
+    keyOut: OnCollide
+  - type: Physics
+    bodyType: Dynamic
+  - type: StaminaDamageOnTrigger
+    stamina: 20
+    keysIn:
+      - OnCollide
+    targetUser: true
+  - type: DamageOnTrigger
+    damage:
+      types:
+        Blunt: 10
+        Structural: 5
+    keysIn:
+      - OnCollide
+    targetUser: true
+  - type: TileFrictionModifier
+    modifier: 0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.3
+        density: 0
+        mask:
+          - BulletImpassable
+        restitution: 1.02
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Items/snap.ogg
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Damageable
