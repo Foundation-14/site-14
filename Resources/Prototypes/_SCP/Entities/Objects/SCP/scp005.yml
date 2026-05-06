@@ -17,6 +17,3 @@
   - type: Tag
     tags:
     - DoorBumpOpener
-  - type: GuideHelp
-    guides:
-    - ScpResearch
