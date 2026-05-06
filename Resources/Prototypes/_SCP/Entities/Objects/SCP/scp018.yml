@@ -1,0 +1,78 @@
+﻿- type: entity
+  parent: BaseItem
+  id: Scp018
+  suffix: SCP-018
+  name: object
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _SCP/Objects/SCP/scp018.rsi
+    state: icon
+    scale: 0.3, 0.3
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+  - type: TriggerOnCollide
+    fixtureID: fix1
+    keyOut: OnCollide
+  - type: Physics
+    bodyType: Dynamic
+    bodyStatus: InAir
+  - type: StaminaDamageOnTrigger
+    stamina: 20
+    keysIn:
+      - OnCollide
+    targetUser: true
+  - type: DamageOnTrigger
+    damage:
+      types:
+        Blunt: 10
+        Structural: 15
+    keysIn:
+      - OnCollide
+    targetUser: true
+  - type: SpawnOnTrigger
+    keysIn: [ OnCollide ]
+    proto: CEDustEffect
+    targetUser: false
+  - type: TileFrictionModifier
+    modifier: 0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.2
+        density: 1
+        mask:
+          - BulletImpassable
+        restitution: 1.02
+        friction: 0.5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Items/snap.ogg
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Damageable
+  - type: EmitSoundOnCollide
+    minVelocity: 1
+    sound:
+      collection: SCP018BounceCollection
+  - type: EmitSoundOnLand
+    sound:
+      collection: SCP018BounceCollection
+  - type: DamageOnHighSpeedImpact
+    soundHit:
+      collection: SCP018BounceHightCollection
+    damageCooldown: 0.1
+    damage:
+      types:
+        Blunt: 10
+    minimumSpeed: 10
