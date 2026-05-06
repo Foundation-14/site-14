@@ -3,11 +3,12 @@
   id: Scp018
   suffix: SCP-018
   name: object
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _SCP/Objects/SCP/scp018.rsi
     state: icon
-    scale: 0.5, 0.5
+    scale: 0.3, 0.3
   - type: Item
     size: Normal
   - type: Tag
@@ -18,6 +19,7 @@
     keyOut: OnCollide
   - type: Physics
     bodyType: Dynamic
+    bodyStatus: InAir
   - type: StaminaDamageOnTrigger
     stamina: 20
     keysIn:
@@ -27,7 +29,7 @@
     damage:
       types:
         Blunt: 10
-        Structural: 5
+        Structural: 15
     keysIn:
       - OnCollide
     targetUser: true
@@ -41,16 +43,17 @@
     fixtures:
       fix1:
         shape: !type:PhysShapeCircle
-          radius: 0.3
-        density: 0
+          radius: 0.2
+        density: 1
         mask:
           - BulletImpassable
         restitution: 1.02
+        friction: 0.5
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 60
+        damage: 300
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -59,8 +62,17 @@
         acts: ["Destruction"]
   - type: Damageable
   - type: EmitSoundOnCollide
+    minVelocity: 1
     sound:
       collection: SCP018BounceCollection
   - type: EmitSoundOnLand
     sound:
       collection: SCP018BounceCollection
+  - type: DamageOnHighSpeedImpact
+    soundHit:
+      collection: SCP018BounceHightCollection
+    damageCooldown: 0.1
+    damage:
+      types:
+        Blunt: 10
+    minimumSpeed: 10
