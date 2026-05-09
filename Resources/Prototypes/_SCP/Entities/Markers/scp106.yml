@@ -30,6 +30,10 @@
   suffix: Вход в комнату измерения SCP 106
   parent: MarkerBase
   components:
+  - type: PointLight
+    color: "#3eb489FF"
+    energy: 2
+    radius: 10
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:

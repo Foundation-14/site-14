@@ -43,7 +43,8 @@ public sealed partial class SCP106TrapComponent : Component
     {
         DamageDict = new()
         {
-            { "Slash", 5 },
+            { "Slash", 3 },
+            { "Cellular", 2 },
         }
     };
 

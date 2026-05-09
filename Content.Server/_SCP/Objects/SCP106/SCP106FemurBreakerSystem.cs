@@ -209,20 +209,17 @@ public sealed class SCP106FemurBreakerSystem : EntitySystem
             return;
         }
 
-        // Поиск SCP-106 для привязки
         var scpQuery = EntityQueryEnumerator<SCP106Component>();
         while (scpQuery.MoveNext(out var scpUid, out var scpComp))
         {
             component.TargetSCP = scpUid;
             _SCP.Teleport(scpUid, Transform(uid).Coordinates, false, scpComp);
-            break; // предполагаем, что SCP-106 только один
+            break;
         }
 
-        // Сбор всех ловушек, исключая те, что имеют SCP106TransitionComponent
         var trapsQuery = EntityQueryEnumerator<SCP106TrapComponent>();
         while (trapsQuery.MoveNext(out var trapUid, out _))
         {
-            // Пропускаем, если есть компонент перехода
             if (HasComp<SCP106TransitionComponent>(trapUid))
                 continue;
 
@@ -230,7 +227,6 @@ public sealed class SCP106FemurBreakerSystem : EntitySystem
             {
                 component.SCPTraps.Add(trapUid);
             }
-            // break убран – теперь добавляются все подходящие
         }
 
         component.NextTickUtilPrison = _timing.CurTime + component.WorkDuration;

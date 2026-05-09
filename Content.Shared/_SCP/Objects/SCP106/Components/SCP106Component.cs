@@ -91,8 +91,8 @@ public sealed partial class SCP106Component : Component
     {
         DamageDict = new()
         {
-            { "Caustic", 2 },
-            { "Slash", 15 },
+            { "Slash", 18.1 },
+            { "Cellular", 2 },
         }
     };
 

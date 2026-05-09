@@ -209,8 +209,8 @@
     labelKey: SCP106MainRoom
     damage:
       types:
-        Slash: 15
-        Caustic: 5
+        Slash: 15.1
+        Cellular: 5
       
 
 - type: entity
@@ -223,6 +223,10 @@
     snap:
       - Wall
   components:
+  - type: PointLight
+    color: "#3eb489FF"
+    energy: 2
+    radius: 3
   - type: SCP106Trap
     key: SCP106TransitionEnterPlace
   - type: SCP106Transition
