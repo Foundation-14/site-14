@@ -1,0 +1,61 @@
+- type: entity
+  id: ActionSCP106Teleport
+  name: Teleport
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _SCP/Actions/scp-106.rsi
+      state: portal_exit_action
+    itemIconStyle: NoItem
+    priority: 12
+  - type: InstantAction
+    event: !type:SCP106TeleportEvent
+
+- type: entity
+  id: ActionSCP106SpawnPortal
+  name: Spawn Portal
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _SCP/Actions/scp-106.rsi
+      state: portal_action
+    itemIconStyle: NoItem
+    priority: 12
+  - type: InstantAction
+    event: !type:SCP106SpawnPortalEvent
+
+- type: entity
+  id: ActionSCP106SpawnTrap
+  name: Spawn Trap
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _SCP/Entities/Mobs/Players/SCP/scp106.rsi
+      state: portal
+    itemIconStyle: NoItem
+    priority: 12
+  - type: InstantAction
+    event: !type:SCP106SpawnTrapEvent
+
+- type: entity
+  id: ActionSCP106SelectTarget
+  name: Catch Victim
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 0
+    icon:
+      sprite: Interface/Actions/actions_mecha.rsi
+      state: mech_damtype_brute
+    itemIconStyle: NoItem
+    priority: 12
+  - type: TargetAction
+    range: 3
+  - type: EntityTargetAction
+    event: !type:SCP106SelectTargetEvent

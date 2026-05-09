@@ -1,0 +1,229 @@
+- type: entity
+  parent: BaseSimpleMob
+  id: MobScp106
+  name: object
+  suffix: SCP-106
+  categories: [ ForkFiltered ]
+  components:
+  - type: Puller
+    needsHands: false
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 0
+    damage:
+      groups:
+        Brute: -0.6
+        Burn: -0.6
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      10000: Critical
+  - type: Damageable
+    damageContainer: SCP106damageContainer
+    damageModifierSet: SCP106ModifierSet
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: running
+      sprite: _SCP/Entities/Mobs/Players/SCP/scp106.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+      fix2:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 100
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 3
+  - type: SCP106
+    soundDamage:
+      path: /Audio/_SCP/Effects/SCP106/damage.ogg
+    soundSpawnTrap:
+      collection: SCP106Corrosion
+    soundSpawnPortal:
+      collection: SCP106Corrosion
+    soundTeleport:
+      collection: SCP106Corrosion
+    soundEnterPD:
+      collection: SCP106PD
+  - type: StatusEffects
+    allowed:
+    - Stun
+  - type: Vocal
+    sounds:
+      Male: SCP106
+      Female: SCP106
+      Unsexed: SCP106
+  - type: ComplexInteraction
+  - type: AmbientSound
+    enabled: true
+    range: 8
+    volume: 0
+    sound:
+      path: /Audio/_SCP/Effects/SCP106/breath.ogg
+      params:
+        volume: -5
+        maxDistance: 7
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: SCP106FootstepCollection
+      params:
+        volume: -5
+        maxDistance: 7
+  - type: Tag
+    tags:
+    - FootstepSound
+    - StunImmune
+    - CannotSuicide
+
+- type: emoteSounds
+  id: SCP106
+  sounds:
+    Laugh:
+      path: /Audio/_SCP/Effects/SCP106/laugh.ogg
+
+- type: damageContainer
+  id: SCP106damageContainer
+  supportedGroups:
+    - Brute
+  supportedTypes:
+    - Shock
+
+- type: damageModifierSet
+  id: SCP106ModifierSet
+  coefficients:
+    Blunt: 0.1
+    Slash: 0.1
+    Piercing: 0.2
+    Shock: 3
+  flatReductions:
+    Blunt: 10
+    Slash: 10
+    Piercing: 10
+
+- type: entity
+  parent: MarkerBase
+  id: SCP106FemurBreaker
+  name: Клетка SCP 106
+  suffix: 3x3
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+  - type: DeviceLinkSink
+    ports:
+      - SCP106FemurBreaker
+  - type: SCP106FemurBreaker
+    soundNoActive:
+      path: /Audio/_SCP/Effects/Elevator/elevator_noactive.ogg
+
+- type: sinkPort
+  id: SCP106FemurBreaker
+  name: signal-port-name-femur-scp106
+  description: signal-port-description-femur-scp106
+
+- type: entity
+  id: BaseSCP106Trap
+  noSpawn: true
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+    snap:
+      - Wall
+  categories: [ ForkFiltered ]
+  components:
+  - type: Appearance
+  - type: Transform
+    anchored: true
+  - type: Physics
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path:
+          "/Audio/Effects/Footsteps/slime1.ogg"
+  - type: Sprite
+    sprite: _SCP/Entities/Mobs/Players/SCP/scp106.rsi
+    state: portal
+    drawdepth: FloorTiles
+  - type: Clickable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        density: 7
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        layer:
+        - MidImpassable
+  - type: SCP106Trap
+    soundTrap:
+      collection: SCP106Corrosion
+    soundEnterPD:
+      collection: SCP106PD
+
+- type: entity
+  parent: BaseSCP106Trap
+  id: SCP106Portal
+  name: сгусток гнили
+  suffix: Портал
+  placement:
+    mode: SnapgridCenter
+    snap:
+      - Wall
+  components:
+  - type: SCP106Trap
+    labelKey: SCP106MainRoom
+
+- type: entity
+  parent: BaseSCP106Trap
+  id: SCP106Trap
+  name: сгусток гнили
+  suffix: Ловушка
+  placement:
+    mode: SnapgridCenter
+    snap:
+      - Wall
+  components:
+  - type: SCP106Trap
+
+- type: entity
+  parent: BaseSCP106Trap
+  id: SCP106RoomTransition
+  name: сгусток гнили
+  suffix: Переход между комнатами
+  placement:
+    mode: SnapgridCenter
+    snap:
+      - Wall
+  components:
+  - type: PointLight
+    color: "#3eb489FF"
+    energy: 2
+    radius: 3
+  - type: SCP106Trap
+    damage:
+      types:
+        Slash: 3
+        Cellular: 2
+  - type: SCP106Transition

@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "https://github.com/Foundation-19",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "running",
+	  "directions": 4
+    },
+	{
+      "name": "portal"
+    },
+	{
+      "name": "teleportation",
+	  "directions": 1,
+	  "delays": [
+			[
+				0.33,
+				0.33,
+				0.33,
+				0.33,
+				0.33,
+				0.33
+			]
+		]
+    },
+	{
+      "name": "teleportation_exit",
+	  "directions": 1,
+	  "delays": [
+			[
+				0.33,
+				0.33,
+				0.33,
+				0.33,
+				0.33,
+				0.33
+			]
+		]
+    }
+  ]
+}
