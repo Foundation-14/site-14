@@ -1,0 +1,38 @@
+- type: entity
+  id: LabelSCP106MainRoom
+  name: пометка
+  suffix: Главная комната SCP 106
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+  - type: SpawnLabel
+    key: SCP106MainRoom
+
+- type: entity
+  id: LabelSCP106RoomExit
+  name: пометка
+  suffix: Выход из измерения SCP 106
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+  - type: SpawnLabel
+    key: SCP106TransitionExitPlace
+
+- type: entity
+  id: LabelSCP106RoomEnter
+  name: пометка
+  suffix: Вход в комнату измерения SCP 106
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+  - type: SpawnLabel
+    key: SCP106TransitionEnterPlace

@@ -28,7 +28,7 @@
   - type: StandingState
   - type: Tag
     tags:
-    - DoorBumpOpener
+    #- DoorBumpOpener # SCP-Foundation
     - StunImmune
   - type: Blindable
   - type: SCPViewconeOccludable # SCP-Foundation

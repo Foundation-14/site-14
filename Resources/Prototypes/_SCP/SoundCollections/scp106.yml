@@ -1,0 +1,16 @@
+- type: soundCollection
+  id: SCP106Corrosion
+  files:
+  - /Audio/_SCP/Effects/SCP106/corrosion1.ogg
+  - /Audio/_SCP/Effects/SCP106/corrosion2.ogg
+  - /Audio/_SCP/Effects/SCP106/corrosion3.ogg
+  - /Audio/_SCP/Effects/SCP106/decay1.ogg
+  - /Audio/_SCP/Effects/SCP106/decay2.ogg
+  - /Audio/_SCP/Effects/SCP106/decay3.ogg
+
+- type: soundCollection
+  id: SCP106PD
+  files:
+  - /Audio/_SCP/Effects/SCP106/enter_pd.ogg
+  - /Audio/_SCP/Effects/SCP106/exit_pd.ogg
+

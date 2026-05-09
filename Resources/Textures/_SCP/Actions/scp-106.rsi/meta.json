@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "Made for Foundation-14.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "portal_action"
+    },
+    {
+      "name": "portal_exit_action"
+    }
+  ]
+}

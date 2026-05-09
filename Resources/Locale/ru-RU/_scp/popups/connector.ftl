@@ -6,6 +6,8 @@ connector-first-elevator = Первый лифт запомнен. Кликни�
 connector-second-elevator = Лифты объединены в одну группу!
 connector-same-elevator = Нельзя связать лифт с самим собой!
 
+connector-femur-breaker = Дверь подключена к [УДАЛЕНО]!
+
 # Порты сигналов
 signal-port-name-call-elevator = Вызов лифта
 signal-port-description-call-elevator = Принимает сигнал на вызов лифта к этому этажу.
