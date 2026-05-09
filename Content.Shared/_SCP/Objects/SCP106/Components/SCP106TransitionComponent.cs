@@ -18,4 +18,3 @@ public sealed partial class SCP106TransitionComponent : Component
     public string EnterKey = "SCP106TransitionEnterPlace";
 
 }
-

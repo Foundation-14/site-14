@@ -206,12 +206,6 @@
       - Wall
   components:
   - type: SCP106Trap
-    labelKey: SCP106MainRoom
-    damage:
-      types:
-        Slash: 15.1
-        Cellular: 5
-      
 
 - type: entity
   parent: BaseSCP106Trap
@@ -228,5 +222,8 @@
     energy: 2
     radius: 3
   - type: SCP106Trap
-    key: SCP106TransitionEnterPlace
+    damage:
+      types:
+        Slash: 3
+        Cellular: 2
   - type: SCP106Transition
