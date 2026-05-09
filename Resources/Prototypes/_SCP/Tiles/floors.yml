@@ -2313,3 +2313,23 @@
   name: tiles-white-floor
   sprite: /Textures/_SCP/Tiles/Foundation/kafel_full.png
   itemDrop: SCPFloorTileItemKafel
+
+- type: tile
+  id: FloorPocketDimension
+  name: tiles-dirt-floor
+  sprite: /Textures/_SCP/Tiles/Foundation/pdplating.png
+  variants: 8
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Space
+  isSubfloor: true
+  footstepSounds:
+    collection: SCP106FootstepCollection
+  heatCapacity: 10000

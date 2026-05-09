@@ -4,10 +4,13 @@ using Content.Shared._SCP.SCP106;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Doors.Components;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Movement.Components;
+using Content.Shared.Movement.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
@@ -16,6 +19,7 @@ using Robust.Server.Player;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
+using Robust.Shared.Physics.Events;
 using Robust.Shared.Timing;
 
 namespace Content.Server._SCP.SCP106;
@@ -36,8 +40,10 @@ public sealed class SCP106System : EntitySystem
     [Dependency] private readonly SCP106TrapSystem _TrapSCP = default!;
     [Dependency] private readonly SpawnLabelSystem _spawnLabel = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
 
-    public List<EntityUid> Targets = new List<EntityUid>();
+    public List<EntityUid> Targets = new();
+
     public override void Initialize()
     {
         base.Initialize();
@@ -48,7 +54,12 @@ public sealed class SCP106System : EntitySystem
         SubscribeLocalEvent<SCP106Component, SCP106TeleportEvent>(OnTeleportToPortal);
         SubscribeLocalEvent<SCP106Component, SCP106SpawnPortalEvent>(OnSpawnPortal);
         SubscribeLocalEvent<SCP106Component, SCP106SpawnTrapEvent>(OnSpawnTrap);
+
+        SubscribeLocalEvent<SCP106Component, StartCollideEvent>(OnStartDoorCollide);
+        SubscribeLocalEvent<SCP106Component, EndCollideEvent>(OnEndDoorCollide);
+        SubscribeLocalEvent<SCP106Component, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeed);
     }
+
     private void OnInit(EntityUid uid, SCP106Component component, ComponentInit args)
     {
         _actions.AddAction(uid, ref component.SCP106TeleportActionEntity, component.SCP106TeleportAction, uid);
@@ -242,6 +253,48 @@ public sealed class SCP106System : EntitySystem
         {
             _appearance.SetData(uid, SCP106Visuals.State, true);
             _appearance.SetData(uid, SCP106Visuals.Teleported, false);
+        }
+    }
+
+    private void OnStartDoorCollide(EntityUid uid, SCP106Component component, ref StartCollideEvent args)
+    {
+        var otherEntity = args.OtherEntity;
+        if (!TryComp<DoorComponent>(otherEntity, out var door))
+            return;
+
+        if (door.State == DoorState.Open)
+            return;
+
+        bool isBolted = TryComp<DoorBoltComponent>(otherEntity, out var bolts) && bolts.BoltsDown;
+
+        if (isBolted)
+        {
+            component.IsBlocked = true;
+        }
+        else
+        {
+            component.IsPhasingDoor = true;
+        }
+
+        _movementSpeed.RefreshMovementSpeedModifiers(uid);
+    }
+
+    private void OnEndDoorCollide(EntityUid uid, SCP106Component component, ref EndCollideEvent args)
+    {
+        component.IsBlocked = false;
+        component.IsPhasingDoor = false;
+        _movementSpeed.RefreshMovementSpeedModifiers(uid);
+    }
+
+    private void OnRefreshMovementSpeed(EntityUid uid, SCP106Component component, RefreshMovementSpeedModifiersEvent args)
+    {
+        if (component.IsBlocked)
+        {
+            args.ModifySpeed(0.01f);
+        }
+        else if (component.IsPhasingDoor)
+        {
+            args.ModifySpeed(component.DoorPhaseSlowdown);
         }
     }
 }

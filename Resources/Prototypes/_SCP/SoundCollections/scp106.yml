@@ -14,3 +14,9 @@
   - /Audio/_SCP/Effects/SCP106/enter_pd.ogg
   - /Audio/_SCP/Effects/SCP106/exit_pd.ogg
 
+- type: soundCollection
+  id: SCP106FootstepCollection
+  files:
+  - /Audio/_SCP/Effects/Footsteps/StepPD0.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepPD1.ogg
+  - /Audio/_SCP/Effects/Footsteps/StepPD2.ogg

@@ -99,6 +99,24 @@ public sealed partial class SCP106Component : Component
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan TeleportDuration = TimeSpan.FromSeconds(2f);
 
+    [DataField, AutoNetworkedField]
+    public string MainFixtureId = "fix1";
+
+    [DataField, AutoNetworkedField]
+    public string TriggerFixtureId = "fix2";
+
+    [DataField, AutoNetworkedField]
+    public string DoorLayer = "AirlockLayer";
+
+    [DataField, AutoNetworkedField]
+    public float DoorPhaseSlowdown = 0.4f;
+
+    [AutoNetworkedField]
+    public bool IsPhasingDoor = false;
+
+    [AutoNetworkedField]
+    public bool IsBlocked = false;
+
     #region Visualizer
     [DataField("state")]
     public string State = "running";

@@ -5,6 +5,8 @@
   suffix: SCP-106
   categories: [ ForkFiltered ]
   components:
+  - type: Puller
+    needsHands: false
   - type: PassiveDamage
     allowedStates:
     - Alive
@@ -22,7 +24,7 @@
     damageContainer: SCP106damageContainer
     damageModifierSet: SCP106ModifierSet
   - type: Sprite
-    drawdepth: SmallMobs
+    drawdepth: Mobs
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: running
@@ -32,8 +34,18 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.4
+          radius: 0.35
         density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+      fix2:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 100
+        hard: false
         mask:
         - MobMask
         layer:
@@ -55,6 +67,38 @@
   - type: StatusEffects
     allowed:
     - Stun
+  - type: Vocal
+    sounds:
+      Male: SCP106
+      Female: SCP106
+      Unsexed: SCP106
+  - type: ComplexInteraction
+  - type: AmbientSound
+    enabled: true
+    range: 8
+    volume: 0
+    sound:
+      path: /Audio/_SCP/Effects/SCP106/breath.ogg
+      params:
+        volume: -5
+        maxDistance: 7
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: SCP106FootstepCollection
+      params:
+        volume: -5
+        maxDistance: 7
+  - type: Tag
+    tags:
+    - FootstepSound
+    - StunImmune
+    - CannotSuicide
+
+- type: emoteSounds
+  id: SCP106
+  sounds:
+    Laugh:
+      path: /Audio/_SCP/Effects/SCP106/laugh.ogg
 
 - type: damageContainer
   id: SCP106damageContainer
@@ -165,7 +209,7 @@
     labelKey: SCP106MainRoom
     damage:
       types:
-        Slash: 10
+        Slash: 15
         Caustic: 5
       
 
