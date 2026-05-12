@@ -23,7 +23,6 @@
     sprite: _SCP/Objects/SCP/scp500.rsi
     state: pill
   - type: Pill
-    useStandardVisuals: false
   - type: SolutionContainerManager
     solutions:
       food:
