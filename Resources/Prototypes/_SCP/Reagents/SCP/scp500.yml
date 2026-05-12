@@ -1,0 +1,20 @@
+﻿- type: reagent
+  id: ReagentScp500
+  name: SCP-500-D
+  desc: Красная, мелкая пыль без запаха и вкуса.
+  physicalDesc: рыхлистая красная пыль
+  flavor: medicine
+  color: "#FF0000"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Burn: -9999
+          Toxin: -9999
+          Airloss: -9999
+          Brute: -9999
+      - !type:ModifyBloodLevel
+        amount: 9999
+      - !type:ModifyBleed
+        amount: -9999

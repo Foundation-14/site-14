@@ -1,0 +1,33 @@
+﻿- type: entity
+  parent:
+  - PillCanister
+  - BaseItem
+  id: ObjectPillCanisterScp500
+  name: object
+  suffix: SCP-500
+  components:
+  - type: Sprite
+    sprite: _SCP/Objects/SCP/scp500.rsi
+    state: canister
+  - type: StorageFill
+    contents:
+    - id: ObjectPillScp500
+      amount: 5
+
+- type: entity
+  parent: Pill
+  id: ObjectPillScp500
+  suffix: SCP-500
+  components:
+  - type: Sprite
+    sprite: _SCP/Objects/SCP/scp500.rsi
+    state: pill
+  - type: Pill
+    useStandardVisuals: false
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 2
+        reagents:
+        - ReagentId: ReagentScp500
+          Quantity: 1
