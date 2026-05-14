@@ -1,8 +1,8 @@
 ﻿- type: reagent
   id: ReagentScp500
-  name: "SCP-500-D"
-  desc: "Красная, мелкая пыль без запаха и вкуса."
-  physicalDesc: "рыхлистая красная пыль"
+  name: reagent-name-scp500
+  desc: reagent-desc-scp500
+  physicalDesc: reagent-physicaldesc-scp500
   flavor: medicine
   color: "#FF0000"
   metabolisms:
