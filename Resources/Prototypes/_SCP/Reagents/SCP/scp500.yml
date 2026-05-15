@@ -1,0 +1,20 @@
+﻿- type: reagent
+  id: ReagentScp500
+  name: reagent-name-scp500
+  desc: reagent-desc-scp500
+  physicalDesc: reagent-physicaldesc-scp500
+  flavor: medicine
+  color: "#FF0000"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Burn: -9999
+          Toxin: -9999
+          Airloss: -9999
+          Brute: -9999
+      - !type:ModifyBloodLevel
+        amount: 9999
+      - !type:ModifyBleed
+        amount: -9999
