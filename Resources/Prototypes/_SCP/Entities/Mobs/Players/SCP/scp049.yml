@@ -10,6 +10,7 @@
     coneAngle: 270
     coneIgnoreRadius: 0.85
     coneIgnoreFeather: 0.05
+  - type: Blinking
   - type: SCPMob049
   - type: Stamina
     baseCritThreshold: 300

@@ -7,7 +7,7 @@ public sealed partial class SCP106TransitionComponent : Component
 {
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public float ExitShance = 0.4f;
+    public float ExitShance = 0.3f;
 
     [DataField]
     [ViewVariables(VVAccess.ReadOnly)]
