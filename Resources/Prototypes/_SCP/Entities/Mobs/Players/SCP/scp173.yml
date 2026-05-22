@@ -14,8 +14,8 @@
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: mob
   - type: MovementSpeedModifier
-    baseWalkSpeed: 0
-    baseSprintSpeed: 0
+    baseWalkSpeed: 0.01
+    baseSprintSpeed: 0.01
   - type: SCP173
     soundSCP173Blind:
       collection: SCP173Blind
@@ -32,3 +32,22 @@
       0: Alive
       2000: Dead
   - type: BlinkingTrigger
+  - type: Muted
+  - type: Damageable
+    damageContainer: SCP173damageContainer
+    damageModifierSet: SCP173ModifierSet
+  - type: StatusEffects
+    allowed:
+    - Stun
+
+- type: damageContainer
+  id: SCP173damageContainer
+  supportedGroups:
+    - Brute
+
+- type: damageModifierSet
+  id: SCP173ModifierSet
+  coefficients:
+    Blunt: 0.7
+    Slash: 0.7
+    Piercing: 0.7

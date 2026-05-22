@@ -14,6 +14,7 @@ using Content.Server._SCP.Blinking;
 using System.Linq;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Damage;
+using Content.Shared.Eye;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Mind.Components;
 using Content.Shared.Examine;
@@ -29,6 +30,7 @@ public sealed class SCP173System : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
@@ -131,7 +133,7 @@ public sealed class SCP173System : EntitySystem
 
         if (!_interaction.InRangeUnobstructed(origin, target, 0f, CollisionGroup.Impassable | CollisionGroup.AirlockLayer, uid => uid == user))
         {
-            _popup.PopupEntity(Loc.GetString("Конечная точка вне зоны досягаемости!"), uid, uid);
+            _popup.PopupEntity(Loc.GetString("scp173-range-unobstructed"), uid, uid);
             return;
         }
 
@@ -146,7 +148,7 @@ public sealed class SCP173System : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        if (_mobState.IsDead(uid))
+        if (_mobState.IsCritical(uid))
             return;
 
         if (!SeeTheStatue(uid, component))
@@ -198,7 +200,7 @@ public sealed class SCP173System : EntitySystem
         var selfMapCoords = _transform.GetMapCoordinates(uid);
         var selfPosition = selfMapCoords.Position;
         var entitiesInRange = _lookup.GetEntitiesInRange(selfMapCoords, component.KillRange);
-        
+
         EntityUid? closestEntity = null;
         float closestDistanceSquared = float.MaxValue;
 
@@ -210,7 +212,7 @@ public sealed class SCP173System : EntitySystem
             if (!TryComp<MobStateComponent>(entity, out var mobState))
                 continue;
 
-            if (_mobState.IsDead(entity, mobState))
+            if (_mobState.IsCritical(entity, mobState) || _mobState.IsDead(entity, mobState))
                 continue;
 
             var otherMapCoords = _transform.GetMapCoordinates(entity);
@@ -224,7 +226,8 @@ public sealed class SCP173System : EntitySystem
             }
         }
 
-        if (closestEntity == null) return;
+        if (closestEntity == null)
+            return;
 
         if (component.SoundDamage != null)
             _audio.PlayPvs(component.SoundDamage, uid);

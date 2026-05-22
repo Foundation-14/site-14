@@ -43,7 +43,7 @@ public sealed partial class SCP106TrapComponent : Component
     {
         DamageDict = new()
         {
-            { "Slash", 15.1 },
+            { "Slash", 16 },
             { "Cellular", 5 },
         }
     };
@@ -56,4 +56,3 @@ public sealed partial class SCP106TrapComponent : Component
     public string ExitState = "teleportation_exit";
     #endregion
 }
-

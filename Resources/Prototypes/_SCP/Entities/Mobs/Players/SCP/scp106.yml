@@ -5,6 +5,11 @@
   suffix: SCP-106
   categories: [ ForkFiltered ]
   components:
+  - type: SCPViewcone
+    coneAngle: 400
+    coneIgnoreRadius: 0.85
+    coneIgnoreFeather: 0.05
+  - type: Blinking
   - type: Puller
     needsHands: false
   - type: PassiveDamage
@@ -13,13 +18,12 @@
     - Critical
     damageCap: 0
     damage:
-      groups:
-        Brute: -0.6
-        Burn: -0.6
+      Types:
+        Shock: -0.6
   - type: MobThresholds
     thresholds:
       0: Alive
-      10000: Critical
+      300: Critical
   - type: Damageable
     damageContainer: SCP106damageContainer
     damageModifierSet: SCP106ModifierSet
@@ -102,22 +106,13 @@
 
 - type: damageContainer
   id: SCP106damageContainer
-  supportedGroups:
-    - Brute
   supportedTypes:
     - Shock
 
 - type: damageModifierSet
   id: SCP106ModifierSet
   coefficients:
-    Blunt: 0.1
-    Slash: 0.1
-    Piercing: 0.2
     Shock: 3
-  flatReductions:
-    Blunt: 10
-    Slash: 10
-    Piercing: 10
 
 - type: entity
   parent: MarkerBase
