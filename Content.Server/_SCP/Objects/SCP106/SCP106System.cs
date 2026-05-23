@@ -9,7 +9,6 @@ using Content.Shared.Mind.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
@@ -37,7 +36,7 @@ public sealed class SCP106System : EntitySystem
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
-    [Dependency] private readonly SCP106TrapSystem _TrapSCP = default!;
+    [Dependency] private readonly SCP106TrapSystem _trapSCP = default!;
     [Dependency] private readonly SpawnLabelSystem _spawnLabel = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
@@ -50,6 +49,7 @@ public sealed class SCP106System : EntitySystem
 
         SubscribeLocalEvent<SCP106Component, ComponentInit>(OnInit);
         SubscribeLocalEvent<SCP106Component, ComponentShutdown>(OnShut);
+        SubscribeLocalEvent<SCP106Component, DamageChangedEvent>(OnDamaged);
         SubscribeLocalEvent<SCP106Component, SCP106SelectTargetEvent>(OnAttackTarget);
         SubscribeLocalEvent<SCP106Component, SCP106TeleportEvent>(OnTeleportToPortal);
         SubscribeLocalEvent<SCP106Component, SCP106SpawnPortalEvent>(OnSpawnPortal);
@@ -74,6 +74,44 @@ public sealed class SCP106System : EntitySystem
         _actions.RemoveAction(uid, component.SCP106SelectTargetActionEntity);
         _actions.RemoveAction(uid, component.SCP106SpawnPortalActionEntity);
         _actions.RemoveAction(uid, component.SCP106SpawnTrapActionEntity);
+    }
+
+    private void OnDamaged(EntityUid uid, SCP106Component component, DamageChangedEvent args)
+    {
+        if (component.IsTeleported)
+            return;
+
+        if (!TryComp<MobStateComponent>(uid, out var mobState))
+            return;
+
+        if (_mobState.IsAlive(uid, mobState))
+            return;
+
+        if (_mobState.IsCritical(uid, mobState) || _mobState.IsDead(uid, mobState))
+        {
+            component.IsTeleported = true;
+            UpdateState(uid, component);
+
+            if (component.SoundTeleport != null)
+                _audio.PlayPvs(component.SoundTeleport, uid);
+
+            Timer.Spawn(component.TeleportDuration, () =>
+            {
+                if (!EntityManager.EntityExists(uid))
+                    return;
+
+                _spawnLabel.TeleportToLabel(component.LabelKey, uid);
+                component.IsTeleported = false;
+                UpdateState(uid, component);
+
+                if (component.HealDamage != null)
+                    _damageable.TryChangeDamage(uid, component.HealDamage, true, false);
+
+                UpdateState(uid, component);
+            });
+
+            _popup.PopupEntity(Loc.GetString("scp106-critical-teleport"), uid, uid);
+        }
     }
 
     private void OnAttackTarget(EntityUid uid, SCP106Component component, SCP106SelectTargetEvent args)
@@ -179,7 +217,7 @@ public sealed class SCP106System : EntitySystem
         if (TryComp<SCP106TrapComponent>(component.Portal, out var trap))
         {
             trap.IsExit = true;
-            _TrapSCP.UpdateState(component.Portal.Value);
+            _trapSCP.UpdateState(component.Portal.Value);
             Teleport(uid, Transform(component.Portal.Value).Coordinates, true, component);
         }
     }
@@ -233,7 +271,7 @@ public sealed class SCP106System : EntitySystem
                 if (TryComp<SCP106TrapComponent>(component.Portal, out var trap))
                 {
                     trap.IsExit = false;
-                    _TrapSCP.UpdateState(component.Portal.Value);
+                    _trapSCP.UpdateState(component.Portal.Value);
                 }
             }
         });

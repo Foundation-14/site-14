@@ -7,5 +7,7 @@ ent-ActionSCP106SpawnTrap = Ловушка
 ent-ActionSCP106SelectTarget = Поймать цель
     .desc = Отправляет выбранную цель в ваше измерение нанося увечия.
 
+scp106-critical-teleport = Вы уходите в карманное измерение, спасая свою сущность.
+
 signal-port-name-bird-scp106 = Запустить
 signal-port-description-bird-scp106 = Запускает ловушку для scp 106.

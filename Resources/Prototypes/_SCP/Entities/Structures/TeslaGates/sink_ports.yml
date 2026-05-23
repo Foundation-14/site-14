@@ -1,0 +1,4 @@
+- type: sinkPort
+  id: ToggleTeslaGate
+  name: signal-port-name-tesla-gate
+  description: signal-port-description-tesla-gate

@@ -1,5 +1,9 @@
 - type: entity
-  parent: BaseSimpleMob
+  parent:
+  - BaseSimpleMob
+  - MobAtmosExposed
+  - MobBloodstream
+  - MobFlammable
   id: MobScp106
   name: object
   suffix: SCP-106
@@ -19,7 +23,7 @@
     damageCap: 0
     damage:
       types:
-        Shock: -0.6
+        Shock: -1.1
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -71,6 +75,7 @@
   - type: StatusEffects
     allowed:
     - Stun
+    - Electrocution
   - type: Vocal
     sounds:
       Male: SCP106
@@ -103,6 +108,91 @@
   sounds:
     Laugh:
       path: /Audio/_SCP/Effects/SCP106/laugh.ogg
+    Scream:
+      collection: MaleScreams
+      params:
+        variation: 0.246
+        pitch: 0.3
+    Sneeze:
+      collection: MaleSneezes
+      params:
+        variation: 0.246
+        pitch: 0.4
+    Cough:
+      collection: MaleCoughs
+      params:
+        variation: 0.246
+        pitch: 0.4
+    CatMeow:
+      collection: CatMeows
+      params:
+        variation: 0.246
+        pitch: 0.3
+    CatHisses:
+      collection: CatHisses
+      params:
+        variation: 0.246
+        pitch: 0.3
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+      params:
+        variation: 0.246
+        pitch: 0.3
+    RobotBeep:
+      collection: RobotBeeps
+      params:
+        variation: 0.246
+        pitch: 0.3
+    Yawn:
+      collection: MaleYawn
+      params:
+        variation: 0.246
+        pitch: 0.45
+    Snore:
+      collection: Snores
+      params:
+        variation: 0.246
+        pitch: 0.3
+    Honk:
+      collection: BikeHorn
+      params:
+        variation: 0.246
+        pitch: 0.3
+    Sigh:
+      collection: MaleSigh
+      params:
+        variation: 0.246
+        pitch: 0.4
+    Crying:
+      collection: MaleCry
+      params:
+        variation: 0.246
+        pitch: 0.3
+    Whistle:
+      collection: Whistles
+      params:
+        variation: 0.246
+        pitch: 0.3
+    Weh:
+      collection: Weh
+      params:
+        variation: 0.246
+        pitch: 0.3
+    Hew:
+      collection: Hew
+      params:
+        variation: 0.246
+        pitch: 0.3
+    Gasp:
+      collection: MaleGasp
+      params:
+        variation: 0.246
+        pitch: 0.3
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+      params:
+        variation: 0.246
+        pitch: 0.3
 
 - type: damageContainer
   id: SCP106damageContainer
@@ -112,7 +202,7 @@
 - type: damageModifierSet
   id: SCP106ModifierSet
   coefficients:
-    Shock: 3
+    Shock: 1.5
 
 - type: entity
   parent: MarkerBase
