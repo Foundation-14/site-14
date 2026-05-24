@@ -5,6 +5,10 @@ public sealed partial class ElevatorConnectorComponent : Component
 {
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
+    public EntityUid? TeslaGate;
+
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
     public EntityUid? Elevator;
 
     [ViewVariables]

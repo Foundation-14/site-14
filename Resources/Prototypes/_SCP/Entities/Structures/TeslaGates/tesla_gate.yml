@@ -1,0 +1,21 @@
+- type: entity
+  parent: WallSolid
+  id: TeslaGateWall
+  name: tesla gate
+  components:
+  - type: DeviceLinkSink
+    ports:
+      - ToggleTeslaGate
+  - type: TeslaGate
+
+- type: entity
+  name: lightning
+  id: TeslaGateLightning
+  parent: BaseLightning
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Lightning
+    canArc: true
+  - type: Electrified
+    requirePower: false
+    shockDamage: 210

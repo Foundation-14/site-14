@@ -1,4 +1,5 @@
 using Content.Server._SCP.Elevator.Components;
+using Content.Server._SCP.TeslaGate.Components;
 using Content.Shared._SCP.SCP106.Components;
 using Content.Shared.Doors.Components;
 using Content.Shared.Interaction.Events;
@@ -11,6 +12,7 @@ namespace Content.Server._SCP.Elevator;
 public sealed class ElevatorConnectorSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly ElevatorSystem _elevatorSystem = default!;
 
     public override void Initialize()
     {
@@ -23,6 +25,7 @@ public sealed class ElevatorConnectorSystem : EntitySystem
     {
         component.FirstElevator = null;
         component.PendingDoor = null;
+        component.TeslaGate = null;
         _popup.PopupEntity(Loc.GetString("connector-reset"), args.User, args.User);
     }
 
@@ -61,8 +64,7 @@ public sealed class ElevatorConnectorSystem : EntitySystem
                 if (TryComp<ElevatorComponent>(target, out var secondComp))
                     secondComp.ElevatorGroupId = groupId;
 
-                var elevatorSystem = EntitySystem.Get<ElevatorSystem>();
-                elevatorSystem.TryLinkElevators(component.FirstElevator.Value, target);
+                _elevatorSystem.TryLinkElevators(component.FirstElevator.Value, target);
 
                 _popup.PopupEntity(Loc.GetString("connector-second-elevator"), args.User, args.User);
                 component.FirstElevator = null;
@@ -87,6 +89,23 @@ public sealed class ElevatorConnectorSystem : EntitySystem
                 _popup.PopupEntity(Loc.GetString("connector-door-pending"), args.User, args.User);
             }
             return;
+        }
+
+        if (TryComp<TeslaGateComponent>(target, out var teslaGate))
+        {
+            if (component.TeslaGate == null)
+            {
+                component.TeslaGate = target;
+                _popup.PopupEntity(Loc.GetString("connector-tesla-first"), args.User, args.User);
+                return;
+            }
+            else
+            {
+                teslaGate.ConnectTeslaGate = component.TeslaGate;
+                component.TeslaGate = null;
+                _popup.PopupEntity(Loc.GetString("connector-tesla-second"), args.User, args.User);
+                return;
+            }
         }
 
         if (component.PendingDoor != null && TryComp<ElevatorComponent>(target, out var pendingElev))

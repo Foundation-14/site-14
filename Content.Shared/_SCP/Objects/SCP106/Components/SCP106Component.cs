@@ -96,6 +96,15 @@ public sealed partial class SCP106Component : Component
         }
     };
 
+    [DataField("healDamage")]
+    public DamageSpecifier HealDamage = new()
+    {
+        DamageDict = new()
+        {
+            { "Shock", -13 }
+        }
+    };
+
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan TeleportDuration = TimeSpan.FromSeconds(2f);
 
@@ -125,4 +134,3 @@ public sealed partial class SCP106Component : Component
     public string TeleportedState = "teleportation";
     #endregion
 }
-
