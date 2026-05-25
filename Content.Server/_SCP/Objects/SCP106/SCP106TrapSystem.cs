@@ -19,7 +19,7 @@ using System.Linq;
 
 namespace Content.Server._SCP.SCP106;
 
-public sealed class SCP106TrapSystem : EntitySystem
+public sealed partial class SCP106TrapSystem : EntitySystem
 {
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
@@ -81,7 +81,7 @@ public sealed class SCP106TrapSystem : EntitySystem
 
         Timer.Spawn(TimeSpan.FromSeconds(component.ParalyzeTime++), () =>
         {
-            if (!EntityManager.EntityExists(uid))
+            if (!Exists(uid))
                 return;
 
             Teleport(uid, target, component);
@@ -94,8 +94,8 @@ public sealed class SCP106TrapSystem : EntitySystem
         if (sound == null)
             return;
 
-        if (TryComp<MindContainerComponent>(target, out var mind) 
-            && TryComp<MindComponent>(mind.Mind, out var mindComp) 
+        if (TryComp<MindContainerComponent>(target, out var mind)
+            && TryComp<MindComponent>(mind.Mind, out var mindComp)
             && mindComp.UserId != null)
         {
             if (_playerManager.TryGetSessionById(mindComp.UserId.Value, out var session))
@@ -113,7 +113,7 @@ public sealed class SCP106TrapSystem : EntitySystem
 
         Targets.Remove(target);
 
-        if (!EntityManager.EntityExists(target))
+        if (!Exists(target))
             return;
 
         var ents = _lookup.GetEntitiesInRange(_transform.GetMapCoordinates(uid, Transform(uid)), 1f)

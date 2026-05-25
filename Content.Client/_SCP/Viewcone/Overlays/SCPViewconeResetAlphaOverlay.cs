@@ -12,7 +12,7 @@ namespace Content.Client._SCP.Viewcone.Overlays;
 ///     After <see cref="SCPViewconeSetAlphaOverlay"/> has run, resets the alpha of affected entities
 ///     back to normal.
 /// </summary>
-public sealed class SCPViewconeResetAlphaOverlay : Overlay
+public sealed partial class SCPViewconeResetAlphaOverlay : Overlay
 {
     [Dependency] private IEntityManager _ent = default!;
     private readonly SCPViewconeOverlayManagementSystem _cone;
@@ -39,4 +39,3 @@ public sealed class SCPViewconeResetAlphaOverlay : Overlay
         _cone.CachedBaseAlphas.Clear();
     }
 }
-

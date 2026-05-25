@@ -5,15 +5,13 @@ using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Doors.Components;
 using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Content.Server._SCP.Elevator;
 
-public sealed class ElevatorSystem : EntitySystem
+public sealed partial class ElevatorSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;

@@ -20,7 +20,7 @@ using Robust.Shared.Utility;
 namespace Content.Server._CE.ZLevels.Mapping.Commands;
 
 [AdminCommand(AdminFlags.Server | AdminFlags.Mapping)]
-public sealed class CEGameMapMappingZNetworkCommand : LocalizedEntityCommands
+public sealed partial class CEGameMapMappingZNetworkCommand : LocalizedEntityCommands
 {
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IComponentFactory _compFactory = default!;
@@ -104,7 +104,7 @@ public sealed class CEGameMapMappingZNetworkCommand : LocalizedEntityCommands
 
         List<MapId> createdMaps = new();
 
-        var opts = new DeserializationOptions {StoreYamlUids = true};
+        var opts = new DeserializationOptions { StoreYamlUids = true };
 
         //Load default map
         if (!_mapLoader.TryLoadMap(mapProto.MapPath, out var defaultMapEnt, out _, opts))

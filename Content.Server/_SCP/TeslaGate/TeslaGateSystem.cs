@@ -7,7 +7,7 @@ using Content.Shared.DeviceLinking.Events;
 
 namespace Content.Server._SCP.TeslaGate;
 
-public sealed class TeslaGateSystem : EntitySystem
+public sealed partial class TeslaGateSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedAudioSystem _audio = default!;

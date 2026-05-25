@@ -16,7 +16,7 @@ namespace Content.Client._SCP.Viewcone.Overlays;
 /// <summary>
 ///     Renders the actual "cone" part of the viewcone, no alpha modulation
 /// </summary>
-public sealed class SCPViewconeConeOverlay : Overlay
+public sealed partial class SCPViewconeConeOverlay : Overlay
 {
     [Dependency] private IEntityManager _ent = default!;
     [Dependency] private IPrototypeManager _proto = default!;
@@ -106,7 +106,7 @@ public sealed class SCPViewconeConeOverlay : Overlay
 
         _viewconeShader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
         _viewconeShader.SetParameter("Zoom", zoom);
-        _viewconeShader.SetParameter("ViewAngle", (float) viewAngle.Theta);
+        _viewconeShader.SetParameter("ViewAngle", (float)viewAngle.Theta);
         _viewconeShader.SetParameter("ConeAngle", _coneAngle);
         _viewconeShader.SetParameter("ConeFeather", _coneFeather);
         _viewconeShader.SetParameter("ConeIgnoreRadius", _coneIgnoreRadius);

@@ -5,7 +5,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._SCP.SpawnLabel;
 
-public sealed class SpawnLabelRule : StationEventSystem<SpawnLabelRuleComponent>
+public sealed partial class SpawnLabelRule : StationEventSystem<SpawnLabelRuleComponent>
 {
     [Dependency] private SpawnLabelSystem _spawnLabel = default!;
     public override void Initialize()
@@ -23,7 +23,4 @@ public sealed class SpawnLabelRule : StationEventSystem<SpawnLabelRuleComponent>
     {
         base.ActiveTick(uid, component, gameRule, frameTime);
     }
-
-
-
 }

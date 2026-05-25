@@ -24,13 +24,12 @@ using Content.Shared.Damage.Components;
 
 namespace Content.Server._SCP.SCP173;
 
-public sealed class SCP173System : EntitySystem
+public sealed partial class SCP173System : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedActionsSystem _actions = default!;
-    [Dependency] private SharedInteractionSystem _interaction = default!;
-    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;=
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;

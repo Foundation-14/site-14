@@ -4,7 +4,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server._SCP.SpawnLabel;
 
-public sealed class SpawnLabelSystem : EntitySystem
+public sealed partial class SpawnLabelSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedTransformSystem _transform = default!;

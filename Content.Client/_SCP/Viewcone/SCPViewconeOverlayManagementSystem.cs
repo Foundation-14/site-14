@@ -18,7 +18,7 @@ namespace Content.Client._SCP.Viewcone;
 ///     Handles adding and removing the viewcone overlays, as well as ferrying data between them
 ///     Also handles calculating desired view angle for active viewcones so overlays can use it
 /// </summary>
-public sealed class SCPViewconeOverlayManagementSystem : EntitySystem
+public sealed partial class SCPViewconeOverlayManagementSystem : EntitySystem
 {
     [Dependency] private IGameTiming _gameTiming = default!;
     [Dependency] private IPlayerManager _playerManager = default!;

@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Content.Server._SCP.Blinking;
 
-public sealed class BlinkingSystem : EntitySystem
+public sealed partial class BlinkingSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private MobStateSystem _mobState = default!;

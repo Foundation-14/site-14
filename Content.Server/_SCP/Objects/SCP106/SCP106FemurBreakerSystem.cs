@@ -26,7 +26,7 @@ using System.Linq;
 
 namespace Content.Server._SCP.SCP106;
 
-public sealed class SCP106FemurBreakerSystem : EntitySystem
+public sealed partial class SCP106FemurBreakerSystem : EntitySystem
 {
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
