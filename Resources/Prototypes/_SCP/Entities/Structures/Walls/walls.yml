@@ -35,8 +35,9 @@
     - type: Icon
       state: full
     - type: Damageable
-      damageContainer: StructuralInorganic
       damageModifierSet: StructuralMetallic
+    - type: Injurable
+      damageContainer: StructuralInorganic
     - type: Physics
       bodyType: Static
     - type: StaticPrice

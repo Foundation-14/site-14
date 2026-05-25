@@ -22,8 +22,9 @@
     - type: Icon
       state: full
     - type: Damageable
-      damageContainer: StructuralInorganic
       damageModifierSet: PerforatedMetallic
+    - type: Injurable
+      damageContainer: StructuralInorganic
     - type: Electrified
       requirePower: true
       noWindowInTile: true

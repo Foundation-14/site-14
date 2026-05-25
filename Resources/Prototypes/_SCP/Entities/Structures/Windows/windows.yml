@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   id: SCPBaseStructureWindow
-  parent: [BaseDeltaPressureGlass, BaseStructure]
+  parent: [BaseDeltaPressureGlassQuarter, BaseStructure]
   name: window
   description: Don't smudge up the glass down there.
   suffix: SCPStructure
@@ -44,8 +44,9 @@
         layer:
         - GlassLayer
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Glass
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: ExaminableDamage
     messages: WindowMessages
   - type: Destructible
