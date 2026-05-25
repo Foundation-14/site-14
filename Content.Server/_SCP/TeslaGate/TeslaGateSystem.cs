@@ -76,7 +76,7 @@ public sealed partial class TeslaGateSystem : EntitySystem
         if (!component.IsActive)
             return false;
 
-        if (!EntityManager.EntityExists(component.ConnectTeslaGate))
+        if (!Exists(component.ConnectTeslaGate))
             component.ConnectTeslaGate = null;
 
         if (component.ConnectTeslaGate == null)
