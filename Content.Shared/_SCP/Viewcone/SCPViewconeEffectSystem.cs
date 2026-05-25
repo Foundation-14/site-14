@@ -12,8 +12,8 @@ namespace Content.Shared._SCP.Viewcone;
 [PublicAPI]
 public sealed class SCPViewconeEffectSystem : EntitySystem
 {
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private SharedTransformSystem _xform = default!;
 
     /// <summary>
     ///     Spawns the given effect entity at the player source, and sets relevant variables

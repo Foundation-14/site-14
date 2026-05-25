@@ -21,12 +21,12 @@ namespace Content.Server._SCP.SCP049.Sysytems;
 
 public sealed partial class SCP049System
 {
-    [Dependency] private readonly MobStateSystem _mobSystem = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly ZombieSystem _zombieSystem = default!;
-    [Dependency] private readonly RejuvenateSystem _rejuvenate = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private MobStateSystem _mobSystem = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private DoAfterSystem _doAfter = default!;
+    [Dependency] private ZombieSystem _zombieSystem = default!;
+    [Dependency] private RejuvenateSystem _rejuvenate = default!;
+    [Dependency] private IPlayerManager _player = default!;
 
     private void InitializeActions()
     {

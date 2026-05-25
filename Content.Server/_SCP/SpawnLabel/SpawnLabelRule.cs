@@ -7,7 +7,7 @@ namespace Content.Server._SCP.SpawnLabel;
 
 public sealed class SpawnLabelRule : StationEventSystem<SpawnLabelRuleComponent>
 {
-    [Dependency] private readonly SpawnLabelSystem _spawnLabel = default!;
+    [Dependency] private SpawnLabelSystem _spawnLabel = default!;
     public override void Initialize()
     {
         base.Initialize();

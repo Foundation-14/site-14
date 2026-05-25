@@ -13,8 +13,8 @@ namespace Content.Server._SCP.SCP049.Sysytems;
 
 public sealed partial class SCP049System : SharedSCP049System
 {
-    [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private ActionsSystem _actions = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     public override void Initialize()
     {

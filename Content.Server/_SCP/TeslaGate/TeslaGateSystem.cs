@@ -9,10 +9,10 @@ namespace Content.Server._SCP.TeslaGate;
 
 public sealed class TeslaGateSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly BeamSystem _beam = default!;
-    [Dependency] private readonly DeviceLinkSystem _signalSystem = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private BeamSystem _beam = default!;
+    [Dependency] private DeviceLinkSystem _signalSystem = default!;
     public override void Initialize()
     {
         base.Initialize();

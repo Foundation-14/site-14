@@ -20,7 +20,7 @@ namespace Content.Client._SCP.Viewcone.Overlays;
 /// </summary>
 public sealed class SCPViewconeSetAlphaOverlay : Overlay
 {
-    [Dependency] private readonly IEntityManager _ent = default!;
+    [Dependency] private IEntityManager _ent = default!;
     private readonly SCPViewconeOverlayManagementSystem _cone;
     private readonly SCPViewconeOccludableTreeSystem _tree;
     private readonly TransformSystem _xform;

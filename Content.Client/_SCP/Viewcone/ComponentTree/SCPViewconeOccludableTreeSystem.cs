@@ -11,7 +11,7 @@ namespace Content.Client._SCP.Viewcone.ComponentTree;
 /// </summary>
 public sealed class SCPViewconeOccludableTreeSystem : ComponentTreeSystem<SCPViewconeOccludableTreeComponent, SCPViewconeOccludableComponent>
 {
-    [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     protected override bool DoFrameUpdate => true;
     protected override bool DoTickUpdate => false;

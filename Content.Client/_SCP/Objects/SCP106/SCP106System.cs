@@ -6,7 +6,7 @@ namespace Content.Client._SCP.SCP106;
 
 public sealed class SCP106System : EntitySystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
 
     public override void Initialize()
     {

@@ -28,21 +28,21 @@ namespace Content.Server._SCP.SCP106;
 
 public sealed class SCP106FemurBreakerSystem : EntitySystem
 {
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly DoorSystem _doorSystem = default!;
-    [Dependency] private readonly DeviceLinkSystem _signalSystem = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SCP106System _SCP = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
-    [Dependency] private readonly StationSystem _stationSystem = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private DoorSystem _doorSystem = default!;
+    [Dependency] private DeviceLinkSystem _signalSystem = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SCP106System _SCP = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private StationSystem _stationSystem = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     public override void Initialize()
     {

@@ -11,8 +11,8 @@ namespace Content.Server._SCP.Elevator;
 
 public sealed class ElevatorConnectorSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly ElevatorSystem _elevatorSystem = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private ElevatorSystem _elevatorSystem = default!;
 
     public override void Initialize()
     {
