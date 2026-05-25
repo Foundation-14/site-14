@@ -51,7 +51,7 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private TagSystem _tags = default!;
     // SCP-Foundation-Start
-    [Dependency] private   readonly SCPViewconeEffectSystem _viewconeEffect = default!;
+    [Dependency] private SCPViewconeEffectSystem _viewconeEffect = default!;
     // SCP-Foundation-End
 
     [Dependency] protected EntityQuery<CanMoveInAirComponent> CanMoveInAirQuery = default!;

@@ -10,7 +10,7 @@ namespace Content.Shared._SCP.Viewcone;
 ///     it spawns in the correct pos and shit
 /// </summary>
 [PublicAPI]
-public sealed class SCPViewconeEffectSystem : EntitySystem
+public sealed partial class SCPViewconeEffectSystem : EntitySystem
 {
     [Dependency] private INetManager _net = default!;
     [Dependency] private SharedTransformSystem _xform = default!;
