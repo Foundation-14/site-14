@@ -1,32 +1,24 @@
 using Content.Server.DoAfter;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.NPC.HTN;
-using Content.Server.Popups;
 using Content.Server.Zombies;
-using Content.Shared._SCP.SCP049;
 using Content.Shared._SCP.SCP049.Components;
-using Content.Shared._SCP.SCP049.SharedSystem;
 using Content.Shared.Administration.Systems;
 using Content.Shared.Humanoid;
 using Content.Shared.DoAfter;
-using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Traits.Assorted;
 using Robust.Server.Player;
 
 namespace Content.Server._SCP.SCP049.Sysytems;
 
 public sealed partial class SCP049System
 {
-    [Dependency] private readonly MobStateSystem _mobSystem = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly ZombieSystem _zombieSystem = default!;
-    [Dependency] private readonly RejuvenateSystem _rejuvenate = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private DoAfterSystem _doAfter = default!;
+    [Dependency] private ZombieSystem _zombieSystem = default!;
+    [Dependency] private RejuvenateSystem _rejuvenate = default!;
+    [Dependency] private IPlayerManager _player = default!;
 
     private void InitializeActions()
     {

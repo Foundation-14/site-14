@@ -1,0 +1,11 @@
+- type: entity
+  id: SpawnPointSCPClassD
+  parent: SpawnPointJobBase
+  name: ClassD
+  components:
+  - type: SpawnPoint
+    job_id: SCPClassD
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger

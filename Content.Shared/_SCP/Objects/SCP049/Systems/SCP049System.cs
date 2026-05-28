@@ -9,10 +9,10 @@ using Robust.Shared.GameObjects;
 
 namespace Content.Shared._SCP.SCP049.SharedSystem;
 
-public abstract class SharedSCP049System : EntitySystem
+public abstract partial class SharedSCP049System : EntitySystem
 {
-    [Dependency] protected readonly MobStateSystem _mobSystem = default!;
-    [Dependency] protected readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] protected MobStateSystem _mobSystem = default!;
+    [Dependency] protected SharedPopupSystem _popupSystem = default!;
 
     public override void Initialize()
     {
@@ -36,7 +36,7 @@ public abstract class SharedSCP049System : EntitySystem
 
         bool hasTargetComp = HasComp<SCPTarget049Component>(target);
         bool hasZombieComp = HasComp<SCPZombie049Component>(target);
-        
+
         if (!hasTargetComp && !hasZombieComp)
         {
             ShowPopupClient("scp049-action-not-require-treatment", target, ent, PopupType.MediumCaution);

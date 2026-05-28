@@ -9,9 +9,9 @@ namespace Content.Client._SCP.Viewcone.ComponentTree;
 /// <summary>
 ///     Handles gathering sprites to modify alpha in the viewcone overlays
 /// </summary>
-public sealed class SCPViewconeOccludableTreeSystem : ComponentTreeSystem<SCPViewconeOccludableTreeComponent, SCPViewconeOccludableComponent>
+public sealed partial class SCPViewconeOccludableTreeSystem : ComponentTreeSystem<SCPViewconeOccludableTreeComponent, SCPViewconeOccludableComponent>
 {
-    [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     protected override bool DoFrameUpdate => true;
     protected override bool DoTickUpdate => false;

@@ -19,18 +19,18 @@ using System.Linq;
 
 namespace Content.Server._SCP.SCP106;
 
-public sealed class SCP106TrapSystem : EntitySystem
+public sealed partial class SCP106TrapSystem : EntitySystem
 {
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
-    [Dependency] private readonly SpawnLabelSystem _spawnLabel = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private NpcFactionSystem _npcFaction = default!;
+    [Dependency] private SpawnLabelSystem _spawnLabel = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
 
     public List<EntityUid> Targets = new List<EntityUid>();
     public override void Initialize()
@@ -81,7 +81,7 @@ public sealed class SCP106TrapSystem : EntitySystem
 
         Timer.Spawn(TimeSpan.FromSeconds(component.ParalyzeTime++), () =>
         {
-            if (!EntityManager.EntityExists(uid))
+            if (!Exists(uid))
                 return;
 
             Teleport(uid, target, component);
@@ -94,8 +94,8 @@ public sealed class SCP106TrapSystem : EntitySystem
         if (sound == null)
             return;
 
-        if (TryComp<MindContainerComponent>(target, out var mind) 
-            && TryComp<MindComponent>(mind.Mind, out var mindComp) 
+        if (TryComp<MindContainerComponent>(target, out var mind)
+            && TryComp<MindComponent>(mind.Mind, out var mindComp)
             && mindComp.UserId != null)
         {
             if (_playerManager.TryGetSessionById(mindComp.UserId.Value, out var session))
@@ -113,7 +113,7 @@ public sealed class SCP106TrapSystem : EntitySystem
 
         Targets.Remove(target);
 
-        if (!EntityManager.EntityExists(target))
+        if (!Exists(target))
             return;
 
         var ents = _lookup.GetEntitiesInRange(_transform.GetMapCoordinates(uid, Transform(uid)), 1f)

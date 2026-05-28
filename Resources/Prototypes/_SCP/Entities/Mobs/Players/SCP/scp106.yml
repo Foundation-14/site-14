@@ -20,7 +20,6 @@
     allowedStates:
     - Alive
     - Critical
-    damageCap: 0
     damage:
       types:
         Shock: -1.1
@@ -29,8 +28,9 @@
       0: Alive
       300: Critical
   - type: Damageable
-    damageContainer: SCP106damageContainer
     damageModifierSet: SCP106ModifierSet
+  - type: Injurable
+    damageContainer: SCP106damageContainer
   - type: Sprite
     drawdepth: Mobs
     layers:

@@ -34,8 +34,9 @@
   - type: BlinkingTrigger
   - type: Muted
   - type: Damageable
-    damageContainer: SCP173damageContainer
     damageModifierSet: SCP173ModifierSet
+  - type: Injurable
+    damageContainer: SCP173damageContainer
   - type: StatusEffects
     allowed:
     - Stun

@@ -111,11 +111,22 @@
     allowedStates:
     - Alive
     - Critical
-    damageCap: 100000
     damage:
-      groups:
-        Brute: -3
-        Burn: -3
-        Airloss: -3
-        Toxin: -9
-        Genetic: -9
+      types:
+        #Brute
+        Blunt: -1
+        Slash: -1
+        Piercing: -1
+        #Burn
+        Heat: -1
+        Shock: -1
+        Cold: -1
+        Caustic: -1
+        #Airloss
+        Asphyxiation: -1
+        Bloodloss: -1
+        #Toxin
+        Poison: -4.5
+        Radiation: -4.5
+        #Genetic
+        Cellular: -9

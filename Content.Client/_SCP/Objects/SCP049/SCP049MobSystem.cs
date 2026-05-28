@@ -8,9 +8,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.Overlays;
 
-public sealed class ShowTarget049HudSystem : SharedSCP049System
+public sealed partial class ShowTarget049HudSystem : SharedSCP049System
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     public override void Initialize()
     {

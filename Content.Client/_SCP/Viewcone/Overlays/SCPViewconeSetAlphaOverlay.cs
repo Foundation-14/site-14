@@ -18,9 +18,9 @@ namespace Content.Client._SCP.Viewcone.Overlays;
 ///
 ///     This alpha pass only works because of <see cref="SCPViewconeResetAlphaOverlay"/>, which resets in a later stage of rendering.
 /// </summary>
-public sealed class SCPViewconeSetAlphaOverlay : Overlay
+public sealed partial class SCPViewconeSetAlphaOverlay : Overlay
 {
-    [Dependency] private readonly IEntityManager _ent = default!;
+    [Dependency] private IEntityManager _ent = default!;
     private readonly SCPViewconeOverlayManagementSystem _cone;
     private readonly SCPViewconeOccludableTreeSystem _tree;
     private readonly TransformSystem _xform;
@@ -135,7 +135,7 @@ public sealed class SCPViewconeSetAlphaOverlay : Overlay
             var angleDist = Angle.ShortestDistance(dist.ToWorldAngle(), eyeRot);
 
             var baseAlpha = sprite.Color.A;
-            var angleAlpha = (float) Math.Clamp((Math.Abs(angleDist.Theta) - (radConeAngle * 0.5f)) + (radConeFeather * 0.5f), 0f, radConeFeather) / radConeFeather;
+            var angleAlpha = (float)Math.Clamp((Math.Abs(angleDist.Theta) - (radConeAngle * 0.5f)) + (radConeFeather * 0.5f), 0f, radConeFeather) / radConeFeather;
             var distAlpha = Math.Clamp((distLength - cone.ConeIgnoreRadius) + (cone.ConeIgnoreFeather * 0.5f), 0f, cone.ConeIgnoreFeather) / cone.ConeIgnoreFeather;
             var targetAlpha = Math.Max(1f - angleAlpha, 1f - distAlpha);
 
