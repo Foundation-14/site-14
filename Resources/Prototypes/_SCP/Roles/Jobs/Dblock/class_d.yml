@@ -1,5 +1,5 @@
 - type: job
-  id: SCPClassD
+  id: JobSCPClassD
   name: job-name-d-class
   description: job-description-d-class
   playTimeTracker: JobClassD

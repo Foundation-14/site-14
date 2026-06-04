@@ -1,0 +1,115 @@
+#region Spline_fancy-corner
+- type: decal
+  id: spline_corner_ne
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_corner_ne
+
+- type: decal
+  id: spline_corner_nw
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_corner_nw
+
+- type: decal
+  id: spline_corner_se
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_corner_se
+
+- type: decal
+  id: spline_corner_sw
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_corner_sw
+
+#region Spline_fancy-line
+- type: decal
+  id: spline_line_e
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_e
+
+- type: decal
+  id: spline_line_n
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_n
+
+- type: decal
+  id: spline_line_s
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_s
+
+- type: decal
+  id: spline_line_w
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_w
+
+#region Spline_fancy-end
+- type: decal
+  id: spline_end_e
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_end_e
+
+- type: decal
+  id: spline_end_n
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_end_n
+
+- type: decal
+  id: spline_end_s
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_end_s
+
+- type: decal
+  id: spline_end_w
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_end_w
+
+#region Spline_fancy-corner-line
+- type: decal
+  id: spline_line_ne
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_ne
+
+- type: decal
+  id: spline_line_nw
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_nw
+
+- type: decal
+  id: spline_line_se
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_se
+
+- type: decal
+  id: spline_line_sw
+  tags: ["station", "spline_fancy"]
+  sprite:
+    sprite: _SCP/Decals/spline_fancy.rsi
+    state: trimline_sw

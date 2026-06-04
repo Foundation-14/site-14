@@ -1,0 +1,166 @@
+#region Bordercolor-corner
+- type: decal
+  id: bordercolor_corner_ne
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_corner_ne
+
+- type: decal
+  id: bordercolor_corner_nw
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_corner_nw
+
+- type: decal
+  id: bordercolor_corner_se
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_corner_se
+
+- type: decal
+  id: bordercolor_corner_sw
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_corner_sw
+
+#region Bordercolor-line
+- type: decal
+  id: bordercolor_line_e
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_e
+
+- type: decal
+  id: bordercolor_line_n
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_n
+
+- type: decal
+  id: bordercolor_line_s
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_s
+
+- type: decal
+  id: bordercolor_line_w
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_w
+
+#region Bordercolor-half-line
+- type: decal
+  id: bordercolor_halfline_e
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_half_e
+
+- type: decal
+  id: bordercolor_halfline_n
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_half_n
+
+- type: decal
+  id: bordercolor_halfline_s
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_half_s
+
+- type: decal
+  id: bordercolor_halfline_w
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_half_w
+
+#region Bordercolor-end
+- type: decal
+  id: bordercolor_end_e
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_end_e
+
+- type: decal
+  id: bordercolor_end_n
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_end_n
+
+- type: decal
+  id: bordercolor_end_s
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_end_s
+
+- type: decal
+  id: bordercolor_end_w
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_end_w
+
+#region Bordercolor-corner-line
+- type: decal
+  id: bordercolor_line_ne
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_ne
+
+- type: decal
+  id: bordercolor_line_nw
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_nw
+
+- type: decal
+  id: bordercolor_line_se
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_se
+
+- type: decal
+  id: bordercolor_line_sw
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_sw
+
+#region Fulltile
+- type: decal
+  id: bordercolor_full
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_full
+
+- type: decal
+  id: bordercolor_mono
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: bordercolor_mono
+
+- type: decal
+  id: rust
+  tags: ["station", "bordercolor"]
+  sprite:
+    sprite: _SCP/Decals/bordercolor.rsi
+    state: rust

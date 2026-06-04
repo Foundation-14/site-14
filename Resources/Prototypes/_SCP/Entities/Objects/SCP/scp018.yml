@@ -48,12 +48,11 @@
         mask:
           - BulletImpassable
         restitution: 1.02
-        friction: 0.5
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 600
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -61,8 +60,12 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Damageable
+  - type: Injurable
+  - type: RandomWalk
+    maxSpeed: 10.1
+    minSpeed: 9.8
   - type: EmitSoundOnCollide
-    minVelocity: 1
+    minVelocity: 0.1
     sound:
       collection: SCP018BounceCollection
   - type: EmitSoundOnLand

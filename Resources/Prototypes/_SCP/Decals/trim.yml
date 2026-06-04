@@ -1,0 +1,57 @@
+#region Spline_fancy-line
+- type: decal
+  id: trim_line_e
+  tags: ["station", "trim"]
+  sprite:
+    sprite: _SCP/Decals/trim.rsi
+    state: trimlineeast
+
+- type: decal
+  id: trim_line_n
+  tags: ["station", "trim"]
+  sprite:
+    sprite: _SCP/Decals/trim.rsi
+    state: trimlinenorth
+
+- type: decal
+  id: trim_line_s
+  tags: ["station", "trim"]
+  sprite:
+    sprite: _SCP/Decals/trim.rsi
+    state: trimlinesouth
+
+- type: decal
+  id: trim_line_w
+  tags: ["station", "trim"]
+  sprite:
+    sprite: _SCP/Decals/trim.rsi
+    state: trimlinewest
+
+#region Spline_fancy-corner-line
+- type: decal
+  id: trim_line_ne
+  tags: ["station", "trim"]
+  sprite:
+    sprite: _SCP/Decals/trim.rsi
+    state: trimlinenortheast
+
+- type: decal
+  id: trim_line_nw
+  tags: ["station", "trim"]
+  sprite:
+    sprite: _SCP/Decals/trim.rsi
+    state: trimlinenorthwest
+
+- type: decal
+  id: trim_line_se
+  tags: ["station", "trim"]
+  sprite:
+    sprite: _SCP/Decals/trim.rsi
+    state: trimlinesoutheast
+
+- type: decal
+  id: trim_line_sw
+  tags: ["station", "trim"]
+  sprite:
+    sprite: _SCP/Decals/trim.rsi
+    state: trimlinesouthwest

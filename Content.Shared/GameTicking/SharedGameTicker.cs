@@ -25,7 +25,7 @@ namespace Content.Shared.GameTicking
         // See ideally these would be pulled from the job definition or something.
         // But this is easier, and at least it isn't hardcoded.
         //TODO: Move these, they really belong in StationJobsSystem or a cvar.
-        public static readonly ProtoId<JobPrototype> FallbackOverflowJob = "SCPClassD"; // Foundation-14
+        public static readonly ProtoId<JobPrototype> FallbackOverflowJob = "JobSCPClassD"; // Foundation-14
 
         public const string FallbackOverflowJobName = "job-name-d-class"; // Foundation-14
 

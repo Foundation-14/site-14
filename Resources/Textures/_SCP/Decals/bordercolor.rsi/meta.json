@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Foundation-19",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "bordercolor_e"
+    },
+    {
+      "name": "bordercolor_n"
+    },
+    {
+      "name": "bordercolor_s"
+    },
+    {
+      "name": "bordercolor_w"
+    },
+    {
+      "name": "bordercolor_end_e"
+    },
+    {
+      "name": "bordercolor_end_n"
+    },
+    {
+      "name": "bordercolor_end_s"
+    },
+    {
+      "name": "bordercolor_end_w"
+    },
+    {
+      "name": "bordercolor_full"
+    },
+    {
+      "name": "bordercolor_half_e"
+    },
+    {
+      "name": "bordercolor_half_n"
+    },
+    {
+      "name": "bordercolor_half_s"
+    },
+    {
+      "name": "bordercolor_half_w"
+    },
+    {
+      "name": "bordercolor_mono"
+    },
+    {
+      "name": "bordercolor_ne"
+    },
+    {
+      "name": "bordercolor_nw"
+    },
+    {
+      "name": "bordercolor_se"
+    },
+    {
+      "name": "bordercolor_sw"
+    },
+    {
+      "name": "bordercolor_corner_ne"
+    },
+    {
+      "name": "bordercolor_corner_nw"
+    },
+    {
+      "name": "bordercolor_corner_se"
+    },
+    {
+      "name": "bordercolor_corner_sw"
+    },
+    {
+      "name": "rust"
+    }
+  ]
+}

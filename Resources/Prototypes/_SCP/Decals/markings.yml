@@ -1,0 +1,144 @@
+﻿#region Danger-corner
+- type: decal
+  id: danger_corner_ne
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_corner_ne
+
+- type: decal
+  id: danger_corner_nw
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_corner_nw
+
+- type: decal
+  id: danger_corner_se
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_corner_se
+
+- type: decal
+  id: danger_corner_sw
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_corner_sw
+
+#region Danger-line
+- type: decal
+  id: danger_line_e
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_e
+
+- type: decal
+  id: danger_line_n
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_n
+
+- type: decal
+  id: danger_line_s
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_s
+
+- type: decal
+  id: danger_line_w
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_w
+
+#region Danger-end
+- type: decal
+  id: danger_end_e
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_end_e
+
+- type: decal
+  id: danger_end_n
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_end_n
+
+- type: decal
+  id: danger_end_s
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_end_s
+
+- type: decal
+  id: danger_end_w
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_end_w
+
+#region Danger-corner-line
+- type: decal
+  id: danger_line_ne
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_ne
+
+- type: decal
+  id: danger_line_nw
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_nw
+
+- type: decal
+  id: danger_line_se
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_se
+
+- type: decal
+  id: danger_line_sw
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_sw
+
+#region Fulltile
+- type: decal
+  id: danger_full
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: danger_full
+
+- type: decal
+  id: loadingarea
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: loadingarea
+
+- type: decal
+  id: outline
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: outline
+
+- type: decal
+  id: warningfulltile
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _SCP/Decals/markings.rsi
+    state: warningfulltile

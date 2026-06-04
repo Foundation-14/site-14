@@ -11,7 +11,7 @@
           mapNameTemplate: "Dev"
         - type: StationJobs
           availableJobs:
-            SCPClassD: [ -1, -1 ]
+            JobSCPClassD: [ -1, -1 ]
         - type: CEStationZLevels
           mapsAbove:
             - /Maps/_SCP/SCPDev/SCPDev1.yml

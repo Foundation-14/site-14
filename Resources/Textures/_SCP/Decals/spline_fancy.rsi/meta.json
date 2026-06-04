@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Shiptest and modified for use.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "trimline_e"
+    },
+    {
+      "name": "trimline_end_e"
+    },
+    {
+      "name": "trimline_n"
+    },
+    {
+      "name": "trimline_ne"
+    },
+    {
+      "name": "trimline_corner_ne"
+    },
+    {
+      "name": "trimline_end_n"
+    },
+    {
+      "name": "trimline_nw"
+    },
+    {
+      "name": "trimline_corner_nw"
+    },
+    {
+      "name": "trimline_s"
+    },
+    {
+      "name": "trimline_se"
+    },
+    {
+      "name": "trimline_corner_se"
+    },
+    {
+      "name": "trimline_end_s"
+    },
+    {
+      "name": "trimline_sw"
+    },
+    {
+      "name": "trimline_corner_sw"
+    },
+    {
+      "name": "trimline_w"
+    },
+    {
+      "name": "trimline_end_w"
+    }
+  ]
+}
