@@ -193,12 +193,14 @@ namespace Content.Client.Lobby.UI
 
             RefreshSpecies();
 
+            /* SCP-Foundation : Human only
             SpeciesButton.OnItemSelected += args =>
             {
                 SpeciesButton.SelectId(args.Id);
                 SetSpecies(_species[args.Id].ID);
                 OnSkinColorOnValueChanged();
             };
+            */
 
             #region Skin
 
@@ -310,7 +312,7 @@ namespace Content.Client.Lobby.UI
                 ReloadPreview();
             };
 
-            SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed;
+            // SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed; SCP-Foundation : Human only
 
             UpdateSpeciesGuidebookIcon();
             IsDirty = false;

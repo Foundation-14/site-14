@@ -1,7 +1,7 @@
 - type: species
   id: Reptilian
   name: species-name-reptilian
-  roundStart: false # SCP-Human only
+  roundStart: false # SCP-Foundation : Human only
   prototype: MobReptilian
   defaultSkinTone: "#34a223"
   dollPrototype: AppearanceReptilian

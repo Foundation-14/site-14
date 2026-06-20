@@ -246,32 +246,32 @@
   - type: DynamicRuleCost
     cost: 75
 
-- type: entity
-  parent: BaseAntagGhostRoleRule
-  id: ParadoxCloneSpawn
-  components:
-  - type: StationEvent
-    weight: 5
-    duration: null
-    earliestStart: 20
-    reoccurrenceDelay: 20
-    minimumPlayers: 15
-  - type: ParadoxCloneRule
-    objectiveBlacklist:
-      tags:
-      - ParadoxCloneObjectiveBlacklist
-  - type: AntagObjectives
-    objectives:
-    - ParadoxCloneKillObjective
-    - ParadoxCloneLivingObjective
-  - type: AntagRandomSpawn # TODO: improve spawning so they only start in maints
-  - type: AntagSelection
-    agentName: paradox-clone-round-end-agent-name
-    antags:
-    - !type:FixedAntagCount
-      proto: ParadoxClone
-  - type: DynamicRuleCost
-    cost: 50
+# - type: entity
+#   parent: BaseAntagGhostRoleRule
+#   id: ParadoxCloneSpawn
+#   components:
+#   - type: StationEvent
+#     weight: 5
+#     duration: null
+#     earliestStart: 20
+#     reoccurrenceDelay: 20
+#     minimumPlayers: 15
+#   - type: ParadoxCloneRule
+#     objectiveBlacklist:
+#       tags:
+#       - ParadoxCloneObjectiveBlacklist
+#   - type: AntagObjectives
+#     objectives:
+#     - ParadoxCloneKillObjective
+#     - ParadoxCloneLivingObjective
+#   - type: AntagRandomSpawn # TODO: improve spawning so they only start in maints
+#   - type: AntagSelection
+#     agentName: paradox-clone-round-end-agent-name
+#     antags:
+#     - !type:FixedAntagCount
+#       proto: ParadoxClone
+#   - type: DynamicRuleCost
+#     cost: 50
 
 - type: entity
   parent: BaseGameRule

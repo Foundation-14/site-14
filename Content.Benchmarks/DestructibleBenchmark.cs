@@ -45,7 +45,7 @@ public class DestructibleBenchmark
     private static readonly EntProtoId WallProtoId = "WallReinforced";
     private static readonly EntProtoId HumanProtoId = "MobHuman";
 
-    private static readonly ProtoId<ContentTileDefinition> TileRef = "Plating";
+    private static readonly ProtoId<ContentTileDefinition> TileRef = "FoundationPlating"; // SCP-Foundation
 
     private readonly EntProtoId[] _prototypes = [WindowProtoId, WallProtoId, HumanProtoId];
 

@@ -1,7 +1,7 @@
 - type: species
   id: Diona
   name: species-name-diona
-  roundStart: false # SCP-Human only
+  roundStart: false # SCP-Foundation : Human only
   prototype: MobDiona
   defaultSkinTone: "#cdb369"
   dollPrototype: AppearanceDiona
