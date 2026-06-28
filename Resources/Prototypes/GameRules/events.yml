@@ -40,7 +40,7 @@
     children:
     - id: DragonSpawn
     - id: NinjaSpawn
-    - id: ParadoxCloneSpawn
+    # - id: ParadoxCloneSpawn
     - id: SleeperAgents
     - id: ZombieOutbreak
     - id: LoneOpsSpawn

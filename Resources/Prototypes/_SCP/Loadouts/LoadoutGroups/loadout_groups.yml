@@ -1,0 +1,15 @@
+# ClassD
+- type: loadoutGroup
+  id: ClassDShoes
+  name: loadout-group-classd-shoes
+  loadouts:
+  - SCPClothingShoesColorBlack
+  - SCPClothingShoesColorOrange
+  - SCPClothingShoesBootsWork
+
+- type: loadoutGroup
+  id: ClassDGloves
+  name: loadout-group-classd-shoes
+  loadouts:
+  - SCPClothingHandsGlovesFingerless
+  - SCPClothingHandsGlovesColorBlack

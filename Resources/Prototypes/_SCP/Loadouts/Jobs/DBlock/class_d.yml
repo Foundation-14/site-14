@@ -1,0 +1,26 @@
+# Shoes
+- type: loadout
+  id: SCPClothingShoesColorBlack
+  equipment:
+    shoes: ClothingShoesColorBlack
+
+- type: loadout
+  id: SCPClothingShoesColorOrange
+  equipment:
+    shoes: ClothingShoesColorOrange
+
+- type: loadout
+  id: SCPClothingShoesBootsWork
+  equipment:
+    shoes: ClothingShoesBootsWork
+
+# Gloves
+- type: loadout
+  id: SCPClothingHandsGlovesFingerless
+  equipment:
+    shoes: ClothingHandsGlovesFingerless
+
+- type: loadout
+  id: SCPClothingHandsGlovesColorBlack
+  equipment:
+    shoes: ClothingHandsGlovesColorBlack
