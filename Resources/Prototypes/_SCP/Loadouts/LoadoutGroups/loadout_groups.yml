@@ -9,7 +9,7 @@
 
 - type: loadoutGroup
   id: ClassDGloves
-  name: loadout-group-classd-shoes
+  name: loadout-group-classd-gloves
   loadouts:
   - SCPClothingHandsGlovesFingerless
   - SCPClothingHandsGlovesColorBlack
