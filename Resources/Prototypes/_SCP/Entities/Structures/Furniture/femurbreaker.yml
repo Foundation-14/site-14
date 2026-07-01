@@ -1,0 +1,31 @@
+- type: entity
+  name: femur breaker
+  id: SCPFemurBreaker
+  description: You lay on this. Either by will or force.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Animateable
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.05"
+        density: 190
+        mask:
+        - TableMask
+  - type: Sprite
+    sprite: _SCP/Structures/Furniture/femurbreaker.rsi
+    state: femurbreaker
+    noRot: true
+  - type: PlaceableSurface
+    placeCentered: true
+  - type: Strap
+    position: Down
+    rotation: 90
+    buckleOffset: "-0.05, 0.25"
