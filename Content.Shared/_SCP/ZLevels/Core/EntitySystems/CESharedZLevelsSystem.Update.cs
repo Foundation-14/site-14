@@ -116,7 +116,7 @@ public abstract partial class CESharedZLevelsSystem
 
         if (zPhysicsComponent.LocalPosition < 0)
         {
-            if (TryMoveDownOrChasm(entity))
+            if (TryMoveDown(entity)) // SCP-Foundation
             {
                 zPhysicsComponent.LocalPosition += 1;
                 if (zPhysicsComponent is { CachedStickyGround: false, Fallable: true })

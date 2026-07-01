@@ -118,7 +118,7 @@
 - type: tile
   id: PlatingBurned
   parent: BasePlating
-  name: tiles-plating-burned
+  name: tiles-foundation-plating-burned
   sprite: /Textures/_SCP/Tiles/Foundation/plating_burned.png
   variants: 3
   placementVariants:

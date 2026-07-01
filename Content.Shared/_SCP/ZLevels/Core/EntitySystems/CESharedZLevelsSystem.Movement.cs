@@ -5,7 +5,7 @@
 
 using System.Numerics;
 using Content.Shared._CE.ZLevels.Core.Components;
-using Content.Shared.Chasm;
+// using Content.Shared.Chasm; // SCP-Foundation
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
@@ -346,24 +346,24 @@ public abstract partial class CESharedZLevelsSystem
         return TryMove(ent, -1);
     }
 
-    [PublicAPI]
-    public bool TryMoveDownOrChasm(EntityUid ent)
-    {
-        if (TryMoveDown(ent))
-            return true;
+    // [PublicAPI] // SCP-Foundation
+    // public bool TryMoveDownOrChasm(EntityUid ent)
+    // {
+    //     if (TryMoveDown(ent))
+    //         return true;
 
-        //welp, that default Chasm behavior. Not really good, but ok for now.
-        if (HasComp<ChasmFallingComponent>(ent))
-            return false; //Already falling
+    //     //welp, that default Chasm behavior. Not really good, but ok for now.
+    //     if (HasComp<ChasmFallingComponent>(ent))
+    //         return false; //Already falling
 
-        var audio = new SoundPathSpecifier("/Audio/Effects/falling.ogg");
-        _audio.PlayPredicted(audio, Transform(ent).Coordinates, ent);
-        var falling = AddComp<ChasmFallingComponent>(ent);
-        falling.NextDeletionTime = _timing.CurTime + falling.DeletionTime;
-        _blocker.UpdateCanMove(ent);
+    //     var audio = new SoundPathSpecifier("/Audio/Effects/falling.ogg");
+    //     _audio.PlayPredicted(audio, Transform(ent).Coordinates, ent);
+    //     var falling = AddComp<ChasmFallingComponent>(ent);
+    //     falling.NextDeletionTime = _timing.CurTime + falling.DeletionTime;
+    //     _blocker.UpdateCanMove(ent);
 
-        return false;
-    }
+    //     return false;
+    // }
 
     private void UpdateDirtyMovement()
     {

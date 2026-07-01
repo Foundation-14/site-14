@@ -6,7 +6,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared._CE.ZLevels.Core.Components;
-using Content.Shared.Chasm;
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
