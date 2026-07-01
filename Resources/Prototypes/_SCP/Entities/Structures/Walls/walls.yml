@@ -100,6 +100,17 @@
   - type: Tag
     tags:
       - HideContextMenu
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb {}
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
   - type: Destructible
     thresholds:
     - trigger:
