@@ -10,7 +10,7 @@ namespace Content.Shared._SCP.Viewcone;
 public sealed partial class SCPViewconeComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public float ConeAngle = 185f;
+    public float ConeAngle = 205f;
 
     [DataField, AutoNetworkedField]
     public float ConeFeather = 3f;

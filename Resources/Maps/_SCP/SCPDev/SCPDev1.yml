@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/25/2026 20:31:46
-  entityCount: 837
+  time: 07/01/2026 12:39:51
+  entityCount: 847
 maps:
 - 1
 grids:
@@ -23,11 +23,10 @@ tilemap:
   0: FloorSteel
   4: FloorTechMaint3
   12: FoundationFloorSteel
+  6: Lattice
   11: Plating
   13: PlatingBurned
   14: PlatingDamaged
-  6: Lattice
-  2: Plating
   3: TrainLattice
 entities:
 - proto: ""
@@ -1471,19 +1470,19 @@ entities:
       inSlotFlag: INNERCLOTHING
     - type: Physics
       canCollide: False
-- proto: SCPGrille
+- proto: SCPGrilleFrame
   entities:
-  - uid: 24
-    components:
-    - type: Transform
-      pos: 2.5,0.5
-      parent: 1
-  - uid: 88
+  - uid: 89
     components:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
   - uid: 133
+    components:
+    - type: Transform
+      pos: 2.5,0.5
+      parent: 1
+  - uid: 172
     components:
     - type: Transform
       pos: 3.5,1.5
@@ -1961,6 +1960,58 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -6.5,5.5
+      parent: 1
+  - uid: 838
+    components:
+    - type: Transform
+      pos: -2.5,-3.5
+      parent: 1
+  - uid: 843
+    components:
+    - type: Transform
+      pos: 2.5,0.5
+      parent: 1
+  - uid: 844
+    components:
+    - type: Transform
+      pos: 1.5,0.5
+      parent: 1
+  - uid: 845
+    components:
+    - type: Transform
+      pos: 3.5,1.5
+      parent: 1
+  - uid: 846
+    components:
+    - type: Transform
+      pos: 0.5,1.5
+      parent: 1
+  - uid: 847
+    components:
+    - type: Transform
+      pos: 5.5,-3.5
+      parent: 1
+- proto: SCPWallFrame
+  entities:
+  - uid: 15
+    components:
+    - type: Transform
+      pos: 3.5,1.5
+      parent: 1
+  - uid: 24
+    components:
+    - type: Transform
+      pos: 0.5,1.5
+      parent: 1
+  - uid: 88
+    components:
+    - type: Transform
+      pos: 1.5,0.5
+      parent: 1
+  - uid: 251
+    components:
+    - type: Transform
+      pos: 2.5,0.5
       parent: 1
 - proto: SCPWallMetalGreen
   entities:
@@ -4927,27 +4978,27 @@ entities:
     - type: Transform
       pos: -7.5,7.5
       parent: 1
-- proto: SCPWindowReinforced
+- proto: SCPWindowReinforcedFrame
   entities:
-  - uid: 15
-    components:
-    - type: Transform
-      pos: 1.5,0.5
-      parent: 1
-  - uid: 89
+  - uid: 839
     components:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
-  - uid: 172
+  - uid: 840
     components:
     - type: Transform
-      pos: 3.5,1.5
+      pos: 1.5,0.5
       parent: 1
-  - uid: 251
+  - uid: 841
     components:
     - type: Transform
       pos: 2.5,0.5
+      parent: 1
+  - uid: 842
+    components:
+    - type: Transform
+      pos: 3.5,1.5
       parent: 1
 - proto: SpawnPointLatejoin
   entities:
@@ -4956,9 +5007,9 @@ entities:
     - type: Transform
       pos: 0.5,4.5
       parent: 1
-- proto: SpawnPointSCPClassD
+- proto: SpawnPointObserver
   entities:
-  - uid: 835
+  - uid: 837
     components:
     - type: Transform
       pos: 0.5,4.5
@@ -4970,9 +5021,9 @@ entities:
     - type: Transform
       pos: 0.5,4.5
       parent: 1
-- proto: SpawnPointObserver
+- proto: SpawnPointSCPClassD
   entities:
-  - uid: 837
+  - uid: 835
     components:
     - type: Transform
       pos: 0.5,4.5
