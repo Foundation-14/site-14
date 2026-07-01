@@ -23,9 +23,9 @@ tilemap:
   0: FloorSteel
   4: FloorTechMaint3
   12: FoundationFloorSteel
-  11: FoundationPlating
-  13: FoundationPlatingBurned
-  14: FoundationPlatingDamaged
+  11: Plating
+  13: PlatingBurned
+  14: PlatingDamaged
   6: Lattice
   2: Plating
   3: TrainLattice

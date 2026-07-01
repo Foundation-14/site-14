@@ -49,7 +49,7 @@ tilemap:
   23: FoundationFloorWhiteMono
   31: FoundationFloorWhiteSmall
   24: FoundationFloorWhiteVertical
-  11: FoundationPlating
+  11: Plating
   8: Lattice
   2: Plating
   4: TrainLattice

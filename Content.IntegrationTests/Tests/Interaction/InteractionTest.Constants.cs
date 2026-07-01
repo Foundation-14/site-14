@@ -10,7 +10,7 @@ public abstract partial class InteractionTest
     // Tiles
     protected const string Floor = "FloorSteel";
     protected const string FloorItem = "FloorTileItemSteel";
-    protected const string Plating = "FoundationPlating"; // SCP-Foundation
+    protected const string Plating = "Plating"; // SCP-Foundation
     protected const string PlatingRCD = "PlatingRCD";
     protected const string Lattice = "Lattice";
     protected const string PlatingBrass = "PlatingBrass";

@@ -58,9 +58,9 @@ tilemap:
   49: FoundationFloorWhiteSmall
   47: FoundationFloorWhiteTiled
   48: FoundationFloorWhiteVertical
-  12: FoundationPlating
-  28: FoundationPlatingBurned
-  29: FoundationPlatingDamaged
+  12: Plating
+  28: PlatingBurned
+  29: PlatingDamaged
   7: Lattice
   2: Plating
   5: TrainLattice

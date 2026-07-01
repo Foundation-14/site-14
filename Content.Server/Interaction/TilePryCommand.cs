@@ -15,7 +15,7 @@ public sealed partial class TilePryCommand : LocalizedEntityCommands
     [Dependency] private ITileDefinitionManager _tileDefinitionManager = default!;
     [Dependency] private SharedMapSystem _mapSystem = default!;
 
-    private readonly string _platingId = "FoundationPlating"; // SCP-Foundation
+    private readonly string _platingId = "Plating";
 
     public override string Command => "tilepry";
 

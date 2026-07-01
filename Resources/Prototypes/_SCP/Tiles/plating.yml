@@ -14,7 +14,7 @@
   id: Plating
   parent: BasePlating
   name: tiles-plating
-  sprite: /Textures/Tiles/plating.png
+  sprite: /Textures/_SCP/Tiles/Foundation/plating.png
 
 - type: tile
   id: PlatingRCD
@@ -50,7 +50,7 @@
   id: PlatingDamaged
   parent: BasePlating
   name: tiles-plating-damaged
-  sprite: /Textures/Tiles/plating_damaged.png
+  sprite: /Textures/_SCP/Tiles/Foundation/plating_damaged.png
   variants: 3
   placementVariants:
   - 1.0
@@ -116,27 +116,10 @@
 
 # Foundation region
 - type: tile
-  id: FoundationPlatingBurned
+  id: PlatingBurned
   parent: BasePlating
-  name: tiles-foundation-plating-burned
+  name: tiles-plating-burned
   sprite: /Textures/_SCP/Tiles/Foundation/plating_burned.png
-  variants: 3
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-
-- type: tile
-  id: FoundationPlating
-  parent: BasePlating
-  name: tiles-foundation-plating
-  sprite: /Textures/_SCP/Tiles/Foundation/plating.png
-
-- type: tile
-  id: FoundationPlatingDamaged
-  parent: BasePlating
-  name: tiles-foundation-plating-damaged
-  sprite: /Textures/_SCP/Tiles/Foundation/plating_damaged.png
   variants: 3
   placementVariants:
   - 1.0

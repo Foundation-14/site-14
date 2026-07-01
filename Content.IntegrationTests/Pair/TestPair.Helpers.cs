@@ -18,7 +18,7 @@ namespace Content.IntegrationTests.Pair;
 public sealed partial class TestPair
 {
     public Task<TestMapData> CreateTestMap(bool initialized = true)
-        => CreateTestMap(initialized, "FoundationPlating"); // SCP-Foundation
+        => CreateTestMap(initialized, "Plating");
 
     /// <summary>
     /// Loads a test map and returns a <see cref="TestMapData"/> representing it.

@@ -86,7 +86,7 @@ public class DeltaPressureBenchmark
         _cvar.SetCVar(CCVars.DeltaPressureParallelToProcessPerIteration, EntitiesPerIteration);
         _cvar.SetCVar(CCVars.DeltaPressureParallelBatchSize, BatchSize);
 
-        var plating = _tileDefMan["FoundationPlating"].TileId; // SCP-Foundation
+        var plating = _tileDefMan["Plating"].TileId;
 
         /*
          Basically, we want to have a 5-wide grid of tiles.
