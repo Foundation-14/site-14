@@ -229,6 +229,7 @@
   name: solid frame
   components:
   - type: Sprite
+    drawdepth: SmallMobs
     sprite: _SCP/Structures/Walls/frame.rsi
     color: "#7F7F75"
   - type: Icon
@@ -256,6 +257,7 @@
   name: solid frame
   components:
   - type: Sprite
+    drawdepth: SmallMobs
     sprite: _SCP/Structures/Walls/frame.rsi
     color: "#505050"
   - type: Icon
