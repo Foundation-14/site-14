@@ -1,4 +1,4 @@
-/*
+﻿/*
  * This file is sublicensed under MIT License
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
@@ -98,13 +98,13 @@ public sealed partial class CEGameMapMappingZNetworkCommand : LocalizedEntityCom
 
         //Ok all parsing is done, we start creating maps
 
-        var network = _zLevel.CreateZNetwork(zNetwork.ZLevelsComponentOverrides);
+        var network = _zLevel.CreateMapNetwork(zNetwork.ZLevelsComponentOverrides);
         _meta.SetEntityName(network, $"Mapping zNetwork: {mapProto.MapName}");
         Dictionary<EntityUid, int> dict = new();
 
         List<MapId> createdMaps = new();
 
-        var opts = new DeserializationOptions { StoreYamlUids = true };
+        var opts = new DeserializationOptions {StoreYamlUids = true};
 
         //Load default map
         if (!_mapLoader.TryLoadMap(mapProto.MapPath, out var defaultMapEnt, out _, opts))
@@ -158,7 +158,7 @@ public sealed partial class CEGameMapMappingZNetworkCommand : LocalizedEntityCom
             }
         }
 
-        if (!_zLevel.TryAddMapsIntoZNetwork(network, dict))
+        if (!_zLevel.TryAddMapsIntoNetwork(network, dict))
         {
             shell.WriteError($"Failed to create zNetwork from loaded maps!");
             return;
@@ -189,7 +189,7 @@ public sealed partial class CEGameMapMappingZNetworkCommand : LocalizedEntityCom
         //TODO: Autosaves
 
         shell.ExecuteCommand($"tp 0 0 {defaultMapEnt.Value.Comp.MapId}");
-        // shell.RemoteExecuteCommand("mappingclientsidesetup"); // SCP-Foundation
+        shell.RemoteExecuteCommand("mappingclientsidesetup");
         foreach (var mapId in createdMaps)
         {
             DebugTools.Assert(_map.IsPaused(mapId));
