@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/01/2026 12:39:52
-  entityCount: 1368
+  time: 07/01/2026 21:11:57
+  entityCount: 1375
 maps:
 - 1
 grids:
@@ -1904,14 +1904,6 @@ entities:
     - type: Transform
       pos: -11.541224,21.176805
       parent: 1
-- proto: HighSecDoor
-  entities:
-  - uid: 9
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,19.5
-      parent: 1
 - proto: LabelSCP106RoomExit
   entities:
   - uid: 950
@@ -2011,6 +2003,25 @@ entities:
     components:
     - type: Transform
       pos: -14.5,16.5
+      parent: 1
+- proto: PoweredDimSmallLight
+  entities:
+  - uid: 1372
+    components:
+    - type: Transform
+      pos: -0.5,20.5
+      parent: 1
+  - uid: 1373
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 0.5,19.5
+      parent: 1
+  - uid: 1374
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,18.5
       parent: 1
 - proto: PoweredSmallLight
   entities:
@@ -2706,6 +2717,89 @@ entities:
     - type: Transform
       pos: -0.5,19.5
       parent: 1
+    - type: SCP106FemurBreaker
+      breakerDoor: 9
+- proto: SCPDoorDblockMetal
+  entities:
+  - uid: 1375
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -3.5,2.5
+      parent: 1
+- proto: SCPDoorMetal
+  entities:
+  - uid: 9
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.5,19.5
+      parent: 1
+    - type: Door
+      denySound: !type:SoundPathSpecifier
+        params:
+          variation: null
+          playOffsetSeconds: 0
+          loop: False
+          referenceDistance: 1
+          rolloffFactor: 1
+          maxDistance: 15
+          pitch: 1
+          volume: 0
+        path: /Audio/Machines/airlock_deny.ogg
+  - uid: 1369
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -34.5,30.5
+      parent: 1
+    - type: Door
+      denySound: !type:SoundPathSpecifier
+        params:
+          variation: null
+          playOffsetSeconds: 0
+          loop: False
+          referenceDistance: 1
+          rolloffFactor: 1
+          maxDistance: 15
+          pitch: 1
+          volume: 0
+        path: /Audio/Machines/airlock_deny.ogg
+  - uid: 1370
+    components:
+    - type: Transform
+      pos: -12.5,15.5
+      parent: 1
+    - type: Door
+      denySound: !type:SoundPathSpecifier
+        params:
+          variation: null
+          playOffsetSeconds: 0
+          loop: False
+          referenceDistance: 1
+          rolloffFactor: 1
+          maxDistance: 15
+          pitch: 1
+          volume: 0
+        path: /Audio/Machines/airlock_deny.ogg
+  - uid: 1371
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -10.5,13.5
+      parent: 1
+    - type: Door
+      denySound: !type:SoundPathSpecifier
+        params:
+          variation: null
+          playOffsetSeconds: 0
+          loop: False
+          referenceDistance: 1
+          rolloffFactor: 1
+          maxDistance: 15
+          pitch: 1
+          volume: 0
+        path: /Audio/Machines/airlock_deny.ogg
 - proto: SCPFemurBreaker
   entities:
   - uid: 2
