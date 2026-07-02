@@ -218,7 +218,8 @@ namespace Content.Client.Lobby.UI
 
             #endregion
 
-            #region SpawnPriority
+            /* SCP-Foundation
+            // #region SpawnPriority
 
             foreach (var value in Enum.GetValues<SpawnPriorityPreference>())
             {
@@ -231,7 +232,8 @@ namespace Content.Client.Lobby.UI
                 SetSpawnPriority((SpawnPriorityPreference)args.Id);
             };
 
-            #endregion SpawnPriority
+            // #endregion SpawnPriority
+            */
 
             #region Eyes
 
@@ -373,7 +375,7 @@ namespace Content.Client.Lobby.UI
             UpdateSexControls();
             UpdateGenderControls();
             UpdateSkinColor();
-            UpdateSpawnPriorityControls();
+            // UpdateSpawnPriorityControls(); // SCP-Foundation
             UpdateAgeEdit();
             UpdateEyePickers();
             UpdateSaveButton();

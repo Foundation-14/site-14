@@ -4,7 +4,7 @@
   description: job-description-d-class
   playTimeTracker: JobClassD
   startingGear: SCPClassDGear
-  icon: "JobIconPassenger"
+  icon: "SCPJobIconClassD"
   supervisors: job-supervisors-everyone
   special:
   - !type:AddComponentSpecial

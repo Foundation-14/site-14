@@ -35,17 +35,18 @@
   conditions:
     - !type:TileNotBlocked
 
-- type: construction
-  id: ChairBrass
-  graph: Seat
-  startNode: start
-  targetNode: chairBrass
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
+# SCP-Foundation : Ignore
+# - type: construction
+#   id: ChairBrass
+#   graph: Seat
+#   startNode: start
+#   targetNode: chairBrass
+#   category: construction-category-furniture
+#   objectType: Structure
+#   placementMode: SnapgridCenter
+#   canBuildInImpassable: false
+#   conditions:
+#     - !type:TileNotBlocked
 
 - type: construction
   id: ChairOfficeLight
@@ -83,17 +84,18 @@
   conditions:
     - !type:TileNotBlocked
 
-- type: construction
-  id: chairPilotSeat
-  graph: Seat
-  startNode: start
-  targetNode: chairPilotSeat
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
+# SCP-Foundation : Ignore
+# - type: construction
+#   id: chairPilotSeat
+#   graph: Seat
+#   startNode: start
+#   targetNode: chairPilotSeat
+#   category: construction-category-furniture
+#   objectType: Structure
+#   placementMode: SnapgridCenter
+#   canBuildInImpassable: false
+#   conditions:
+#     - !type:TileNotBlocked
 
 - type: construction
   id: ChairWood
@@ -107,29 +109,30 @@
   conditions:
     - !type:TileNotBlocked
 
-- type: construction
-  id: ChairMeat
-  graph: Seat
-  startNode: start
-  targetNode: chairMeat
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-  - !type:TileNotBlocked
-
-- type: construction
-  id: ChairRitual
-  graph: RitualSeat
-  startNode: start
-  targetNode: chairRitual
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
+# SCP-Foundation : Ignore
+# - type: construction
+#   id: ChairMeat
+#   graph: Seat
+#   startNode: start
+#   targetNode: chairMeat
+#   category: construction-category-furniture
+#   objectType: Structure
+#   placementMode: SnapgridCenter
+#   canBuildInImpassable: false
+#   conditions:
+#   - !type:TileNotBlocked
+#
+# - type: construction
+#   id: ChairRitual
+#   graph: RitualSeat
+#   startNode: start
+#   targetNode: chairRitual
+#   category: construction-category-furniture
+#   objectType: Structure
+#   placementMode: SnapgridCenter
+#   canBuildInImpassable: false
+#   conditions:
+#     - !type:TileNotBlocked
 
 - type: construction
   id: ChairFolding
@@ -266,29 +269,30 @@
   conditions:
     - !type:TileNotBlocked
 
-- type: construction
-  id: TablePlasmaGlass
-  graph: Table
-  startNode: start
-  targetNode: TablePlasmaGlass
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: TableBrass
-  graph: Table
-  startNode: start
-  targetNode: TableBrass
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
+# SCP-Foundation : Ignore
+# - type: construction
+#   id: TablePlasmaGlass
+#   graph: Table
+#   startNode: start
+#   targetNode: TablePlasmaGlass
+#   category: construction-category-furniture
+#   objectType: Structure
+#   placementMode: SnapgridCenter
+#   canBuildInImpassable: false
+#   conditions:
+#     - !type:TileNotBlocked
+#
+# - type: construction
+#   id: TableBrass
+#   graph: Table
+#   startNode: start
+#   targetNode: TableBrass
+#   category: construction-category-furniture
+#   objectType: Structure
+#   placementMode: SnapgridCenter
+#   canBuildInImpassable: false
+#   conditions:
+#     - !type:TileNotBlocked
 
 - type: construction
   id: TableWood
@@ -482,29 +486,30 @@
     - !type:TileNotBlocked
 
 #bedroom
-- type: construction
-  id: Bed
-  graph: bed
-  startNode: start
-  targetNode: bed
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
+# SCP-Foundation : Ignore
+# - type: construction
+#   id: Bed
+#   graph: bed
+#   startNode: start
+#   targetNode: bed
+#   category: construction-category-furniture
+#   objectType: Structure
+#   placementMode: SnapgridCenter
+#   canBuildInImpassable: false
+#   conditions:
+#     - !type:TileNotBlocked
 
-- type: construction
-  id: MedicalBed
-  graph: bed
-  startNode: start
-  targetNode: medicalbed
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
+# - type: construction
+#   id: MedicalBed
+#   graph: bed
+#   startNode: start
+#   targetNode: medicalbed
+#   category: construction-category-furniture
+#   objectType: Structure
+#   placementMode: SnapgridCenter
+#   canBuildInImpassable: false
+#   conditions:
+#     - !type:TileNotBlocked
 
 - type: construction
   id: DogBed

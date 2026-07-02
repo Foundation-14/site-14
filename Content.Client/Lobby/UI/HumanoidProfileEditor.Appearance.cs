@@ -136,6 +136,7 @@ public sealed partial class HumanoidProfileEditor
         }
     }
 
+    /* SCP-Foundation
     private void UpdateSpawnPriorityControls()
     {
         if (Profile == null)
@@ -145,6 +146,7 @@ public sealed partial class HumanoidProfileEditor
 
         SpawnPriorityButton.SelectId((int)Profile.SpawnPriority);
     }
+    */
 
     /// <summary>
     /// Refreshes the species selector.

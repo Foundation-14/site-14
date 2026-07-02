@@ -2,6 +2,7 @@
   id: MuzzleFlashEffect
   categories: [ HideSpawnMenu ]
   components:
+  - type: Fixtures # SCP-Foundation
   - type: TimedDespawn
     lifetime: 0.4
   - type: Sprite

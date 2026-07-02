@@ -529,6 +529,7 @@
   components:
   - type: Sprite
     sprite: _SCP/Structures/Furniture/Tables/wood.rsi # SCP-Foundation : Resprite
+    color: "#6d4733" # SCP-Foundation : Resprite
   - type: Icon
     sprite: _SCP/Structures/Furniture/Tables/wood.rsi # SCP-Foundation : Resprite
   - type: Damageable

@@ -2,6 +2,7 @@
   id: BulletImpactEffect
   categories: [ HideSpawnMenu ]
   components:
+  - type: Fixtures # SCP-Foundation
   - type: TimedDespawn
     lifetime: 0.25
   - type: Sprite
