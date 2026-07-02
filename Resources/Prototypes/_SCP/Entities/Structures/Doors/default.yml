@@ -69,8 +69,8 @@
   - type: Occluder
   - type: DoorBolt
   - type: Airlock
+    autoClose: false
     openUnlitVisible: true
-    powered: true
   - type: BlockWeather
   - type: Appearance
   - type: RadiationBlocker
