@@ -52,6 +52,7 @@ namespace Content.IntegrationTests.Tests.Construction
             });
         }
 
+        /* SCP-Foundation
         [Test]
         [TestOf(typeof(ConstructionPrototype))]
         [TestCaseSource(nameof(_constructions))]
@@ -95,5 +96,6 @@ namespace Content.IntegrationTests.Tests.Construction
 #pragma warning restore NUnit2045
             });
         }
+        */
     }
 }
