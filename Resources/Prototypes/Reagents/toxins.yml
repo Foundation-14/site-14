@@ -28,8 +28,8 @@
   flavor: bitter
   color: "#e2a38c"
   physicalDesc: reagent-physical-desc-exotic-smelling
-  allowedDepartments:
-  - Medical
+  # allowedDepartments: # SCP-Foundation
+  # - Medical # SCP-Foundation
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 10
@@ -56,8 +56,8 @@
   flavor: bitter
   color: "#000067"
   physicalDesc: reagent-physical-desc-nondescript
-  allowedDepartments:
-  - Medical
+  # allowedDepartments: # SCP-Foundation
+  # - Medical # SCP-Foundation
   metabolisms:
     Bloodstream:
       effects:
@@ -557,9 +557,9 @@
   group: Narcotics
   desc: reagent-desc-pax
   physicalDesc: reagent-physical-desc-soothing
-  allowedDepartments:
-  - Security
-  - Medical
+  # allowedDepartments: # SCP-Foundation
+  # - Security # SCP-Foundation
+  # - Medical # SCP-Foundation
   color: "#AAAAAA"
   metabolisms:
     Bloodstream:
@@ -687,8 +687,8 @@
   group: Toxins
   desc: reagent-desc-lipolicide
   physicalDesc: reagent-physical-desc-strong-smelling
-  allowedDepartments:
-  - Medical
+  # allowedDepartments: # SCP-Foundation
+  # - Medical # SCP-Foundation
   flavor: mothballs #why does weightloss juice taste like mothballs
   color: "#F0FFF0"
   metabolisms:

@@ -4,8 +4,8 @@
   group: Medicine
   desc: reagent-desc-cryptobiolin
   physicalDesc: reagent-physical-desc-fizzy
-  allowedDepartments:
-  - Medical
+  # allowedDepartments: # SCP-Foundation
+  # - Medical # SCP-Foundation
   flavor: medicine
   color: "#081a80"
   metabolisms:
@@ -429,8 +429,8 @@
   group: Medicine
   desc: reagent-desc-ipecac
   physicalDesc: reagent-physical-desc-inky
-  allowedDepartments:
-  - Medical
+  # allowedDepartments: # SCP-Foundation
+  # - Medical # SCP-Foundation
   flavor: medicine
   color: "#422912"
   metabolisms:
@@ -851,8 +851,8 @@
   name: reagent-name-lipozine
   group: Medicine
   desc: reagent-desc-lipozine
-  allowedDepartments:
-  - Medical
+  # allowedDepartments: # SCP-Foundation
+  # - Medical # SCP-Foundation
   physicalDesc: reagent-physical-desc-oily
   flavor: medicine
   color: "#2690b5"
@@ -1501,8 +1501,8 @@
   group: Medicine
   desc: reagent-desc-heparin
   physicalDesc: reagent-physical-desc-thin
-  allowedDepartments:
-  - Medical
+  # allowedDepartments: # SCP-Foundation
+  # - Medical # SCP-Foundation
   flavor: medicine
   color: "#d0e21b"
   metabolisms:

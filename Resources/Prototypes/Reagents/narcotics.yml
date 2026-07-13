@@ -402,8 +402,8 @@
   group: Narcotics
   desc: reagent-desc-tear-gas
   physicalDesc: reagent-physical-desc-milky
-  allowedDepartments:
-  - Security
+  allowedDepartments: # SCP-Foundation
+  - Security # SCP-Foundation
   flavor: salty
   color: "#ffffff4d"
   boilingPoint: 255.0

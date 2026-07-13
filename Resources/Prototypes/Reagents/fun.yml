@@ -217,8 +217,8 @@
     requiredSlipSpeed: 3.5
   desc: reagent-desc-fresium
   physicalDesc: reagent-physical-desc-frosty
-  allowedDepartments:
-  - Medical
+  # allowedDepartments: # SCP-Foundation
+  # - Medical # SCP-Foundation
   flavor: cold
   color: "#b3f1ff"
   boilingPoint: 50.0

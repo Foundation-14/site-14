@@ -80,8 +80,8 @@
   desc: reagent-desc-artifexium
   flavor: metallic
   physicalDesc: reagent-physical-desc-crystalline
-  allowedDepartments:
-  - Science
+  # allowedDepartments: # SCP-Foundation
+  # - Science # SCP-Foundation
   color: "#776291"
   metabolisms:
     Bloodstream:

@@ -144086,8 +144086,7 @@ entities:
       size: Huge
     - type: Contraband
       allowedJobs: []
-      allowedDepartments:
-      - Security
+          - Security
       severity: Syndicate
 - proto: SmartFridge
   entities:
