@@ -336,8 +336,8 @@
   physicalDesc: reagent-physical-desc-gaseous
   # allowedDepartments: # SCP-Foundation
   # - Engineering # SCP-Foundation
-  allowedJobs:
-  - Chemist
+  # allowedJobs: # SCP-Foundation
+  # - Chemist # SCP-Foundation
   flavor: bitter
   color: "#3a758c"
   boilingPoint: -195.8
