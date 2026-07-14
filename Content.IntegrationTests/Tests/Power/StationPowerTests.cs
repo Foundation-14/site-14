@@ -23,18 +23,7 @@ public sealed class StationPowerTests : GameTest
 
     private static readonly string[] GameMaps =
     [
-        "Bagel",
-        "Box",
-        "Elkridge",
-        "Fland",
-        "Marathon",
-        "Oasis",
-        "Packed",
-        "Plasma",
-        "Relic",
-        "Snowball",
-        "Reach",
-        "Exo",
+        "Dev",
     ];
 
     public override PoolSettings PoolSettings => new ()

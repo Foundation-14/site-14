@@ -165,9 +165,9 @@
   description: A square piece of metal standing on four metal legs.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/generic.rsi
+    sprite: _SCP/Structures/Furniture/Tables/metal.rsi # SCP-Foundation : Resprite
   - type: Icon
-    sprite: Structures/Furniture/Tables/generic.rsi
+    sprite: _SCP/Structures/Furniture/Tables/metal.rsi # SCP-Foundation : Resprite
   - type: Damageable
     damageModifierSet: Metallic
   - type: Injurable
@@ -210,9 +210,9 @@
   description: A square piece of metal standing on four metal legs. Extra robust.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/reinforced.rsi
+    sprite: _SCP/Structures/Furniture/Tables/reinforced.rsi # SCP-Foundation : Resprite
   - type: Icon
-    sprite: Structures/Furniture/Tables/reinforced.rsi
+    sprite: _SCP/Structures/Furniture/Tables/reinforced.rsi # SCP-Foundation : Resprite
   - type: Destructible
     thresholds:
     - trigger:
@@ -528,9 +528,10 @@
   description: Do not apply fire to this. Rumour says it burns easily.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/wood.rsi
+    sprite: _SCP/Structures/Furniture/Tables/wood.rsi # SCP-Foundation : Resprite
+    color: "#6d4733" # SCP-Foundation : Resprite
   - type: Icon
-    sprite: Structures/Furniture/Tables/wood.rsi
+    sprite: _SCP/Structures/Furniture/Tables/wood.rsi # SCP-Foundation : Resprite
   - type: Damageable
     damageModifierSet: Wood
   - type: Destructible

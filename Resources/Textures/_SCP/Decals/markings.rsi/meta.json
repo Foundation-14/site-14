@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Foundation-19",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "loadingarea"
+    },
+    {
+      "name": "warningfulltile"
+    },
+    {
+      "name": "outline"
+    },
+    {
+      "name": "danger_e"
+    },
+    {
+      "name": "danger_n"
+    },
+    {
+      "name": "danger_s"
+    },
+    {
+      "name": "danger_w"
+    },
+    {
+      "name": "danger_end_e"
+    },
+    {
+      "name": "danger_end_n"
+    },
+    {
+      "name": "danger_end_s"
+    },
+    {
+      "name": "danger_end_w"
+    },
+    {
+      "name": "danger_full"
+    },
+    {
+      "name": "danger_ne"
+    },
+    {
+      "name": "danger_nw"
+    },
+    {
+      "name": "danger_se"
+    },
+    {
+      "name": "danger_sw"
+    },
+    {
+      "name": "danger_corner_ne"
+    },
+    {
+      "name": "danger_corner_nw"
+    },
+    {
+      "name": "danger_corner_se"
+    },
+    {
+      "name": "danger_corner_sw"
+    }
+  ]
+}

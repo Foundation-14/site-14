@@ -3,6 +3,10 @@
   abstract: true
   categories: [ HideSpawnMenu ]
   components:
+  - type: Physics
+    bodyType: Kinematic
+    bodyStatus: InAir
+  - type: Fixtures
   - type: SCPViewconeOccludable
     inverted: true
     overrideBaseAlpha: true

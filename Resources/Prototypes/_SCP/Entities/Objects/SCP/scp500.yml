@@ -25,10 +25,8 @@
     sprite: _SCP/Objects/SCP/scp500.rsi
     state: pill
   - type: Pill
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 2
-        reagents:
-        - ReagentId: ReagentScp500
-          Quantity: 1
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: ReagentScp500
+        Quantity: 1

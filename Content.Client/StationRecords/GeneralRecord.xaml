@@ -4,7 +4,9 @@
         <Label Name="Age"/>
         <Label Name="Title"/>
         <Label Name="Job"/>
+        <!-- SCP-Foundation : Human only
         <Label Name="Species"/>
+        -->
         <Label Name="Gender"/>
         <Label Name="Fingerprint"/>
         <Label Name="Dna"/>

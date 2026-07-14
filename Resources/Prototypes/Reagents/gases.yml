@@ -122,8 +122,8 @@
   name: reagent-name-tritium
   desc: reagent-desc-tritium
   physicalDesc: reagent-physical-desc-ionizing
-  allowedDepartments:
-  - Engineering
+  # allowedDepartments: # SCP-Foundation
+  # - Engineering # SCP-Foundation
   flavor: bitter
   color: "#66ff33"
   tileReactions:
@@ -334,10 +334,10 @@
   name: reagent-name-frezon
   desc: reagent-desc-frezon
   physicalDesc: reagent-physical-desc-gaseous
-  allowedDepartments:
-  - Engineering
-  allowedJobs:
-  - Chemist
+  # allowedDepartments: # SCP-Foundation
+  # - Engineering # SCP-Foundation
+  # allowedJobs: # SCP-Foundation
+  # - Chemist # SCP-Foundation
   flavor: bitter
   color: "#3a758c"
   boilingPoint: -195.8

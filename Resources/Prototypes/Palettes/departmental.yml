@@ -1,19 +1,17 @@
 ﻿- type: palette
-  id: Departmental
+  id: SCPDepartmental
   name: Departmental
   colors:
-    command: "#334E6DC8"
-    medical: "#52B4E996"
-    service: "#9FED5896"
-    engineering: "#EFB34196"
-    security: "#DE3A3A96"
-    bar: "#79150096"
-    science: "#D381C996"
-    cargo: "#A4610696"
-    janitor: "#8c347f96"
-    chemistry: "#fa750096"
-    virology: "#43990996"
-    atmospherics: "#3eb38896"
-    salvage: "#8d1c9996"
-    neutral: "#D4D4D496"
-    neutralLight: "#D4D4D428"
+    command: "#334E6D"
+    medical: "#52B4E9"
+    service: "#9FED58"
+    engineering: "#EFB341"
+    security: "#DE3A3A"
+    bar: "#791500"
+    science: "#D381C9"
+    cargo: "#A46106"
+    janitor: "#8C347F"
+    chemistry: "#FA7500"
+    virology: "#439909"
+    atmospherics: "#3EB388"
+    salvage: "#8D1C99"

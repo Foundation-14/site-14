@@ -20,6 +20,7 @@ public sealed partial class HumanoidProfileEditor
 
     public void UpdateSpeciesGuidebookIcon()
     {
+        /* SCP-Foundtion : Human only
         SpeciesInfoButton.StyleClasses.Clear();
 
         var species = Profile?.Species;
@@ -35,6 +36,7 @@ public sealed partial class HumanoidProfileEditor
 
         const string style = "SpeciesInfoDefault";
         SpeciesInfoButton.StyleIdentifier = style;
+        */
     }
 
     private void UpdateGenderControls()
@@ -134,6 +136,7 @@ public sealed partial class HumanoidProfileEditor
         }
     }
 
+    /* SCP-Foundation
     private void UpdateSpawnPriorityControls()
     {
         if (Profile == null)
@@ -143,12 +146,14 @@ public sealed partial class HumanoidProfileEditor
 
         SpawnPriorityButton.SelectId((int)Profile.SpawnPriority);
     }
+    */
 
     /// <summary>
     /// Refreshes the species selector.
     /// </summary>
     public void RefreshSpecies()
     {
+        /* SCP-Foundation : Human only
         SpeciesButton.Clear();
         _species.Clear();
 
@@ -175,6 +180,7 @@ public sealed partial class HumanoidProfileEditor
                 SetSpecies(HumanoidCharacterProfile.DefaultSpecies);
             }
         }
+        */
     }
 
     private void SetSpecies(string newSpecies)

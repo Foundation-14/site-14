@@ -10,10 +10,14 @@
   - type: Clothing
     sprite: _SCP/Clothing/Mask/balaclava.rsi
   - type: IdentityBlocker
-    coverage: MOUTH
+    coverage: FULL
   - type: Tag
     tags:
     - WhitelistChameleon
+  - type: HideLayerClothing
+    layers:
+      Hair: Mask
+      Snout: Mask
   - type: Armor
     modifiers:
       coefficients:
@@ -36,11 +40,13 @@
   - type: BreathMask
   - type: IngestionBlocker
   - type: IdentityBlocker
+    coverage: FULL
   - type: Tag
     tags:
     - WhitelistChameleon
   - type: HideLayerClothing
     layers:
+      Hair: Mask
       Snout: Mask
     hideOnToggle: true
   - type: Armor
@@ -65,11 +71,13 @@
   - type: BreathMask
   - type: IngestionBlocker
   - type: IdentityBlocker
+    coverage: FULL
   - type: Tag
     tags:
     - WhitelistChameleon
   - type: HideLayerClothing
     layers:
+      Hair: Mask
       Snout: Mask
     hideOnToggle: true
   - type: Armor

@@ -19,7 +19,7 @@ namespace Content.IntegrationTests.Tests.Round;
 [TestFixture]
 public sealed class JobTest : GameTest
 {
-    private static readonly ProtoId<JobPrototype> Passenger = "SCPClassD"; // Foundation-14
+    private static readonly ProtoId<JobPrototype> Passenger = "JobSCPClassD"; // Foundation-14
     private static readonly ProtoId<JobPrototype> Engineer = "StationEngineer";
     private static readonly ProtoId<JobPrototype> Captain = "Captain";
 

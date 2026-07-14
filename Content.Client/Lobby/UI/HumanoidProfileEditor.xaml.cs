@@ -193,12 +193,14 @@ namespace Content.Client.Lobby.UI
 
             RefreshSpecies();
 
+            /* SCP-Foundation : Human only
             SpeciesButton.OnItemSelected += args =>
             {
                 SpeciesButton.SelectId(args.Id);
                 SetSpecies(_species[args.Id].ID);
                 OnSkinColorOnValueChanged();
             };
+            */
 
             #region Skin
 
@@ -216,7 +218,8 @@ namespace Content.Client.Lobby.UI
 
             #endregion
 
-            #region SpawnPriority
+            /* SCP-Foundation
+            // #region SpawnPriority
 
             foreach (var value in Enum.GetValues<SpawnPriorityPreference>())
             {
@@ -229,7 +232,8 @@ namespace Content.Client.Lobby.UI
                 SetSpawnPriority((SpawnPriorityPreference)args.Id);
             };
 
-            #endregion SpawnPriority
+            // #endregion SpawnPriority
+            */
 
             #region Eyes
 
@@ -310,7 +314,7 @@ namespace Content.Client.Lobby.UI
                 ReloadPreview();
             };
 
-            SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed;
+            // SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed; SCP-Foundation : Human only
 
             UpdateSpeciesGuidebookIcon();
             IsDirty = false;
@@ -371,7 +375,7 @@ namespace Content.Client.Lobby.UI
             UpdateSexControls();
             UpdateGenderControls();
             UpdateSkinColor();
-            UpdateSpawnPriorityControls();
+            // UpdateSpawnPriorityControls(); // SCP-Foundation
             UpdateAgeEdit();
             UpdateEyePickers();
             UpdateSaveButton();

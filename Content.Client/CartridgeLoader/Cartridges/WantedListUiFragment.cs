@@ -102,10 +102,12 @@ public sealed partial class WantedListUiFragment : BoxContainer
             "wanted-list-job-label",
             ("job", record.TargetInfo.JobTitle.ToLower())
         ));
+        /* SCP-Foundation : Human only
         TargetSpecies.SetMessage(GetLoc(
             "wanted-list-species-label",
             ("species", record.TargetInfo.Species.ToLower())
         ));
+        */
         TargetGender.SetMessage(GetLoc(
             "wanted-list-gender-label",
             ("gender", record.TargetInfo.Gender)

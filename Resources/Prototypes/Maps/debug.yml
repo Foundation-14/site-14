@@ -11,6 +11,7 @@
           mapNameTemplate: "Empty"
         - type: StationJobs
           availableJobs:
+            JobSCPClassD: [ -1, -1 ] # Foundation-14
             Passenger: [ -1, -1 ]
 
 - type: gameMap

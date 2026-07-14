@@ -66,7 +66,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ CentralCommand ]
+    allowedDepartments: [  ] # [ CentralCommand  ] # SCP-Foundation
 
 - type: entity
   id: BaseCommandContraband
@@ -74,7 +74,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Command ]
+    allowedDepartments: [  ] # [ Command ] # SCP-Foundation
 
 - type: entity
   id: BaseSecurityContraband
@@ -82,7 +82,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Security ]
+    allowedDepartments: [  ] # [ Security ] # SCP-Foundation
 
 - type: entity
   id: BaseEngineeringContraband
@@ -90,7 +90,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Engineering ]
+    allowedDepartments: [  ] # [ Engineering ] # SCP-Foundation
 
 - type: entity
   id: BaseScienceContraband
@@ -98,7 +98,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Science ]
+    allowedDepartments: [  ] # [ Science ] # SCP-Foundation
 
 - type: entity
   id: BaseMedicalContraband
@@ -106,7 +106,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Medical ]
+    allowedDepartments: [  ] # [ Medical ] # SCP-Foundation
 
 - type: entity
   id: BaseCivilianContraband
@@ -114,7 +114,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Civilian ]
+    allowedDepartments: [  ] # [ Civilian ] # SCP-Foundation
 
 - type: entity
   id: BaseCargoContraband
@@ -122,7 +122,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Cargo ]
+    allowedDepartments: [  ] # [ Cargo ] # SCP-Foundation
 
 # multiple departments restricted contraband
 - type: entity
@@ -131,7 +131,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ CentralCommand, Command ]
+    allowedDepartments: [  ] # [ CentralCommand, Command ] # SCP-Foundation
 
 - type: entity
   id: BaseSecurityCommandContraband
@@ -139,7 +139,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Security, Command ]
+    allowedDepartments: [  ] # [ Security, Command ] # SCP-Foundation
 
 - type: entity
   id: BaseSecurityScienceCommandContraband
@@ -147,7 +147,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Security, Science, Command ]
+    allowedDepartments: [  ] # [ Security, Science, Command ] # SCP-Foundation
 
 - type: entity
   id: BaseSecurityEngineeringContraband
@@ -155,7 +155,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Security, Engineering ]
+    allowedDepartments: [  ] # [ Security, Engineering ] # SCP-Foundation
 
 - type: entity
   id: BaseSiliconScienceContraband
@@ -163,7 +163,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Science, Silicon ]
+    allowedDepartments: [  ] # [ Science, Silicon ] # SCP-Foundation
 
 - type: entity
   id: BaseSecurityCargoContraband
@@ -171,7 +171,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Security, Cargo ]
+    allowedDepartments: [  ] # [ Security, Cargo ] # SCP-Foundation
 
 - type: entity
   id: BaseMedicalScienceContraband
@@ -179,7 +179,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Medical, Science ]
+    allowedDepartments: [  ] # [ Medical, Science ] # SCP-Foundation
 
 # contraband restricted by job by some degree
 - type: entity
@@ -188,8 +188,8 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Security ]
-    allowedJobs: [ Bartender ]
+    allowedDepartments: [  ] # [ Security ] # SCP-Foundation
+    allowedJobs: [  ] # [ Bartender ] # SCP-Foundation
 
 - type: entity
   id: BaseSecurityLawyerContraband
@@ -197,8 +197,8 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Security ]
-    allowedJobs: [ Lawyer ]
+    allowedDepartments: [  ] # [ Security ] # SCP-Foundation
+    allowedJobs: [  ] # [ Lawyer ] # SCP-Foundation
 
 - type: entity
   id: BaseJanitorContraband
@@ -206,7 +206,7 @@
   abstract: true
   components:
   - type: Contraband
-    allowedJobs: [ Janitor ]
+    allowedJobs: [  ] # [ Janitor ] # SCP-Foundation
 
 # for ~objective items
 - type: entity
@@ -215,4 +215,4 @@
   components:
   - type: Contraband
     severity: GrandTheft
-    allowedDepartments: [ Command ]
+    allowedDepartments: [  ] # [ Command ] # SCP-Foundation

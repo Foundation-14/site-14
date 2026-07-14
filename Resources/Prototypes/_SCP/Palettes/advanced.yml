@@ -1,0 +1,43 @@
+- type: palette
+  id: SCPAdvanced
+  name: Advanced
+  colors:
+    defaultlight: "#999999"
+    defaultmedium: "#73777A"
+    defaultdark: "#353638"
+
+    greylight: "#b3b3b3"
+    grey: "#808080"
+    greydark: "#5b5e61"
+
+    gunmetallight: "#6d7685"
+    gunmetal: "#545c68"
+    gunmetaldark: "#3f444d"
+
+    redlight: "#b82a2f"
+    red: "#8d2125"
+    reddark: "#631719"
+
+    orangelight: "#f07400"
+    orangemedium: "#b95a00"
+    orangedark: "#8a4300"
+
+    yellowlight: "#c2ad86"
+    yellow: "#b19664"
+    yellowdark: "#967c4b"
+
+    brownlight: "#b09061"
+    brown: "#917448"
+    browndark: "#705a38"
+
+    greenlight: "#a8c28d"
+    green: "#8daf6a"
+    greendark: "#769953"
+
+    bluelight: "#8aaec2"
+    blue: "#6a97b0"
+    bluedark: "#507e96"
+
+    mauvelight: "#d4c1d1"
+    mauve: "#bda2ba"
+    mauvedark: "#a885a4"

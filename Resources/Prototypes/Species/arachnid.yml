@@ -1,7 +1,7 @@
 - type: species
   id: Arachnid
   name: species-name-arachnid
-  roundStart: false # SCP-Human only
+  roundStart: false # SCP-Foundation : Human only
   prototype: MobArachnid
   defaultSkinTone: "#385878"
   dollPrototype: AppearanceArachnid

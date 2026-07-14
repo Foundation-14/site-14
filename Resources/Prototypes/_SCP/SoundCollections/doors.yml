@@ -1,0 +1,13 @@
+- type: soundCollection
+  id: SCPDoorClose
+  files:
+  - /Audio/_SCP/Machines/door_close_0.ogg
+  - /Audio/_SCP/Machines/door_close_1.ogg
+  - /Audio/_SCP/Machines/door_close_2.ogg
+
+- type: soundCollection
+  id: SCPDoorOpen
+  files:
+  - /Audio/_SCP/Machines/door_open_0.ogg
+  - /Audio/_SCP/Machines/door_open_1.ogg
+  - /Audio/_SCP/Machines/door_open_2.ogg

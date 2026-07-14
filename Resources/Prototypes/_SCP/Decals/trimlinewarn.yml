@@ -1,0 +1,55 @@
+﻿- type: decal
+  id: trimwarn_East
+  tags: ["station", "trimlinewarn"]
+  sprite:
+    sprite: _SCP/Decals/trimlinewarn.rsi
+    state: warneast
+
+- type: decal
+  id: trimwarn_North
+  tags: ["station", "trimlinewarn"]
+  sprite:
+    sprite: _SCP/Decals/trimlinewarn.rsi
+    state: warnnorth
+
+- type: decal
+  id: trimwarn_NorthEast
+  tags: ["station", "trimlinewarn"]
+  sprite:
+    sprite: _SCP/Decals/trimlinewarn.rsi
+    state: warnnortheast
+
+- type: decal
+  id: trimwarn_NorthWest
+  tags: ["station", "trimlinewarn"]
+  sprite:
+    sprite: _SCP/Decals/trimlinewarn.rsi
+    state: warnnorthwest
+
+- type: decal
+  id: trimwarn_South
+  tags: ["station", "trimlinewarn"]
+  sprite:
+    sprite: _SCP/Decals/trimlinewarn.rsi
+    state: warnsouth
+
+- type: decal
+  id: trimwarn_SouthEast
+  tags: ["station", "trimlinewarn"]
+  sprite:
+    sprite: _SCP/Decals/trimlinewarn.rsi
+    state: warnsoutheast
+
+- type: decal
+  id: trimwarn_SouthWest
+  tags: ["station", "trimlinewarn"]
+  sprite:
+    sprite: _SCP/Decals/trimlinewarn.rsi
+    state: warnsouthwest
+
+- type: decal
+  id: trimwarn_West
+  tags: ["station", "trimlinewarn"]
+  sprite:
+    sprite: _SCP/Decals/trimlinewarn.rsi
+    state: warnwest

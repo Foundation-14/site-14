@@ -103,6 +103,7 @@ public sealed partial class AirlockSystem : SharedAirlockSystem
                 ||  state == DoorState.Opening
                 ||  state == DoorState.Denying
                 || (state == DoorState.Open && comp.OpenUnlitVisible)
+                || (state == DoorState.Closed && comp.OpenUnlitVisible) // SCP-Foundation
                 || (_appearanceSystem.TryGetData<bool>(uid, DoorVisuals.ClosedLights, out var closedLights, args.Component) && closedLights))
                     && !boltedVisible && !emergencyLightsVisible;
         }
