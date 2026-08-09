@@ -1,5 +1,3 @@
-﻿defaultWindowTitle: Space Station 14
-windowIconSet: /Textures/Logo/icon
-splashLogo: /Textures/Logo/logo.png
-
-# PJB PLEASE
+﻿defaultWindowTitle: Foundation 14
+windowIconSet: /Textures/_SCP/Logo/icon
+splashLogo: /Textures/_SCP/Logo/logo.png
