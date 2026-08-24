@@ -25,7 +25,7 @@ public abstract partial class CESharedZLevelsSystem : EntitySystem
     [Dependency] private INetManager _net = null!;
     [Dependency] private IGameTiming _timing = null!;
     [Dependency] private IConfigurationManager _config = null!;
-    [Dependency] private IMapManager _mapManager = null!;
+    [Dependency] private SharedMapSystem _mapManager = null!;
 
     [Dependency] private SharedPhysicsSystem _physicsSystem = null!;
     [Dependency] private SharedTransformSystem _transform = null!;
