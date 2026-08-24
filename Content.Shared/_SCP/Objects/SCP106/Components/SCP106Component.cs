@@ -58,17 +58,17 @@ public sealed partial class SCP106Component : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public float ParalyzeTime = 3f;
 
-    [DataField("portalId", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    [DataField("portalId")]
     [ViewVariables(VVAccess.ReadOnly)]
-    public string PortalId = "SCP106Portal";
+    public EntProtoId PortalId = "SCP106Portal";
 
-    [DataField("trapId", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    [DataField("trapId")]
     [ViewVariables(VVAccess.ReadOnly)]
-    public string TrapId = "SCP106Trap";
+    public EntProtoId TrapId = "SCP106Trap";
 
     [DataField]
     [ViewVariables(VVAccess.ReadOnly)]
-    public string LabelKey = "SCP106MainRoom";
+    public EntProtoId LabelKey = "SCP106MainRoom";
 
     [DataField]
     [ViewVariables(VVAccess.ReadOnly)]

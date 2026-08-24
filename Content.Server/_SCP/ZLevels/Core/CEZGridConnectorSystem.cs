@@ -20,9 +20,8 @@ namespace Content.Server._CE.ZLevels.Core;
 public sealed partial class CEZGridConnectorSystem : EntitySystem
 {
     [Dependency] private CEZLevelsSystem _zLevels = default!;
-    [Dependency] private SharedMapSystem _mapManager = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
-    [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private SharedMapSystem _map = default!;
 
     [Dependency] private EntityQuery<CEZGridComponent> _zgridQuery = default!;
     [Dependency] private EntityQuery<CEZGridNetworkComponent> _zgridNetworkQuery = default!;
@@ -234,13 +233,13 @@ public sealed partial class CEZGridConnectorSystem : EntitySystem
                 continue;
 
             var worldPos = _transform.GetWorldPosition(connectorUid);
-            if (!_mapManager.TryFindGridAt(aboveMap.Owner, worldPos, out var upperGridUid, out var upperGrid))
+            if (!_map.TryFindGridAt(aboveMap.Owner, worldPos, out var upperGridUid, out var upperGrid))
                 continue;
             if (upperGridUid == lowerGridUid)
                 continue;
 
             // TryFindGridAt matches by AABB — verify the tile at this position actually exists
-            if (!_mapSystem.TryGetTileRef(upperGridUid, upperGrid, worldPos, out var tileRef) || tileRef.Tile.IsEmpty)
+            if (!_map.TryGetTileRef(upperGridUid, upperGrid, worldPos, out var tileRef) || tileRef.Tile.IsEmpty)
                 continue;
 
             if (!_adj.TryGetValue(lowerGridUid, out var lowerNeighbors))

@@ -8,7 +8,7 @@ namespace Content.Server._SCP.TeslaGate.Components;
 [RegisterComponent]
 public sealed partial class TeslaGateComponent : Component
 {
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
+    [DataField]
     public string ToggleTeslaGatePort = "ToggleTeslaGate";
 
     [ViewVariables(VVAccess.ReadOnly)]
