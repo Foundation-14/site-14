@@ -8,17 +8,11 @@
     collection: FootstepPlating
   baseTurf: Lattice
 
-# - type: tile
-#   id: BasePlating
-#   abstract: true
-#   friction: 1.5
-#   heatCapacity: 10000
-#   isSubfloor: true
-#   footstepSounds:
-#     collection: FootstepPlating
-#   baseTurf: Lattice
-#   baseWhitelist:
-#     - TrainLattice
+- type: tile
+  id: Plating
+  parent: BasePlating
+  name: tiles-plating
+  sprite: /Textures/Tiles/plating.png
 
 - type: tile
   id: PlatingDamaged
@@ -75,11 +69,11 @@
   isSubfloor: true
   deconstructTools: [ Cutting ]
   weather: true
-  transparent: true # SCP-Foundation
   footstepSounds:
     collection: FootstepCatwalk
   friction: 1.5
   isSpace: true
+  transparent: true # SCP-Foundation
   itemDrop: PartRodMetal1
   heatCapacity: 10000
   mass: 200

@@ -32,7 +32,7 @@
       0: Alive
       2000: Dead
   - type: BlinkingTrigger
-  - type: Muted
+  - type: MutedStatusEffect
   - type: Damageable
     damageModifierSet: SCP173ModifierSet
   - type: Injurable

@@ -5,6 +5,7 @@
   sprite: /Textures/Tiles/Glass/glass.png
   footstepSounds:
     collection: FootstepTile
+  transparent: true # SCP-Foundation
   itemDrop: SheetGlass1
 
 - type: tile
@@ -14,6 +15,7 @@
   sprite: /Textures/Tiles/Glass/glass-reinf.png
   footstepSounds:
     collection: FootstepTile
+  transparent: true # SCP-Foundation
   itemDrop: SheetRGlass1
 
 - type: tile
@@ -23,6 +25,7 @@
   sprite: /Textures/Tiles/Glass/glass-plasma.png
   footstepSounds:
     collection: FootstepTile
+  transparent: true # SCP-Foundation
   itemDrop: SheetPlasma1
 
 - type: tile
@@ -32,6 +35,7 @@
   sprite: /Textures/Tiles/Glass/glass-uranium.png
   footstepSounds:
     collection: FootstepTile
+  transparent: true # SCP-Foundation
   itemDrop: SheetUranium1
 
 - type: tile
@@ -41,4 +45,5 @@
   sprite: /Textures/Tiles/Glass/glass-plastitanium.png
   footstepSounds:
     collection: FootstepTile
+  transparent: true # SCP-Foundation
   itemDrop: SheetPlasma1
