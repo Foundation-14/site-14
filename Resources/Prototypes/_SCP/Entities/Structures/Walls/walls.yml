@@ -26,9 +26,7 @@
             MetalLaserImpact
     - type: ExaminableDamage
       messages: WindowMessages
-    - type: Tag
-      tags:
-      - Wall
+    - type: Wall
     - type: IsRoof
     - type: Sprite
       drawdepth: Walls

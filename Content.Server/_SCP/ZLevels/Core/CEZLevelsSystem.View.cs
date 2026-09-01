@@ -37,7 +37,6 @@ public sealed partial class CEZLevelsSystem
         SubscribeLocalEvent<CEZLevelViewerComponent, ComponentRemove>(OnCompRemove);
 
         SubscribeLocalEvent<CEZLevelViewerComponent, MapUidChangedEvent>(OnViewerMapUidChanged);
-        SubscribeLocalEvent<CEZPhysicsComponent, CEZLevelFallMapEvent>(OnZLevelFall);
     }
 
     private void UpdateView(float frameTime)
@@ -121,21 +120,17 @@ public sealed partial class CEZLevelsSystem
             eyes.Add(newEye);
         }
 
-        // We constantly load the upper z-level for the client so that you can quickly look up and climb stairs without PVS lag.
-        if (TryMapUp(map.Value, out var aboveMapUid))
+        // We constantly load the upper z-levels for the client so that you can quickly look up and climb stairs without PVS lag.
+        for (var i = 1; i <= MaxZLevelsAboveRendering; i++)
         {
-            var newEye = SpawnAtPosition(_zEyeProto, new EntityCoordinates(aboveMapUid, globalPos));
+            if (!TryMapOffset(map.Value, i, out var mapUidAbove))
+                break;
+
+            var newEye = SpawnAtPosition(_zEyeProto, new EntityCoordinates(mapUidAbove, globalPos));
 
             Transform(newEye).GridTraversal = false;
             _viewSubscriber.AddViewSubscriber(newEye, actor.PlayerSession);
             eyes.Add(newEye);
         }
-    }
-
-    private void OnZLevelFall(Entity<CEZPhysicsComponent> ent, ref CEZLevelFallMapEvent args)
-    {
-        //A dirty trick: we call PredictedPopup on the falling entity on SERVER.
-        //This means that the one who is falling does not see the popup itself, but everyone around them does. This is what we need.
-        _popup.PopupPredictedCoordinates(Loc.GetString("ce-zlevel-falling-popup", ("name", Identity.Name(ent, EntityManager))), Transform(ent).Coordinates, ent);
     }
 }

@@ -18,11 +18,9 @@ namespace Content.Client.Viewport;
 
 public sealed partial class ScalingViewport
 {
-    [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private IEyeManager _eyeManager = default!;
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private ITileDefinitionManager _tile = default!;
-    [Dependency] private IOverlayManager _overlayManager = default!;
 
     private CEClientZLevelsSystem? _zLevels;
     private SharedMapSystem? _mapSystem;
@@ -70,7 +68,7 @@ public sealed partial class ScalingViewport
         var mapCoordsBottomLeft = new MapCoordinates(new Vector2(minX, minY), mapId);
         var mapCoordsTopRight = new MapCoordinates(new Vector2(maxX, maxY), mapId);
 
-        if (_mapSystem is null || !_map.TryFindGridAt(mapUid, mapCoordsBottomLeft.Position, out var gridUid, out var grid))
+        if (_mapSystem is null || !_mapSystem.TryFindGridAt(mapUid, mapCoordsBottomLeft.Position, out var gridUid, out var grid))
             return true;
 
         var tileBottomLeft = _mapSystem.TileIndicesFor(gridUid, grid, mapCoordsBottomLeft);
@@ -117,7 +115,9 @@ public sealed partial class ScalingViewport
         if (playerXform.MapUid is null)
             return;
 
-        var lookUp = zLevelViewer.LookUp ? 1 : 0;
+        var lookUp = 0;
+        if (zLevelViewer.LookUp)
+            lookUp = _zLevels.GetVisibleZLevelsAbove(_player.LocalEntity.Value, playerXform.MapUid);
 
         var lowestDepth = 0;
         for (var i = 0; i >= -CESharedZLevelsSystem.MaxZLevelsBelowRendering; i--)
@@ -138,53 +138,13 @@ public sealed partial class ScalingViewport
                 break;
         }
 
-        // Try to locate the placement overlay so we can temporarily disable it while rendering z-levels
-        Overlay? placementOverlay = null;
-
-        // Search for placement overlay by type name
-        // yeah i know this is junky af but i don't have any other solutions
-        foreach (var overlay in _overlayManager.AllOverlays)
-        {
-            if (overlay.GetType().Name == "PlacementOverlay")
-            {
-                placementOverlay = overlay;
-                break;
-            }
-        }
-
-        var placementRemoved = false;
-
         //From the lowest depth to the highest, render each level
         for (var depth = lowestDepth; depth <= lookUp; depth++)
         {
             if (depth == 0)
-            {
                 viewport.Eye = _fallbackEye;
-
-                // Restore placement overlay for the base layer
-                if (placementRemoved && placementOverlay is not null)
-                {
-                    try
-                    {
-                        _overlayManager.AddOverlay(placementOverlay);
-                        placementRemoved = false;
-                    }
-                    catch { }
-                }
-            }
             else
             {
-                // Remove placement overlay before rendering z-levels so it will only display on ours
-                if (!placementRemoved && placementOverlay is not null)
-                {
-                    try
-                    {
-                        _overlayManager.RemoveOverlay(placementOverlay);
-                        placementRemoved = true;
-                    }
-                    catch { }
-                }
-
                 if (!_zLevels.TryMapOffset(playerXform.MapUid.Value, depth, out var mapUidBelow))
                     continue;
 
@@ -207,16 +167,6 @@ public sealed partial class ScalingViewport
 
             viewport.ClearColor = depth == lowestDepth ? Color.Black : null;
             viewport.Render();
-        }
-
-        // Restore placement overlay
-        if (placementRemoved && placementOverlay is not null)
-        {
-            try
-            {
-                _overlayManager.AddOverlay(placementOverlay);
-            }
-            catch { }
         }
 
         // Restore the Eye

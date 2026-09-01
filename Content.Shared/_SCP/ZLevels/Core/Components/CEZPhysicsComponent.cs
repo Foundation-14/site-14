@@ -25,7 +25,7 @@ public sealed partial class CEZPhysicsComponent : Component
     /// The current height of the entity within the current Z-level.
     /// Takes values from 0 to 1. If the value rises above 1, the entity moves up to the next level and the value is normalized.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [ViewVariables, AutoNetworkedField]
     public float LocalPosition;
 
     /// Optimization Caches
@@ -38,7 +38,7 @@ public sealed partial class CEZPhysicsComponent : Component
     // Physics
 
     [DataField, AutoNetworkedField]
-    public float Bounciness;
+    public float Bounciness = 0.3f;
 
     [DataField, AutoNetworkedField]
     public float GravityMultiplier = 1f;
@@ -73,6 +73,10 @@ public sealed partial class CEZPhysicsComponent : Component
     [DataField]
     public bool VelocityGravity = true;
 
+    /// <summary>
+    /// If true, CEGetZVelocityEvent is raised every physics tick so systems (e.g. flight) can adjust Velocity.
+    /// Off by default to avoid the event overhead for entities that never need custom vertical control.
+    /// </summary>
     [DataField]
     public bool VelocityRaiseEvent;
 
@@ -112,4 +116,10 @@ public sealed partial class CEZPhysicsComponent : Component
     public float TimeToSleep = 2f;
 
     #endregion
+
+    /// <summary>
+    /// While true, ProcessZPhysics skips this entity entirely: no gravity, no ground sync, no BodyStatus sync.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool Disabled;
 }

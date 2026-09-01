@@ -1,3 +1,4 @@
+using Content.Shared._CE.ZLevels.Tiles; // Foundation-14
 using Content.Shared.Tools.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -6,7 +7,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Tools.Components;
 
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(SharedToolSystem))]
+[Access(typeof(SharedToolSystem), typeof(CEZLevelToolTileSystem))] // Foundation-14 +CEZLevelToolTileSystem
 public sealed partial class ToolComponent : Component
 {
     [DataField]
