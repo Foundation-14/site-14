@@ -9,6 +9,7 @@
   - type: ComplexInteraction
   - type: Sprite
     drawdepth: Mobs
+    scale: 1.25, 1.25
     sprite: _SCP/Entities/Mobs/Players/SCP/scp173.rsi
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]

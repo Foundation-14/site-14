@@ -1,26 +1,28 @@
 - type: entity
+  parent: BaseMentalAction
   id: CEActionZLevelUp
   name: Move up
   description: Move up one Z-Level
   components:
-  - type: Action
-    checkCanInteract: false
-    icon:
-      sprite: _SCP/Actions/misc.rsi
-      state: up
+  - type: Sprite
+    sprite: _SCP/Actions/misc.rsi
+    layers:
+    - state: up
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:CEZLevelActionUp
 
 - type: entity
+  parent: BaseMentalAction
   id: CEActionZLevelDown
   name: Move down
   description: Move down one Z-Level
   components:
-  - type: Action
-    checkCanInteract: false
-    icon:
-      sprite: _SCP/Actions/misc.rsi
-      state: down
+  - type: Sprite
+    sprite: _SCP/Actions/misc.rsi
+    layers:
+    - state: down
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:CEZLevelActionDown
 
@@ -32,9 +34,11 @@
   components:
   - type: Action
     checkCanInteract: false
-    icon:
-      sprite: _SCP/Actions/misc.rsi
-      state: eye_down
-    iconOn:
-      sprite: _SCP/Actions/misc.rsi
-      state: eye_up
+  - type: Sprite
+    sprite: _SCP/Actions/misc.rsi
+    layers:
+    - state: eye_up
+      map: ["enum.ActionVisuals.Icon"]
+    - state: eye_down
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false

@@ -80,7 +80,7 @@
           - WallLayer
           density: 1000
 
-# Stripe region
+#region Stripe
 - type: entity
   parent: SCPBaseStructureWall
   id: SCPStripeWhite
@@ -231,7 +231,7 @@
   - type: Icon
     sprite: _SCP/Structures/Walls/stripe.rsi
 
-# Frame region
+#region Frame
 - type: entity
   parent: SCPBaseStructureWall
   id: SCPWallFrame
@@ -288,52 +288,41 @@
         layer:
         - TableLayer
 
-# MetalWall region
+#region MetalWall
 - type: entity
   parent: SCPBaseWall
   id: SCPWallMetal
   name: metal wall
   components:
-  - type: Sprite
-    sprite: _SCP/Structures/Walls/metal.rsi
-    color: "#7F7F75"
-  - type: Icon
-    sprite: _SCP/Structures/Walls/metal.rsi
-  - type: IconSmooth
-    key: walls
-    base: base
+    - type: Sprite
+      sprite: Structures/Walls/solid.rsi
+    - type: Icon
+      sprite: Structures/Walls/solid.rsi
+    - type: IconSmooth
+      key: walls
+      base: solid
 
 - type: entity
-  parent: SCPBaseWall
+  parent: SCPWallMetal
   id: SCPWallMetalMetallic
   name: metal wall
   suffix: SCPStructure, Metallic
   components:
-  - type: Sprite
-    sprite: _SCP/Structures/Walls/metal.rsi
-    color: "#505050"
-  - type: Icon
-    sprite: _SCP/Structures/Walls/metal.rsi
-  - type: IconSmooth
-    key: walls
-    base: base
+    - type: Sprite
+      sprite: Structures/Walls/solid.rsi
+      color: "#888888"
 
 - type: entity
-  parent: SCPBaseWall
+  parent: SCPWallMetal
   id: SCPWallMetalGreen
   name: metal wall
   suffix: SCPStructure, Green
   components:
-  - type: Sprite
-    sprite: _SCP/Structures/Walls/metal.rsi
-    color: "#223322"
-  - type: Icon
-    sprite: _SCP/Structures/Walls/metal.rsi
-  - type: IconSmooth
-    key: walls
-    base: base
+    - type: Sprite
+      sprite: Structures/Walls/solid.rsi
+      color: "#007200"
 
-# SolidWall region
+#region SolidWall
 - type: entity
   parent: SCPBaseWall
   id: SCPWallSolid
@@ -341,7 +330,6 @@
   components:
     - type: Sprite
       sprite: _SCP/Structures/Walls/base.rsi
-      color: "#7F7F75"
     - type: Icon
       sprite: _SCP/Structures/Walls/base.rsi
     - type: IconSmooth
@@ -367,11 +355,9 @@
   name: solid wall
   suffix: SCPStructure, Metallic
   components:
-  - type: Sprite
-    sprite: _SCP/Structures/Walls/base.rsi
-    color: "#505050"
-  - type: Icon
-    sprite: _SCP/Structures/Walls/base.rsi
+    - type: Sprite
+      sprite: _SCP/Structures/Walls/base.rsi
+      color: "#888888"
   
 - type: entity
   parent: SCPWallSolid
@@ -379,23 +365,21 @@
   name: solid wall
   suffix: SCPStructure, Green
   components:
-  - type: Sprite
-    sprite: _SCP/Structures/Walls/base.rsi
-    color: "#223322"
-  - type: Icon
-    sprite: _SCP/Structures/Walls/base.rsi
+    - type: Sprite
+      sprite: _SCP/Structures/Walls/base.rsi
+      color: "#007200"
 
-# ReinforcedWall region
+#region ReinforcedWall
 - type: entity
   parent: SCPBaseWall
   id: SCPWallReinforced
   name: reinforced wall
   components:
     - type: Sprite
-      sprite: _SCP/Structures/Walls/reinf-over.rsi
-      color: "#7F7F75"
+      sprite: Structures/Walls/solid.rsi
     - type: Icon
-      sprite: _SCP/Structures/Walls/reinf-over.rsi
+      sprite: Structures/Walls/solid.rsi
+      state: rgeneric
     - type: IconSmooth
       key: walls
       base: reinf_over
@@ -419,11 +403,9 @@
   name: reinforced wall
   suffix: SCPStructure, Metallic
   components:
-  - type: Sprite
-    sprite: _SCP/Structures/Walls/reinf-over.rsi
-    color: "#505050"
-  - type: Icon
-    sprite: _SCP/Structures/Walls/reinf-over.rsi
+    - type: Sprite
+      sprite: Structures/Walls/solid.rsi
+      color: "#888888"
 
 - type: entity
   parent: SCPWallReinforced
@@ -431,8 +413,6 @@
   name: reinforced wall
   suffix: SCPStructure, Green
   components:
-  - type: Sprite
-    sprite: _SCP/Structures/Walls/reinf-over.rsi
-    color: "#223322"
-  - type: Icon
-    sprite: _SCP/Structures/Walls/reinf-over.rsi
+    - type: Sprite
+      sprite: Structures/Walls/solid.rsi
+      color: "#007200"

@@ -151,7 +151,6 @@
     sprite: _SCP/Structures/Doors/default.rsi
     layers:
     - state: wall
-      color: "#7F7F75"
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
     - state: closed_unlit
@@ -177,7 +176,7 @@
     sprite: _SCP/Structures/Doors/default.rsi
     layers:
     - state: wall
-      color: "#505050"
+      color: "#888888"
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
     - state: closed_unlit
