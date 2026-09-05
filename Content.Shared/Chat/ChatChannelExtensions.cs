@@ -6,14 +6,14 @@ public static class ChatChannelExtensions
     {
         return channel switch
         {
-            ChatChannel.Server => Color.Orange,
+            ChatChannel.Server => Color.White, // SCP-Foundation
             ChatChannel.Radio => Color.LimeGreen,
-            ChatChannel.LOOC => Color.MediumTurquoise,
-            ChatChannel.OOC => Color.LightSkyBlue,
+            ChatChannel.LOOC => Color.PaleGreen, // SCP-Foundation
+            ChatChannel.OOC => Color.Orange, // SCP-Foundation
             ChatChannel.Dead => Color.MediumPurple,
-            ChatChannel.Admin => Color.Red,
-            ChatChannel.AdminAlert => Color.Red,
-            ChatChannel.AdminChat => Color.HotPink,
+            ChatChannel.Admin => Color.Gold, // SCP-Foundation
+            ChatChannel.AdminAlert => Color.Gold, // SCP-Foundation
+            ChatChannel.AdminChat => Color.DarkRed, // SCP-Foundation
             ChatChannel.Whisper => Color.DarkGray,
             _ => Color.LightGray
         };

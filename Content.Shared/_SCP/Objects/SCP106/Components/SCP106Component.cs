@@ -101,7 +101,7 @@ public sealed partial class SCP106Component : Component
     {
         DamageDict = new()
         {
-            { "Shock", -13 }
+            { "Shock", -150 }
         }
     };
 

@@ -67,10 +67,12 @@
   - type: Perishable
   - type: AmbientSound
     enabled: true
-    volume: -7
+    volume: -6
     range: 7
     sound:
       collection: SCP939Breath
+      params:
+        variation: 0.128
   - type: FootstepModifier
     footstepSoundCollection:
       collection: SCP939FootstepCollection

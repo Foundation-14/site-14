@@ -20,10 +20,16 @@
   - type: SCP173
     soundSCP173Blind:
       collection: SCP173Blind
+      params:
+        variation: 0.128
     soundDamage:
       collection: SCP173Damage
+      params:
+        variation: 0.128
     soundStepNoises:
       collection: SCP173Noises
+      params:
+        variation: 0.128
   - type: MobState
     allowedStates:
     - Alive

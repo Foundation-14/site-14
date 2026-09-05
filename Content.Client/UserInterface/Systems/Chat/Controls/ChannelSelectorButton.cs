@@ -60,10 +60,10 @@ public sealed class ChannelSelectorButton : ChatPopupButton<ChannelSelectorPopup
         return channel switch
         {
             ChatSelectChannel.Radio => Color.LimeGreen,
-            ChatSelectChannel.LOOC => Color.MediumTurquoise,
-            ChatSelectChannel.OOC => Color.LightSkyBlue,
+            ChatSelectChannel.LOOC => Color.PaleGreen, // SCP-Foundation
+            ChatSelectChannel.OOC => Color.Orange, // SCP-Foundation
             ChatSelectChannel.Dead => Color.MediumPurple,
-            ChatSelectChannel.Admin => Color.HotPink,
+            ChatSelectChannel.Admin => Color.DarkRed, // SCP-Foundation
             _ => Color.DarkGray
         };
     }

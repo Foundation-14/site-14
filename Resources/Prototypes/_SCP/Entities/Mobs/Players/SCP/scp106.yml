@@ -26,7 +26,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      300: Critical
+      250: Critical
   - type: Damageable
     damageModifierSet: SCP106ModifierSet
   - type: Injurable
@@ -64,14 +64,24 @@
   - type: SCP106
     soundDamage:
       path: /Audio/_SCP/Effects/SCP106/damage.ogg
+      params:
+        variation: 0.128
     soundSpawnTrap:
       collection: SCP106Corrosion
+      params:
+        variation: 0.128
     soundSpawnPortal:
       collection: SCP106Corrosion
+      params:
+        variation: 0.128
     soundTeleport:
       collection: SCP106Corrosion
+      params:
+        variation: 0.128
     soundEnterPD:
       collection: SCP106PD
+      params:
+        variation: 0.128
   - type: StatusEffects
     allowed:
     - Stun
@@ -91,10 +101,12 @@
       params:
         volume: -5
         maxDistance: 7
+        variation: 0.128
   - type: FootstepModifier
     footstepSoundCollection:
       collection: SCP106FootstepCollection
       params:
+        variation: 0.128
         volume: -5
         maxDistance: 7
   - type: Tag
