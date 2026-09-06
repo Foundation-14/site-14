@@ -25,7 +25,7 @@ public sealed partial class SCP106FemurBreakerComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public SoundSpecifier? DamageSound = default!;
 
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
+    [DataField]
     public string ActivateSCP106FemurBreakerPort = "SCP106FemurBreaker";
 
     [ViewVariables(VVAccess.ReadOnly)]

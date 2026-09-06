@@ -6,7 +6,7 @@
 
 # Fond
 - type: entity
-  parent: SCPClothingUniformBase
+  parent: [ SCPClothingUniformBase, ClothingUniformFoldableBase]
   id: SCPClothingUniformClassD
   name: class D personnel uniform
   description: Basic prisoner's uniform, the only difference - he's part of the Foundation.

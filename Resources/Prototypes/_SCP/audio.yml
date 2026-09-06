@@ -4,7 +4,6 @@
     params:
       volume: -12
     collection: AmbienceGeneral
-  rules: AlwaysTrue
 
 - type: soundCollection
   id: AmbienceGeneral
@@ -53,8 +52,3 @@
     - /Audio/_SCP/Ambience/Zone3/Ambient10.ogg
     - /Audio/_SCP/Ambience/Zone3/Ambient11.ogg
     - /Audio/_SCP/Ambience/Zone3/ToZone3.ogg
-
-- type: rules
-  id: AlwaysTrue
-  rules:
-    - !type:AlwaysTrueRule

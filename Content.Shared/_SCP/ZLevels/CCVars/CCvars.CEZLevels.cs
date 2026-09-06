@@ -49,4 +49,46 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<int>
         CEZLevelsRenderingMaxZLevelsBelowRendering = CVarDef.Create("ce.zlevels.rendering.max_zLevels_below_rendering", 1, CVar.SERVER | CVar.REPLICATED);
+
+    /**
+     * Lighting
+     */
+
+    /// <summary>Whether lights from upper z-levels bleed down through open tiles.</summary>
+    public static readonly CVarDef<bool>
+        CEZLevelsLightEnabled = CVarDef.Create("ce.zlevels.light.enabled", true, CVar.ARCHIVE | CVar.CLIENT);
+
+    /// <summary>Maximum number of upper z-levels scanned for lights.</summary> 
+    public static readonly CVarDef<int>
+        CEZLevelsLightMaxLevels = CVarDef.Create("ce.zlevels.light.max_levels", 2, CVar.ARCHIVE | CVar.CLIENT);
+
+    /// <summary>Light transmission per z-level.</summary>
+    public static readonly CVarDef<float>
+        CEZLevelsLightTransmission = CVarDef.Create("ce.zlevels.light.transmission", 0.55f, CVar.ARCHIVE | CVar.CLIENT);
+
+    /// <summary>Whether walls block light from reaching openings.</summary>
+    public static readonly CVarDef<bool>
+        CEZLevelsLightOcclusion = CVarDef.Create("ce.zlevels.light.occlusion", true, CVar.ARCHIVE | CVar.CLIENT);
+
+    /// <summary>Maximum number of lights processed per upper z-level.</summary>
+    public static readonly CVarDef<int>
+        CEZLevelsLightMaxLights = CVarDef.Create("ce.zlevels.light.max_lights", 64, CVar.ARCHIVE | CVar.CLIENT);
+
+    /**
+     * Audio
+     */
+
+    /// <summary>
+    /// How many decibels of volume are subtracted from a PVS-positioned sound for every Z-level
+    /// it is away from the listener.
+    /// </summary>
+    public static readonly CVarDef<float>
+        CEZLevelsAudioPerLevelAttenuation = CVarDef.Create("ce.zlevels.audio.per_level_attenuation_db", 9f, CVar.ARCHIVE | CVar.CLIENT);
+
+    /// <summary>
+    /// Occlusion added to a cross-Z-level sound when an opaque tile blocks the floor/ceiling between
+    /// the source and the listener, on top of the flat per-level attenuation.
+    /// </summary>
+    public static readonly CVarDef<float>
+        CEZLevelsAudioFloorOcclusion = CVarDef.Create("ce.zlevels.audio.floor_occlusion", 3f, CVar.ARCHIVE | CVar.CLIENT);
 }

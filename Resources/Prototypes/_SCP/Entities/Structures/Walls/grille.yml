@@ -61,35 +61,12 @@
 
 # Base Grille
 - type: entity
-  id: SCPGrille
-  parent: SCPBaseStructureGrille
-  categories: [ ForkFiltered ]
-  components:
-    - type: Sprite
-      sprite: _SCP/Structures/Grilles/grille.rsi
-      color: "#656565"
-    - type: Icon
-      sprite: _SCP/Structures/Grilles/grille.rsi
-    - type: IconSmooth
-      key: walls
-      base: grille
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          layer:
-          - GlassLayer
-
-- type: entity
   id: SCPGrilleFrame
   parent: SCPBaseStructureGrille
   categories: [ ForkFiltered ]
   components:
     - type: Sprite
       sprite: _SCP/Structures/Grilles/grille-frame.rsi
-      color: "#656565"
     - type: Icon
       sprite: _SCP/Structures/Grilles/grille-frame.rsi
     - type: IconSmooth

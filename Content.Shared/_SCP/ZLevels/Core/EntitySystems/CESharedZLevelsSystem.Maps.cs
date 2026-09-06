@@ -6,6 +6,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared._CE.ZLevels.Core.Components;
+using Content.Shared.Chasm;
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
@@ -71,6 +72,29 @@ public abstract partial class CESharedZLevelsSystem
     [PublicAPI]
     public bool TryMapDown(Entity<CEZMapComponent?> inputMapUid, out Entity<CEZMapComponent> belowMapUid) =>
         TryMapOffset(inputMapUid, -1, out belowMapUid);
+
+    /// <summary>
+    /// Returns how many z-levels apart two maps in the same z-network are (positive if <paramref name="mapB"/>
+    /// is above <paramref name="mapA"/>, negative if below). O(1) via <see cref="CEZMapComponent.Depth"/>,
+    /// unlike walking <see cref="TryMapOffset"/> level by level.
+    /// </summary>
+    [PublicAPI]
+    public bool TryGetZLevelOffset(Entity<CEZMapComponent?> mapA, Entity<CEZMapComponent?> mapB, out int offset)
+    {
+        offset = 0;
+
+        if (mapA.Owner == mapB.Owner)
+            return true;
+
+        if (!Resolve(mapA, ref mapA.Comp, false) || !Resolve(mapB, ref mapB.Comp, false))
+            return false;
+
+        if (mapA.Comp.NetworkUid != mapB.Comp.NetworkUid)
+            return false;
+
+        offset = mapB.Comp.Depth - mapA.Comp.Depth;
+        return true;
+    }
 
     /// <summary>
     /// Returns a list of all maps above the specified map. The closest map at the top is returned first.

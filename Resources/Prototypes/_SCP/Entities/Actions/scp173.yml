@@ -1,30 +1,36 @@
 - type: entity
+  parent: BaseAction
   id: ActionSCP173Blind
   name: Blind
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     useDelay: 30
-    icon:
-      sprite: Interface/Actions/voice-mask.rsi
-      state: icon
     itemIconStyle: NoItem
     priority: 13
+  - type: Sprite
+    sprite: Interface/Actions/voice-mask.rsi
+    layers:
+    - state: icon
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:SCP173BlindEvent
 
 - type: entity
+  parent: BaseAction
   id: ActionSCP173Dash
   name: Dash
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     useDelay: 0
-    icon:
-      sprite: Interface/Actions/actions_mecha.rsi
-      state: mech_damtype_brute
     itemIconStyle: NoItem
     priority: 12
+  - type: Sprite
+    sprite: Interface/Actions/actions_mecha.rsi
+    layers:
+    - state: mech_damtype_brute
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     range: 16
     repeat: false

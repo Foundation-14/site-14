@@ -96,12 +96,14 @@
       params:
         volume: -5
         maxDistance: 7
+        variation: 0.128
   - type: FootstepModifier
     footstepSoundCollection:
       collection: SCP049FootstepCollection
       params:
         volume: -5
         maxDistance: 7
+        variation: 0.128
   - type: Tag
     tags:
     - FootstepSound

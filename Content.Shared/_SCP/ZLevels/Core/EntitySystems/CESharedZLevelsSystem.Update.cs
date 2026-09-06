@@ -62,9 +62,12 @@ public abstract partial class CESharedZLevelsSystem
 
     private void ProcessZPhysics(Entity<CEZPhysicsComponent, PhysicsComponent> entity, float frameTime)
     {
-        UpdateCalls++;
-
         var zPhysicsComponent = entity.Comp1;
+
+        if (zPhysicsComponent.Disabled)
+            return;
+
+        UpdateCalls++;
 
         var oldVelocity = zPhysicsComponent.Velocity;
         var oldHeight = zPhysicsComponent.LocalPosition;
@@ -116,7 +119,7 @@ public abstract partial class CESharedZLevelsSystem
 
         if (zPhysicsComponent.LocalPosition < 0)
         {
-            if (TryMoveDown(entity)) // SCP-Foundation
+            if (TryMoveDownOrChasm(entity))
             {
                 zPhysicsComponent.LocalPosition += 1;
                 if (zPhysicsComponent is { CachedStickyGround: false, Fallable: true })

@@ -26,7 +26,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      300: Critical
+      250: Critical
   - type: Damageable
     damageModifierSet: SCP106ModifierSet
   - type: Injurable
@@ -58,29 +58,48 @@
         - MobMask
         layer:
         - MobLayer
+      slowdown:
+        shape: !type:PhysShapeAabb
+          bounds: -0.4,-0.4,0.4,0.4
+        layer:
+        - SlipLayer
+        mask:
+        - ItemMask
+        density: 1000
+        hard: false
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.3
+    sprintSpeedModifier: 0.3
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
     baseSprintSpeed: 3
   - type: SCP106
     soundDamage:
       path: /Audio/_SCP/Effects/SCP106/damage.ogg
+      params:
+        variation: 0.128
     soundSpawnTrap:
       collection: SCP106Corrosion
+      params:
+        variation: 0.128
     soundSpawnPortal:
       collection: SCP106Corrosion
+      params:
+        variation: 0.128
     soundTeleport:
       collection: SCP106Corrosion
+      params:
+        variation: 0.128
     soundEnterPD:
       collection: SCP106PD
+      params:
+        variation: 0.128
   - type: StatusEffects
     allowed:
     - Stun
     - Electrocution
   - type: Vocal
-    sounds:
-      Male: SCP106
-      Female: SCP106
-      Unsexed: SCP106
+    emoteSounds: SCP106
   - type: ComplexInteraction
   - type: AmbientSound
     enabled: true
@@ -91,10 +110,12 @@
       params:
         volume: -5
         maxDistance: 7
+        variation: 0.128
   - type: FootstepModifier
     footstepSoundCollection:
       collection: SCP106FootstepCollection
       params:
+        variation: 0.128
         volume: -5
         maxDistance: 7
   - type: Tag
@@ -102,6 +123,10 @@
     - FootstepSound
     - StunImmune
     - CannotSuicide
+  - type: NightVision
+    prioritized: false
+    relayOverlay: false # In case default value ever changes
+    lightingColor: '#FFFFFF15' # Basically makes it impossible for things to be "Pitch black" but can still be dark.
 
 - type: emoteSounds
   id: SCP106

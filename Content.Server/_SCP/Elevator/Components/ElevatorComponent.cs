@@ -9,10 +9,10 @@ namespace Content.Server._SCP.Elevator.Components;
 [RegisterComponent]
 public sealed partial class ElevatorComponent : Component
 {
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
+    [DataField]
     public string CallElevatorPort = "CallElevator";
 
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
+    [DataField]
     public string ReviewElevatorPort = "ReviewElevator";
 
     [DataField]

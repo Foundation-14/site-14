@@ -6,6 +6,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared._CE.ZLevels.Core.Components;
 using Content.Shared.ActionBlocker;
+using Content.Shared.Actions;
 using Content.Shared.CCVar;
 using Content.Shared.Popups;
 using JetBrains.Annotations;
@@ -25,12 +26,12 @@ public abstract partial class CESharedZLevelsSystem : EntitySystem
     [Dependency] private INetManager _net = null!;
     [Dependency] private IGameTiming _timing = null!;
     [Dependency] private IConfigurationManager _config = null!;
-    [Dependency] private IMapManager _mapManager = null!;
 
     [Dependency] private SharedPhysicsSystem _physicsSystem = null!;
     [Dependency] private SharedTransformSystem _transform = null!;
     [Dependency] private SharedAudioSystem _audio = null!;
     [Dependency] private ActionBlockerSystem _blocker = null!;
+    [Dependency] private SharedActionsSystem _actions = null!;
     [Dependency] private EntityLookupSystem _lookup = null!;
     [Dependency] private SharedMapSystem _map = null!;
     [Dependency] private SharedPopupSystem _popup = null!;
