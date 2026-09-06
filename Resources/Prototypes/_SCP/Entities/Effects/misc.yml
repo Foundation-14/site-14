@@ -1,4 +1,24 @@
 - type: entity
+  id: CEDustEffect
+  name: dust effect
+  suffix: VFX
+  categories: [ ForkFiltered ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _SCP/Effects/dust.rsi
+    drawdepth: Items
+    layers:
+    - state: dust
+  - type: Physics
+    canCollide: false
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: TimedDespawn
+    lifetime: 0.5
+
+- type: entity
   id: CEDustTileEffect
   name: dust effect
   description: A burst of dust upon impact.
