@@ -38,13 +38,13 @@ latejoin-arrival-announcement = { $character } ({ $job }) { GENDER($entity) ->
     [female] прибыла
     [epicene] прибыли
     *[neuter] прибыло
-} на станцию!
-latejoin-arrival-announcement-special = { $job } { $character } на палубе!
-latejoin-arrival-sender = Станции
-latejoin-arrivals-direction = Вскоре прибудет шаттл, который доставит вас на станцию.
-latejoin-arrivals-direction-time = Шаттл, который доставит вас на станцию, прибудет через { $time }.
-latejoin-arrivals-dumped-from-shuttle = Таинственная сила не позволяет вам улететь на шаттле прибытия.
-latejoin-arrivals-teleport-to-spawn = Таинственная сила телепортирует вас с шаттла прибытия. Удачной смены!
+} в комплекс!
+latejoin-arrival-announcement-special = { $job } { $character } пробудился от сна!
+latejoin-arrival-sender = РИИ
+latejoin-arrivals-direction = Вскоре прибудет поезд, который доставит вас в комплекс.
+latejoin-arrivals-direction-time = Поезд, который доставит вас в комплкес, прибудет через { $time }.
+latejoin-arrivals-dumped-from-shuttle = Таинственная сила не позволяет вам уехать на поезде прибытия.
+latejoin-arrivals-teleport-to-spawn = Таинственная сила перемещает вас с поезда прибытия. Удачной смены!
 
 preset-not-enough-ready-players = Не удалось запустить пресет { $presetName }. Требуется { $minimumPlayers } игроков, но готовы только { $readyPlayersCount }.
 preset-no-one-ready = Не удалось запустить режим { $presetName }. Нет готовых игроков.

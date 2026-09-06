@@ -2,26 +2,39 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.Audio;
 using Content.Shared.DeviceLinking;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._SCP.TeslaGate.Components;
 
 [RegisterComponent]
 public sealed partial class TeslaGateComponent : Component
 {
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
+    [DataField]
     public string ToggleTeslaGatePort = "ToggleTeslaGate";
 
-    [ViewVariables(VVAccess.ReadOnly)]
+    [DataField]
     public TimeSpan LightingDuration = TimeSpan.FromSeconds(1.8f);
 
+    [DataField]
     [ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan TimeUtilLighting = TimeSpan.Zero;
 
+    [DataField]
     [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan RunningDuration = TimeSpan.FromSeconds(5.5f);
+    public EntProtoId SensorPrototype = "TeslaGateSensor";
 
+    [DataField]
+    public float DetectionWidth = 1.5f;
+
+    [DataField]
+    public TimeSpan CooldownDuration = TimeSpan.FromSeconds(2f);
+
+    [DataField]
     [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan TimeUtilRunning = TimeSpan.Zero;
+    public TimeSpan NextZapTime = TimeSpan.Zero;
+
+    [DataField]
+    public List<EntityUid> Sensors = new();
 
     [DataField]
     [ViewVariables(VVAccess.ReadOnly)]
@@ -36,8 +49,11 @@ public sealed partial class TeslaGateComponent : Component
     public bool IsTimeLighting = false;
 
     [DataField]
-    [ViewVariables(VVAccess.ReadOnly)]
     public SoundSpecifier? SoundsBeforeLighting = new SoundPathSpecifier("/Audio/_SCP/Effects/TeslaGate/tesla_gate.ogg");
+
+    [DataField]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntProtoId ZapBeamEntityId = "TeslaGateLightning";
 
 }
 

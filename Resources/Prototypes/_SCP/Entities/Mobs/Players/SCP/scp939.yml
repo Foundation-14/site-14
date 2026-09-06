@@ -67,10 +67,12 @@
   - type: Perishable
   - type: AmbientSound
     enabled: true
-    volume: -7
+    volume: -6
     range: 7
     sound:
       collection: SCP939Breath
+      params:
+        variation: 0.128
   - type: FootstepModifier
     footstepSoundCollection:
       collection: SCP939FootstepCollection
@@ -78,3 +80,7 @@
     tags:
     - FootstepSound
     - CannotSuicide
+  - type: NightVision
+    prioritized: false
+    relayOverlay: false # In case default value ever changes
+    lightingColor: '#FFFFFF15' # Basically makes it impossible for things to be "Pitch black" but can still be dark.

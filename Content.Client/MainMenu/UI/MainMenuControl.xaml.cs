@@ -33,6 +33,7 @@ public sealed partial class MainMenuControl : Control
         // "KettleStation", // SCP-Foundation
         // "BagelStation", // SCP-Foundation
         // "ExoStation", // SCP-Foundation
+        // "SnowballStation" // SCP-Foundation
     ];
 
     public MainMenuControl(IResourceCache resCache, IConfigurationManager configMan)

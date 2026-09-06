@@ -9,6 +9,7 @@
   - type: ComplexInteraction
   - type: Sprite
     drawdepth: Mobs
+    scale: 1.25, 1.25
     sprite: _SCP/Entities/Mobs/Players/SCP/scp173.rsi
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
@@ -19,10 +20,16 @@
   - type: SCP173
     soundSCP173Blind:
       collection: SCP173Blind
+      params:
+        variation: 0.128
     soundDamage:
       collection: SCP173Damage
+      params:
+        variation: 0.128
     soundStepNoises:
       collection: SCP173Noises
+      params:
+        variation: 0.128
   - type: MobState
     allowedStates:
     - Alive
@@ -32,7 +39,7 @@
       0: Alive
       2000: Dead
   - type: BlinkingTrigger
-  - type: Muted
+  - type: MutedStatusEffect
   - type: Damageable
     damageModifierSet: SCP173ModifierSet
   - type: Injurable
@@ -40,6 +47,10 @@
   - type: StatusEffects
     allowed:
     - Stun
+  - type: NightVision
+    prioritized: false
+    relayOverlay: false # In case default value ever changes
+    lightingColor: '#FFFFFF15' # Basically makes it impossible for things to be "Pitch black" but can still be dark.
 
 - type: damageContainer
   id: SCP173damageContainer

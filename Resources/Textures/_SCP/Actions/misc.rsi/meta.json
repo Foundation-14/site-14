@@ -4,23 +4,20 @@
         "x": 32,
         "y": 32
     },
-    "license": "CC-BY-SA-4.0",
-    "copyright": "Created by TheShuEd",
+    "license": "CLA",
+    "copyright": "Sprited for Foundation-14.",
     "states": [
         {
             "name": "down"
         },
         {
-            "name": "eye"
+            "name": "eye_down"
+        },
+        {
+            "name": "eye_up"
         },
         {
             "name": "up"
-        },
-        {
-            "name": "roof"
-        },
-        {
-            "name": "respawn"
         }
     ]
 }

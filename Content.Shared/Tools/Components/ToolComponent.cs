@@ -1,24 +1,25 @@
+using Content.Shared._CE.ZLevels.Tiles; // Foundation-14
 using Content.Shared.Tools.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
-using Robust.Shared.Utility;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Tools.Components;
 
-[RegisterComponent, NetworkedComponent]
-[Access(typeof(SharedToolSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[Access(typeof(SharedToolSystem), typeof(CEZLevelToolTileSystem))] // Foundation-14 +CEZLevelToolTileSystem
 public sealed partial class ToolComponent : Component
 {
-    [DataField]
-    public PrototypeFlags<ToolQualityPrototype> Qualities  = [];
+    [DataField, AutoNetworkedField]
+    public HashSet<ProtoId<ToolQualityPrototype>> Qualities = [];
 
     /// <summary>
-    ///     For tool interactions that have a delay before action this will modify the rate, time to wait is divided by this value
+    /// For tool interactions that have a delay before action this will modify the rate, time to wait is divided by this value
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public float SpeedModifier = 1f;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public SoundSpecifier? UseSound;
 }
 

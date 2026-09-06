@@ -1,5 +1,5 @@
 - type: entity
-  parent: WallSolid
+  parent: WallMalign
   id: TeslaGateWall
   name: tesla gate
   components:
@@ -7,6 +7,15 @@
     ports:
       - ToggleTeslaGate
   - type: TeslaGate
+    lightingDuration: 0.5
+  - type: AmbientSound
+    enabled: false
+    range: 8
+    sound:
+      path: /Audio/_SCP/Effects/TeslaGate/idle.ogg
+      params:
+        maxDistance: 7
+        variation: 0.128
 
 - type: entity
   name: lightning
@@ -15,7 +24,38 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Lightning
-    canArc: true
+    canArc: false
   - type: Electrified
     requirePower: false
     shockDamage: 210
+  - type: Beam
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_SCP/Effects/TeslaGate/shock.ogg
+      params:
+        variation: 0.128
+
+- type: entity
+  id: TeslaGateSensor
+  name: tesla gate sensor
+  suffix: invisible
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: /Textures/Markers/cross.rsi
+    state: blue
+    visible: false
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        density: 7
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.5,-1.5,1.5,1.5"
+        layer:
+        - MidImpassable
+  - type: TeslaGateSensor

@@ -156,6 +156,7 @@
     - trayScanner
     - AccessConfiguratorUniversal
     - Multitool
+    - ElevatorConnector # SCP-Foundation
 
 #Gladiator with spear
 - type: startingGear

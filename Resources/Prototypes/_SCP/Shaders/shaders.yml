@@ -7,3 +7,9 @@
   id: Viewcone
   kind: source
   path: "/Textures/_SCP/Shaders/viewcone.swsl"
+
+- type: shader
+  id: CEZLightAdditive
+  kind: canvas
+  light_mode: unshaded
+  blend_mode: Add

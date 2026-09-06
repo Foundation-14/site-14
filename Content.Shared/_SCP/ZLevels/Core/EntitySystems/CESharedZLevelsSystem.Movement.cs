@@ -5,7 +5,8 @@
 
 using System.Numerics;
 using Content.Shared._CE.ZLevels.Core.Components;
-// using Content.Shared.Chasm; // SCP-Foundation
+using Content.Shared.Chasm;
+using Content.Shared.Inventory;
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
@@ -52,13 +53,14 @@ public abstract partial class CESharedZLevelsSystem
             var max = mapCoords.Position + half;
             var aabb = new Box2(min, max);
 
-            var entities = _lookup.GetEntitiesIntersecting(mapCoords.MapId, aabb);
+            var entities = _lookup.GetEntitiesIntersecting(mapCoords.MapId, aabb, LookupFlags.Uncontained);
             foreach (var uid in entities)
             {
                 if (!ZPhysicsQuery.TryComp(uid, out var zComp))
                     continue;
 
                 RequestCacheMovement((uid, zComp));
+                RefreshBody((uid, zComp));
             }
         }
     }
@@ -122,7 +124,7 @@ public abstract partial class CESharedZLevelsSystem
             }
 
             //Find whichever grid (structure or planet) provides the floor here.
-            if (!_mapManager.TryFindGridAt(checkingMap, worldPos, out var gridUid, out var grid))
+            if (!_map.TryFindGridAt(checkingMap, worldPos, out var gridUid, out var grid))
                 continue;
 
             var gridTile = _map.WorldToTile(gridUid, grid, worldPos);
@@ -201,7 +203,7 @@ public abstract partial class CESharedZLevelsSystem
             return false;
 
         var worldPos = _transform.GetWorldPosition(ent);
-        if (!_mapManager.TryFindGridAt(mapAboveUid, worldPos, out var gridUid, out var grid))
+        if (!_map.TryFindGridAt(mapAboveUid, worldPos, out var gridUid, out var grid))
             return false;
 
         if (_map.TryGetTileRef(gridUid, grid, worldPos, out var tileRef) &&
@@ -245,7 +247,7 @@ public abstract partial class CESharedZLevelsSystem
         if (!TryMapUp(currentMap, out var mapAboveUid))
             return false;
 
-        if (!_mapManager.TryFindGridAt(mapAboveUid, worldPos, out var gridUid, out var grid))
+        if (!_map.TryFindGridAt(mapAboveUid, worldPos, out var gridUid, out var grid))
             return false;
 
         return _map.TryGetTileRef(gridUid, grid, worldPos, out var tileRef) && !tileRef.Tile.IsEmpty;
@@ -269,7 +271,7 @@ public abstract partial class CESharedZLevelsSystem
             return;
 
         var ev = new CECheckGravityEvent();
-        RaiseLocalEvent(ent.Owner, ref ev);
+        RaiseLocalEvent(ent.Owner, ev);
 
         SetZGravity(ent, ev.Gravity);
     }
@@ -328,6 +330,9 @@ public abstract partial class CESharedZLevelsSystem
 
         var worldRot = _transform.GetWorldRotation(ent);
 
+        var beforeEv = new CEZLevelBeforeMapMoveEvent(offset, targetMap.Comp.Depth);
+        RaiseLocalEvent(ent, ref beforeEv);
+
         _transform.SetMapCoordinates(ent, new MapCoordinates(_transform.GetWorldPosition(ent), targetMapComp.MapId));
         _transform.SetWorldRotation(ent, worldRot);
 
@@ -346,24 +351,30 @@ public abstract partial class CESharedZLevelsSystem
         return TryMove(ent, -1);
     }
 
-    // [PublicAPI] // SCP-Foundation
-    // public bool TryMoveDownOrChasm(EntityUid ent)
-    // {
-    //     if (TryMoveDown(ent))
-    //         return true;
+    [PublicAPI]
+    public bool TryMoveDownOrChasm(EntityUid ent)
+    {
+        if (TryMoveDown(ent))
+            return true;
 
-    //     //welp, that default Chasm behavior. Not really good, but ok for now.
-    //     if (HasComp<ChasmFallingComponent>(ent))
-    //         return false; //Already falling
+        //welp, that default Chasm behavior. Not really good, but ok for now.
+        if (HasComp<ChasmFallingComponent>(ent))
+            return false; //Already falling
 
-    //     var audio = new SoundPathSpecifier("/Audio/Effects/falling.ogg");
-    //     _audio.PlayPredicted(audio, Transform(ent).Coordinates, ent);
-    //     var falling = AddComp<ChasmFallingComponent>(ent);
-    //     falling.NextDeletionTime = _timing.CurTime + falling.DeletionTime;
-    //     _blocker.UpdateCanMove(ent);
+        var attempt = new CEZLevelChasmAttempt(ent);
+        RaiseLocalEvent(ent, attempt);
 
-    //     return false;
-    // }
+        if (attempt.Cancelled)
+            return false;
+
+        var audio = new SoundPathSpecifier("/Audio/Effects/falling.ogg");
+        _audio.PlayPredicted(audio, Transform(ent).Coordinates, ent);
+        var falling = AddComp<ChasmFallingComponent>(ent);
+        falling.NextDeletionTime = _timing.CurTime + falling.DeletionTime;
+        _blocker.UpdateCanMove(ent);
+
+        return false;
+    }
 
     private void UpdateDirtyMovement()
     {
@@ -381,6 +392,21 @@ public abstract partial class CESharedZLevelsSystem
 
         _dirtyMovementBodies.Clear();
     }
+}
+
+/// <summary>
+/// Is called on an entity right before it moves between z-levels.
+/// </summary>
+/// <param name="offset">How many levels were crossed. If negative, it means there was a downward movement. If positive, it means an upward movement.</param>
+[ByRefEvent]
+public struct CEZLevelBeforeMapMoveEvent(int offset, int level)
+{
+    /// <summary>
+    /// How many levels were crossed. If negative, it means there was a downward movement. If positive, it means an upward movement.
+    /// </summary>
+    public int Offset = offset;
+
+    public int CurrentZLevel = level;
 }
 
 /// <summary>
@@ -403,6 +429,15 @@ public struct CEZLevelMapMoveEvent(int offset, int level)
 /// </summary>
 [ByRefEvent]
 public struct CEZLevelFallMapEvent;
+
+/// <summary>
+///Called upon the essence before attempting to fall into the abyss
+/// </summary>
+public sealed class CEZLevelChasmAttempt(EntityUid falled) : CancellableEntityEventArgs, IInventoryRelayEvent
+{
+    public EntityUid Falled = falled;
+    public SlotFlags TargetSlots => SlotFlags.All;
+}
 
 /// <summary>
 /// It is called on an entity when it hits the floor or ceiling with force.
@@ -430,8 +465,7 @@ public struct CEGetZVelocityEvent(Entity<CEZPhysicsComponent> target)
 /// <summary>
 /// Called when UpdateGravityState is used to update the current strength of the active z-level gravity. Various systems can subscribe to this to disable gravity.
 /// </summary>
-[ByRefEvent]
-public struct CECheckGravityEvent()
+public sealed class CECheckGravityEvent : EntityEventArgs
 {
     public float Gravity = 1f;
 }
