@@ -58,6 +58,18 @@
         - MobMask
         layer:
         - MobLayer
+      slowdown:
+        shape: !type:PhysShapeAabb
+          bounds: -0.4,-0.4,0.4,0.4
+        layer:
+        - SlipLayer
+        mask:
+        - ItemMask
+        density: 1000
+        hard: false
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.3
+    sprintSpeedModifier: 0.3
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
     baseSprintSpeed: 3
@@ -87,10 +99,7 @@
     - Stun
     - Electrocution
   - type: Vocal
-    sounds:
-      Male: SCP106
-      Female: SCP106
-      Unsexed: SCP106
+    emoteSounds: SCP106
   - type: ComplexInteraction
   - type: AmbientSound
     enabled: true
@@ -114,6 +123,8 @@
     - FootstepSound
     - StunImmune
     - CannotSuicide
+  - type: NightVision
+    color: "#00000000"
 
 - type: emoteSounds
   id: SCP106

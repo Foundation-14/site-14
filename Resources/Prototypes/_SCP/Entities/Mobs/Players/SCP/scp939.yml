@@ -80,3 +80,5 @@
     tags:
     - FootstepSound
     - CannotSuicide
+  - type: NightVision
+    color: "#00000000"

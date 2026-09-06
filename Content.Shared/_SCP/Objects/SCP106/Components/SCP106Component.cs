@@ -68,7 +68,7 @@ public sealed partial class SCP106Component : Component
 
     [DataField]
     [ViewVariables(VVAccess.ReadOnly)]
-    public EntProtoId LabelKey = "SCP106MainRoom";
+    public string LabelKey = "SCP106MainRoom";
 
     [DataField]
     [ViewVariables(VVAccess.ReadOnly)]

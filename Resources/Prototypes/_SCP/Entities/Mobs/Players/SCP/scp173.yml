@@ -47,6 +47,8 @@
   - type: StatusEffects
     allowed:
     - Stun
+  - type: NightVision
+    color: "#00000000"
 
 - type: damageContainer
   id: SCP173damageContainer
