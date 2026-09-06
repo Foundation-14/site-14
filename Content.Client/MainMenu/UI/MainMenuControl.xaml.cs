@@ -21,19 +21,19 @@ public sealed partial class MainMenuControl : Control
 
     private static readonly ProtoId<ParallaxPrototype>[] Parallaxes =
     [
-        "Wizard",
-        "TrainStation",
-        "PlasmaStation",
-        "AmberStation",
-        "FastSpace",
-        "AspidParallax",
-        "OriginStation",
-        "Default",
+        // "Wizard", // SCP-Foundation
+        // "TrainStation", // SCP-Foundation
+        // "PlasmaStation", // SCP-Foundation
+        // "AmberStation", // SCP-Foundation
+        // "FastSpace", // SCP-Foundation
+        // "AspidParallax", // SCP-Foundation
+        // "OriginStation", // SCP-Foundation
+        // "Default", // SCP-Foundation
         "Sky",
-        "KettleStation",
-        "BagelStation",
-        "ExoStation",
-        "SnowballStation"
+        // "KettleStation", // SCP-Foundation
+        // "BagelStation", // SCP-Foundation
+        // "ExoStation", // SCP-Foundation
+        // "SnowballStation" // SCP-Foundation
     ];
 
     public MainMenuControl(IResourceCache resCache, IConfigurationManager configMan)
@@ -52,7 +52,7 @@ public sealed partial class MainMenuControl : Control
         // to update an allowlist than to randomly get an ugly one to fix a blocklist.
         BackgroundParallax.ParallaxPrototype = _random.Pick(Parallaxes).Id;
 
-        var logoTexture = resCache.GetResource<TextureResource>("/Textures/Logo/logo.png");
+        var logoTexture = resCache.GetResource<TextureResource>("/Textures/_SCP/Logo/logo.png"); // SCP-Foundation
         Logo.Texture = logoTexture;
 
         var currentUserName = configMan.GetCVar(CVars.PlayerName);
