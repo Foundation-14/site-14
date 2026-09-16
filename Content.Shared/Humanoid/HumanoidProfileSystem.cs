@@ -2,6 +2,7 @@ using Content.Shared.Examine;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Preferences;
+using Robust.Shared.Enums; // SCP-Foundation
 using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Prototypes;
 
@@ -39,18 +40,53 @@ public sealed partial class HumanoidProfileSystem : EntitySystem
         }
     }
 
-    private void OnExamined(Entity<HumanoidProfileComponent> ent, ref ExaminedEvent args)
+    // SCP-Foundation-start
+    public Gender GetGender(EntityUid uid, HumanoidProfileComponent? profile = null)
     {
-        var identity = Identity.Entity(ent, EntityManager);
+        if (!Resolve(uid, ref profile, logMissing: false))
+            return Gender.Epicene;
+        return profile.Gender;
+    }
+
+    public int GetAge(EntityUid uid, HumanoidProfileComponent? profile = null)
+    {
+        if (!Resolve(uid, ref profile, logMissing: false))
+            return 18;
+        return profile.Age;
+    }
+
+    public ProtoId<SpeciesPrototype> GetSpecies(EntityUid uid, HumanoidProfileComponent? profile = null)
+    {
+        if (!Resolve(uid, ref profile, logMissing: false))
+            return HumanoidCharacterProfile.DefaultSpecies;
+        return profile.Species;
+    }
+    // SCP-Foundation-end
+
+    private void OnExamined(Entity<HumanoidProfileComponent> ent, ref ExaminedEvent args) // SCP-Foundation modifed
+    {
         var species = GetSpeciesRepresentation(ent.Comp.Species).ToLower();
         var age = GetAgeRepresentation(ent.Comp.Species, ent.Comp.Age);
 
-        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));
+        var overrideEv = new _SCP.Guestbook.Events.IdentityViewerOverrideEvent(ent.Owner);
+        RaiseLocalEvent(args.Examiner, ref overrideEv);
+
+        if (overrideEv.Override is { } overriddenName)
+        {
+            args.PushText(Loc.GetString("humanoid-appearance-component-examine-named",
+                ("name", overriddenName),
+                ("age", age),
+                ("species", species)));
+            return;
+        }
+
+        var identity = Identity.Entity(ent, EntityManager, args.Examiner);
+        args.PushText(Loc.GetString("humanoid-appearance-component-examine",
+            ("user", identity),
+            ("age", age),
+            ("species", species)));
     }
 
-    /// <summary>
-    /// Takes ID of the species prototype, returns UI-friendly name of the species.
-    /// </summary>
     public string GetSpeciesRepresentation(ProtoId<SpeciesPrototype> species)
     {
         if (ProtoMan.TryIndex(species, out var speciesPrototype))

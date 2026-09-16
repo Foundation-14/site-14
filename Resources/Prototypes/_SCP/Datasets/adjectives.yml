@@ -1,0 +1,17 @@
+﻿- type: localizedDataset
+  id: GuestbookAdjectives
+  values:
+    prefix: guestbook-adjective-
+    count: 25
+
+- type: localizedDataset
+  id: GuestbookAdjectivesScp049
+  values:
+    prefix: guestbook-adjective-049-
+    count: 12
+
+- type: localizedDataset
+  id: GuestbookAdjectivesScp106
+  values:
+    prefix: guestbook-adjective-106-
+    count: 12

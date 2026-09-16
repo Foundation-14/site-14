@@ -127,6 +127,19 @@
     prioritized: false
     relayOverlay: false # In case default value ever changes
     lightingColor: '#FFFFFF15' # Basically makes it impossible for things to be "Pitch black" but can still be dark.
+  - type: HumanoidProfile
+    species: Human
+  - type: Guestbook
+    adjectiveDataset: GuestbookAdjectivesScp106
+    useRandomAdjective: true
+  - type: UserInterface
+    interfaces:
+      enum.GuestbookUiKey.Key:
+        type: GuestbookBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
 
 - type: emoteSounds
   id: SCP106

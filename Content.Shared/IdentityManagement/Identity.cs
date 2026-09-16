@@ -1,5 +1,6 @@
 using Content.Shared.Ghost.Components;
 using Content.Shared.IdentityManagement.Components;
+using Content.Shared._SCP.Guestbook.Events; // SCP-Foundation
 
 namespace Content.Shared.IdentityManagement;
 
@@ -29,6 +30,16 @@ public static class Identity
             return meta.EntityName; // Identity component and such will not yet have initialized and may throw NREs
 
         var uidName = meta.EntityName;
+
+        // SCP-Foundation-start
+        if (viewer is { } v && v != uid)
+        {
+            var overrideEv = new IdentityViewerOverrideEvent(uid);
+            ent.EventBus.RaiseLocalEvent(v, ref overrideEv);
+            if (overrideEv.Override is { } overrideName)
+                return overrideName;
+        }
+        // SCP-Foundation-end
 
         if (!ent.TryGetComponent<IdentityComponent>(uid, out var identity))
             return uidName;
