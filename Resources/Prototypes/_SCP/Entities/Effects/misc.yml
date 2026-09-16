@@ -9,7 +9,7 @@
     sprite: _SCP/Effects/dust.rsi
     drawdepth: Items
     layers:
-    - state: dust
+    - state: effect
   - type: Physics
     canCollide: false
   - type: Tag
@@ -27,7 +27,7 @@
   components:
   - type: Transform
   - type: Sprite
-    sprite: _CE/Effects/TileEffects/dust.rsi
+    sprite: _SCP/Effects/dust.rsi
     snapCardinals: true
     layers:
     - state: effect
