@@ -5,7 +5,7 @@ using Robust.Shared.Enums;
 
 namespace Content.Shared.Guestbook;
 
-public abstract class SharedGuestbookSystem : EntitySystem
+public abstract partial class SharedGuestbookSystem : EntitySystem
 {
     [Dependency] private HumanoidProfileSystem _humanoidProfile = default!;
 
