@@ -60,8 +60,13 @@
   - type: Pacified
   - type: FlashImmunity
     showInExamine: false
+  - type: Guestbook
+    adjectiveDataset: GuestbookAdjectivesScp049
+    useRandomAdjective: true
   - type: UserInterface
     interfaces:
+      enum.GuestbookUiKey.Key:
+        type: GuestbookBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
       enum.StoreUiKey.Key:

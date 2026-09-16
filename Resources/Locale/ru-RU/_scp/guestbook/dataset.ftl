@@ -94,3 +94,103 @@ guestbook-adjective-25 = { $gender ->
     [Male] утончённый
     *[other] утончённая
 }
+
+
+guestbook-adjective-106-1 = { $gender ->
+    [Male] дряхлый
+    *[other] дряхлая
+}
+guestbook-adjective-106-2 = { $gender ->
+    [Male] сгорбленный
+    *[other] сгорбленная
+}
+guestbook-adjective-106-3 = { $gender ->
+    [Male] слизкий
+    *[other] слизкая
+}
+guestbook-adjective-106-4 = { $gender ->
+    [Male] скользкий
+    *[other] скользкая
+}
+guestbook-adjective-106-5 = { $gender ->
+    [Male] разлагающийся
+    *[other] разлагающаяся
+}
+guestbook-adjective-106-6 = { $gender ->
+    [Male] гниющий
+    *[other] гниющая
+}
+guestbook-adjective-106-7 = { $gender ->
+    [Male] прогорклый
+    *[other] прогорклая
+}
+guestbook-adjective-106-8 = { $gender ->
+    [Male] осклизлый
+    *[other] осклизлая
+}
+guestbook-adjective-106-9 = { $gender ->
+    [Male] зловещий
+    *[other] зловещая
+}
+guestbook-adjective-106-10 = { $gender ->
+    [Male] хищный
+    *[other] хищная
+}
+guestbook-adjective-106-11 = { $gender ->
+    [Male] коварный
+    *[other] коварная
+}
+guestbook-adjective-106-12 = { $gender ->
+    [Male] мокрый
+    *[other] мокрая
+}
+
+
+guestbook-adjective-049-1 = { $gender ->
+    [Male] чумной
+    *[other] чумная
+}
+guestbook-adjective-049-2 = { $gender ->
+    [Male] клювый
+    *[other] клювая
+}
+guestbook-adjective-049-3 = { $gender ->
+    [Male] замаскированный
+    *[other] замаскированная
+}
+guestbook-adjective-049-4 = { $gender ->
+    [Male] окутанный
+    *[other] окутанная
+}
+guestbook-adjective-049-5 = { $gender ->
+    [Male] облачённый
+    *[other] облачённая
+}
+guestbook-adjective-049-6 = { $gender ->
+    [Male] вежливый
+    *[other] вежливая
+}
+guestbook-adjective-049-7 = { $gender ->
+    [Male] невозмутимый
+    *[other] невозмутимая
+}
+guestbook-adjective-049-8 = { $gender ->
+    [Male] жуткий
+    *[other] жуткая
+}
+guestbook-adjective-049-9 = { $gender ->
+    [Male] худой
+    *[other] худая
+}
+guestbook-adjective-049-10 = { $gender ->
+    [Male] докторский
+    *[other] докторская
+}
+guestbook-adjective-049-11 = { $gender ->
+    [Male] ритуальный
+    *[other] ритуальная
+}
+guestbook-adjective-049-12 = { $gender ->
+    [Male] мрачный
+    *[other] мрачная
+}
