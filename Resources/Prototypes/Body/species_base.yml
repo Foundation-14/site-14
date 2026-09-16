@@ -124,6 +124,8 @@
   - type: Stripping
   - type: UserInterface
     interfaces:
+      enum.GuestbookUiKey.Key: # SCP-Foundation
+        type: GuestbookBoundUserInterface # SCP-Foundation
       enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
@@ -156,6 +158,8 @@
   - type: SCPViewconeOccludable # SCP-Foundation
   - type: CEZPhysics # SCP-Foundation
   - type: SCPPestilence # SCP-Foundation
+  - type: Guestbook # SCP-Foundation
+    useRandomAdjective: true
 
 - type: entity
   abstract: true

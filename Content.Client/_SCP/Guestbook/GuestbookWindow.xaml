@@ -1,0 +1,50 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      Title="Guestbook"
+                      MinSize="400 300"
+                      SetSize="480 400">
+    <BoxContainer Orientation="Vertical"
+                  Margin="5"
+                  SeparationOverride="5">
+
+        <ScrollContainer VerticalExpand="True"
+                         HorizontalExpand="True"
+                         MinHeight="120">
+            <ItemList Name="EntriesList"
+                      VerticalExpand="True"
+                      HorizontalExpand="True" />
+        </ScrollContainer>
+
+        <BoxContainer Orientation="Horizontal"
+                      HorizontalAlignment="Right"
+                      SeparationOverride="5">
+            <Button Name="RenameButton"
+                    Text="Rename"
+                    Disabled="True"
+                    MinWidth="90" />
+            <Button Name="DeleteButton"
+                    Text="Forget"
+                    Disabled="True"
+                    MinWidth="90" />
+        </BoxContainer>
+
+        <PanelContainer Name="InputPanel"
+                        Visible="False">
+            <BoxContainer Orientation="Vertical"
+                          Margin="6"
+                          SeparationOverride="6">
+                <Label Name="InputPrompt"
+                       Text="Enter a name:"
+                       ClipText="True" />
+                <LineEdit Name="NameInput"
+                          HorizontalExpand="True" />
+                <BoxContainer Orientation="Horizontal"
+                              HorizontalAlignment="Right"
+                              SeparationOverride="5">
+                    <Button Name="ConfirmButton" Text="OK" MinWidth="70" />
+                    <Button Name="CancelButton" Text="Cancel" MinWidth="70" />
+                </BoxContainer>
+            </BoxContainer>
+        </PanelContainer>
+    </BoxContainer>
+</controls:FancyWindow>
