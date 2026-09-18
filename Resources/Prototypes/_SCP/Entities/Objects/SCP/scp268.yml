@@ -1,0 +1,16 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSCP268
+  name: SCP-268 "Cap of neglect"
+  description: A mysterious hat that renders the wearer completely invisible. You cannot interact with anything while wearing it. What could possibly go wrong?
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_french.rsi # Временный спрайт. Я хз, где взять другой
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_french.rsi
+    slots:
+    - Head
+    equipDelay: 1
+    unequipDelay: 1
+  - type: SCP268Blindfold
+    Enabled: true
