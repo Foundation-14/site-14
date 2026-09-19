@@ -9,9 +9,4 @@ namespace Content.Shared._SCP.SCP268;
 [RegisterComponent, NetworkedComponent, Access(typeof(SCP268InteractionBlockerSystem))]
 public sealed partial class SCP268InteractionBlockerComponent : Component
 {
-    /// <summary>
-    /// Whether the interaction blocking is currently active.
-    /// </summary>
-    [DataField]
-    public bool Enabled = true;
 }

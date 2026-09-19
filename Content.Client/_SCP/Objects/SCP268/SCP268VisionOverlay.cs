@@ -1,5 +1,4 @@
-﻿using Content.Shared._SCP.SCP268;
-using Robust.Client.Graphics;
+﻿using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
@@ -12,7 +11,6 @@ public sealed partial class SCP268VisionOverlay : Overlay
     private static readonly ProtoId<ShaderPrototype> Shader = "SCP268Effect";
 
     [Dependency] private IPrototypeManager _prototypeManager = default!;
-    [Dependency] private IPlayerManager _playerManager = default!;
 
     public override OverlaySpace Space => OverlaySpace.ScreenSpace;
     public override bool RequestScreenTexture => true;

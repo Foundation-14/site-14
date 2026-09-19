@@ -7,14 +7,8 @@ namespace Content.Shared._SCP.SCP268;
 /// Makes the wearer unable to interact with the world.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class SCP268BlindfoldComponent : Component
+public sealed partial class SCP268Component : Component
 {
-    /// <summary>
-    /// Whether the blindfold effect is currently active.
-    /// </summary>
-    [DataField]
-    public bool Enabled = true;
-
     /// <summary>
     /// The entity that is wearing this blindfold component (the wearer).
     /// Set when the blindfold is equipped onto a wearer, cleared when removed.

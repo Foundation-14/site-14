@@ -25,15 +25,12 @@ public sealed partial class SCP268InteractionBlockerSystem : EntitySystem
         SubscribeLocalEvent<SCP268InteractionBlockerComponent, ThrowAttemptEvent>(OnThrowAttempt);
         SubscribeLocalEvent<SCP268InteractionBlockerComponent, AttackAttemptEvent>(OnAttackAttempt);
         SubscribeLocalEvent<SCP268InteractionBlockerComponent, EmoteAttemptEvent>(OnEmoteAttempt);
-        SubscribeLocalEvent<SCP268InteractionBlockerComponent, ActionAttemptEvent>(OnActionAttempt);
         SubscribeLocalEvent<SCP268InteractionBlockerComponent, DropAttemptEvent>(OnDropAttempt);
+        SubscribeLocalEvent<SCP268InteractionBlockerComponent, ActionAttemptEvent>(OnActionAttempt);
     }
 
     private void OnInteractionAttempt(Entity<SCP268InteractionBlockerComponent> ent, ref InteractionAttemptEvent args)
     {
-        if (!ent.Comp.Enabled)
-            return;
-
         // Allow self-interactions (target null) e.g., hand swap
         if (args.Target == null)
             return;
@@ -58,9 +55,6 @@ public sealed partial class SCP268InteractionBlockerSystem : EntitySystem
 
     private void OnUseAttempt(Entity<SCP268InteractionBlockerComponent> ent, ref UseAttemptEvent args)
     {
-        if (!ent.Comp.Enabled)
-            return;
-
         // Allow use of items currently held in the user's hand
         // The used item must be in the user's container hierarchy
         if (_container.IsInSameOrParentContainer(ent.Owner, args.Used))
@@ -75,31 +69,26 @@ public sealed partial class SCP268InteractionBlockerSystem : EntitySystem
 
     private void OnThrowAttempt(EntityUid uid, SCP268InteractionBlockerComponent component, ThrowAttemptEvent args)
     {
-        if (component.Enabled)
-            args.Cancel();
+        args.Cancel();
     }
 
     private void OnAttackAttempt(EntityUid uid, SCP268InteractionBlockerComponent component, AttackAttemptEvent args)
     {
-        if (component.Enabled)
-            args.Cancel();
+        args.Cancel();
     }
 
     private void OnEmoteAttempt(EntityUid uid, SCP268InteractionBlockerComponent component, EmoteAttemptEvent args)
     {
-        if (component.Enabled)
-            args.Cancel();
+        args.Cancel();
     }
 
-    private void OnActionAttempt(EntityUid uid, SCP268InteractionBlockerComponent component, ActionAttemptEvent args)
+    private void OnDropAttempt(EntityUid uid, SCP268InteractionBlockerComponent component, DropAttemptEvent args)
     {
-        if (component.Enabled)
-            args.Cancelled = true;
+        args.Cancel();
     }
 
-    private void OnDropAttempt(Entity<SCP268InteractionBlockerComponent> ent, ref DropAttemptEvent args)
+    private void OnActionAttempt(Entity<SCP268InteractionBlockerComponent> ent, ref ActionAttemptEvent args)
     {
-        if (ent.Comp.Enabled)
-            args.Cancel();
+        args.Cancelled = true;
     }
 }

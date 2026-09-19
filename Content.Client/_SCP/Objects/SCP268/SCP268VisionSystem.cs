@@ -21,8 +21,8 @@ public sealed partial class SCP268VisionSystem : EntitySystem
 
         _overlay = new SCP268VisionOverlay();
 
-        SubscribeLocalEvent<SCP268BlindfoldComponent, GotEquippedEvent>(OnEquipped);
-        SubscribeLocalEvent<SCP268BlindfoldComponent, GotUnequippedEvent>(OnUnequipped);
+        SubscribeLocalEvent<SCP268Component, GotEquippedEvent>(OnEquipped);
+        SubscribeLocalEvent<SCP268Component, GotUnequippedEvent>(OnUnequipped);
         SubscribeLocalEvent<LocalPlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<LocalPlayerDetachedEvent>(OnPlayerDetached);
     }
@@ -37,7 +37,7 @@ public sealed partial class SCP268VisionSystem : EntitySystem
         }
     }
 
-    private void OnEquipped(EntityUid uid, SCP268BlindfoldComponent component, GotEquippedEvent args)
+    private void OnEquipped(EntityUid uid, SCP268Component component, GotEquippedEvent args)
     {
         if (!args.SlotFlags.HasFlag(SlotFlags.HEAD))
             return;
@@ -49,7 +49,7 @@ public sealed partial class SCP268VisionSystem : EntitySystem
         _overlayMan.AddOverlay(_overlay);
     }
 
-    private void OnUnequipped(EntityUid uid, SCP268BlindfoldComponent component, GotUnequippedEvent args)
+    private void OnUnequipped(EntityUid uid, SCP268Component component, GotUnequippedEvent args)
     {
         if (args.EquipTarget != _playerManager.LocalEntity)
             return;
@@ -61,8 +61,7 @@ public sealed partial class SCP268VisionSystem : EntitySystem
     {
         if (_playerManager.LocalEntity is { } player &&
             _inventory.TryGetSlotEntity(player, "head", out var hatUid) &&
-            TryComp<SCP268BlindfoldComponent>(hatUid, out var blindfold) &&
-            blindfold.Enabled &&
+            TryComp<SCP268Component>(hatUid, out var blindfold) &&
             blindfold.Wearer == player)
         {
             _overlay.SetIntensity(1f);
