@@ -1,0 +1,30 @@
+// SCP-268 screen distortion shader with centered noise
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float intensity;
+
+const highp float grainMult = 0.35;
+const highp float grainBase = 0.5;
+
+void fragment() {
+    highp vec2 uv = SCREEN_UV;
+    highp vec2 centeredUV = uv - vec2(0.5, 0.5);
+    highp float dist = length(centeredUV);
+
+    // Band mask with gradual edge falloff, reduced at the center
+    highp float baseMask = 1.0 - smoothstep(0.1, 0.8, dist);
+    highp float centerReduction = smoothstep(0.0, 0.35, dist);
+    highp float mask = baseMask * centerReduction;
+
+    highp float noise = zRandom(FRAGCOORD.xy * SCREEN_PIXEL_SIZE * (TIME * 0.01)).x;
+    highp float noiseFactor = noise * grainMult + grainBase;
+
+    highp vec4 original = zTextureSpec(SCREEN_TEXTURE, uv);
+
+    // Subtle blue tint
+    highp vec3 blueTint = vec3(0.0, 0.05, 0.25);
+
+    highp vec3 distorted = original.rgb * (1.0 - intensity * 0.8 * mask);
+    distorted = distorted + blueTint * intensity * mask * noiseFactor;
+
+    COLOR = vec4(distorted, original.a);
+}

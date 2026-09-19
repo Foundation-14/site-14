@@ -13,3 +13,8 @@
   kind: canvas
   light_mode: unshaded
   blend_mode: Add
+
+- type: shader
+  id: SCP268Effect
+  kind: source
+  path: "/Textures/_SCP/Shaders/scp268_effect.swsl"
