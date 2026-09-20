@@ -5,7 +5,7 @@ using Content.Shared.Examine;
 using Content.Shared.Hands.Components;
 using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
-using Content.Shared._SCP.Objects.SCP.Components;
+using Content.Shared._SCP.SCP330.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Body;
 using Content.Server.Popups;
@@ -15,14 +15,14 @@ using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Server._SCP.Objects.SCP;
+namespace Content.Server._SCP.SCP330;
 
-public sealed class SCP330System : EntitySystem
+public sealed partial class SCP330System : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly BinSystem _binSystem = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private BinSystem _binSystem = default!;
 
     /// <summary>
     /// Stores pending interactors for each bowl as a queue of (user, timestamp).
@@ -74,6 +74,11 @@ public sealed class SCP330System : EntitySystem
         // This allows us to identify who took a candy when it is removed
         if (TryComp(args.User, out ActorComponent? actor) && actor.PlayerSession.AttachedEntity.HasValue)
         {
+            // Do not enqueue the user until candy removal succeeds.
+            // OnInteractHand runs before BinSystem, so an empty bowl must not leave a stale entry.
+            if (!TryComp(uid, out BinComponent? bin) || bin.Items.Count == 0)
+                return;
+
             if (!_pendingInteractors.TryGetValue(uid, out var queue))
             {
                 queue = new Queue<(EntityUid, TimeSpan)>();
@@ -187,7 +192,7 @@ public sealed class SCP330System : EntitySystem
             EntityUid candy = EntityManager.SpawnEntity(component.CandyPrototypeId, Transform(uid).MapPosition);
             if (!_binSystem.TryInsertIntoBin(uid, candy, bin))
             {
-                EntityManager.DeleteEntity(candy);
+                Del(candy);
                 break;
             }
         }

@@ -1,7 +1,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._SCP.Objects.SCP.Components;
+namespace Content.Shared._SCP.SCP330.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SCP330CounterComponent : Component

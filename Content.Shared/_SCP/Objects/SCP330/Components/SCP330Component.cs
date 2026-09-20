@@ -1,7 +1,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._SCP.Objects.SCP.Components;
+namespace Content.Shared._SCP.SCP330.Components;
 
 [RegisterComponent]
 public sealed partial class SCP330Component : Component
