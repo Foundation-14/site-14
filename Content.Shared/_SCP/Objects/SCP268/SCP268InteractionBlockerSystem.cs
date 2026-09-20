@@ -1,4 +1,3 @@
-using Content.Shared._SCP.SCP268;
 using Content.Shared.Actions.Events;
 using Content.Shared.Emoting;
 using Content.Shared.Hands;
