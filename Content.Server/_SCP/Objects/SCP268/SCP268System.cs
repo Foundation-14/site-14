@@ -12,8 +12,8 @@ namespace Content.Server._SCP.SCP268;
 /// </summary>
 public sealed partial class SCP268System : EntitySystem
 {
-    [Dependency] private readonly SharedStealthSystem _stealth = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private SharedStealthSystem _stealth = default!;
+    [Dependency] private TagSystem _tag = default!;
 
     public override void Initialize()
     {

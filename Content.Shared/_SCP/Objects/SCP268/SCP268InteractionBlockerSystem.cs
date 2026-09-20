@@ -16,7 +16,7 @@ namespace Content.Shared._SCP.SCP268;
 /// </summary>
 public sealed partial class SCP268InteractionBlockerSystem : EntitySystem
 {
-    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
 
     public override void Initialize()
     {
