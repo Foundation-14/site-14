@@ -2,7 +2,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._SCP.Objects.SCP458.Components;
+namespace Content.Shared._SCP.SCP458.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SCP458Component : Component

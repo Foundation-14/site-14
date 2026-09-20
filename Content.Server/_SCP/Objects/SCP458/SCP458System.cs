@@ -1,5 +1,5 @@
 using Content.Server.Storage.EntitySystems;
-using Content.Shared._SCP.Objects.SCP458.Components;
+using Content.Shared._SCP.SCP458.Components;
 using Content.Shared.Mind;
 using Content.Shared.Storage;
 using Robust.Shared.Containers;
@@ -7,7 +7,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server._SCP.Objects.SCP458.Systems;
+namespace Content.Server._SCP.SCP458.Systems;
 
 public sealed partial class SCP458System : EntitySystem
 {
