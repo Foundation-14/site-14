@@ -1,6 +1,4 @@
-using System;
 using System.Linq;
-using System.Collections.Generic;
 using Content.Shared.Examine;
 using Content.Shared.Hands.Components;
 using Content.Shared.Storage.Components;
@@ -9,7 +7,6 @@ using Content.Shared._SCP.SCP330.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Body;
 using Content.Server.Popups;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;

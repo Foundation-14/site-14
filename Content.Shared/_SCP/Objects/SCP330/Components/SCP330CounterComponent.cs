@@ -1,5 +1,4 @@
 using Robust.Shared.GameStates;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared._SCP.SCP330.Components;
 
@@ -13,8 +12,8 @@ public sealed partial class SCP330CounterComponent : Component
     public int TakenCount;
 
     /// <summary>
-    /// Component expiration time (15 minutes by default).
+    /// Component expiration time.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public TimeSpan ExpiresAt = TimeSpan.FromMinutes(15);
+    public TimeSpan ExpiresAt = TimeSpan.FromMinutes(60);
 }
