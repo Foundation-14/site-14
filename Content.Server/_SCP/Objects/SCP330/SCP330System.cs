@@ -11,6 +11,10 @@ using Robust.Shared.Player;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Body.Systems;
+using Content.Shared.Body.Components;
+using Content.Shared.StatusEffectNew;
 
 namespace Content.Server._SCP.SCP330;
 
@@ -20,6 +24,9 @@ public sealed partial class SCP330System : EntitySystem
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private PopupSystem _popup = default!;
     [Dependency] private BinSystem _binSystem = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private BloodstreamSystem _bloodstream = default!;
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
     /// <summary>
     /// Stores pending interactors for each bowl as a queue of (user, timestamp).
@@ -128,10 +135,29 @@ public sealed partial class SCP330System : EntitySystem
         counter.TakenCount++;
         Dirty(takenPlayer, counter);
 
-        // Check if hands should be removed (3 or more candies taken)
+        // Check if punishment threshold is reached (3 or more candies taken)
         if (counter.TakenCount >= 3)
         {
+            // Apply damage if configured (ignore resistances for SCP-330 enforcement)
+            if (!component.DamageOnOverdose.Empty)
+            {
+                _damageable.TryChangeDamage(takenPlayer, component.DamageOnOverdose, ignoreResistances: true, origin: uid);
+            }
+
+            // Apply bleeding stacks via BloodstreamSystem (analogous to Hemorrhage effect)
+            if (component.BleedStacksOnOverdose > 0 && TryComp<BloodstreamComponent>(takenPlayer, out var bloodstream))
+            {
+                _bloodstream.TryModifyBleedAmount((takenPlayer, bloodstream), component.BleedStacksOnOverdose * 0.5f);
+            }
+
+            // Apply hemorrhaging status effect via StatusEffectsSystem
+            if (TryComp<BloodstreamComponent>(takenPlayer, out _))
+            {
+                _statusEffects.TryAddStatusEffectDuration(takenPlayer, "StatusEffectHemorrhage", TimeSpan.FromSeconds(21));
+            }
+
             RemoveHands(takenPlayer);
+
             _popup.PopupEntity(Loc.GetString("scp330-hands-removed"), takenPlayer);
         }
     }
