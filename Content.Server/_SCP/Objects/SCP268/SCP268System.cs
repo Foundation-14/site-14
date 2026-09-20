@@ -4,6 +4,7 @@ using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
 using Content.Shared.Tag;
 using Content.Shared._SCP.SCP268;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._SCP.SCP268;
 
@@ -14,6 +15,8 @@ public sealed partial class SCP268System : EntitySystem
 {
     [Dependency] private SharedStealthSystem _stealth = default!;
     [Dependency] private TagSystem _tag = default!;
+
+    private static readonly ProtoId<TagPrototype> FootstepSoundTag = "FootstepSound";
 
     public override void Initialize()
     {
@@ -40,7 +43,7 @@ public sealed partial class SCP268System : EntitySystem
 
         EnsureComp<SCP268InteractionBlockerComponent>(wearer);
 
-        _tag.RemoveTag(wearer, "FootstepSound");
+        _tag.RemoveTag(wearer, FootstepSoundTag);
     }
 
     private void OnGotUnequipped(EntityUid uid, SCP268Component component, GotUnequippedEvent args)
@@ -71,6 +74,6 @@ public sealed partial class SCP268System : EntitySystem
             RemComp<SCP268InteractionBlockerComponent>(wearer);
         }
 
-        _tag.AddTag(wearer, "FootstepSound");
+        _tag.AddTag(wearer, FootstepSoundTag);
     }
 }
