@@ -1,0 +1,40 @@
+- type: entity
+  parent: BaseStorageItem
+  id: SCP458
+  name: pizza box
+  description: A box for pizza. It keeps in the heat, the smell, and the memories of the best five minutes of your life.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/pizza.rsi
+    drawdepth: SmallObjects
+    layers:
+    - state: box
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: box-open
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Storage
+    grid:
+    - 0,0,2,1
+    maxItemSize: Normal
+    whitelist:
+      tags:
+      - Pizza
+  - type: Item
+    sprite: Objects/Consumable/Food/Baked/pizza.rsi
+    heldPrefix: box
+    shape:
+    - 0,0,2,1
+    storedOffset: 0,-6
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateDoorOpen: box-open
+    stateDoorClosed: box
+  - type: StaticPrice
+    price: 0
+  - type: SCP458
+    possiblePizzas:
+    - FoodPizzaMargherita
+    - FoodPizzaMeat
+    - FoodPizzaMushroom
+    - FoodPizzaVegetable
+    preferenceMemory: {}
