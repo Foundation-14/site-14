@@ -1,0 +1,101 @@
+- type: entity
+  parent: BaseItem
+  id: SCP330
+  name: steel bowl
+  description: A small, round stainless steel bowl with a handwritten note.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/candy_bowl.rsi
+    noRot: true
+    drawdepth: SmallObjects
+    state: candy_bowl0
+  - type: Appearance
+  - type: Bin
+    maxItems: 25
+    whitelist:
+      tags:
+        - SCP330
+  - type: ContainerContainer
+    containers:
+      bin-container: !type:Container
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.10,-0.10,0.10,0.10"
+        density: 20
+        mask:
+        - TabletopMachineMask
+        restitution: 0.3
+        friction: 0.2
+  - type: InteractionOutline
+  - type: ItemMapper
+    sprite: Objects/Misc/candy_bowl.rsi
+    mapLayers:
+      candy_bowl1:
+        whitelist:
+          tags:
+          - SCP330
+  - type: SCP330
+
+- type: entity
+  parent: BaseItem
+  id: SCP330Candy
+  name: candy
+  description: Tastes like aluminium foil.
+  components:
+  - type: Sprite
+    sprite: _SCP/Objects/SCP/scp330.rsi
+    layers:
+    - state: candy-1
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        candy-1: ""
+        candy-2: ""
+        candy-3: ""
+        candy-4: ""
+        candy-5: ""
+  - type: Item
+    sprite: _SCP/Objects/SCP/scp330.rsi
+    heldPrefix: candy
+    size: Tiny
+  - type: Tag
+    tags:
+      - FoodSnack
+      - SCP330
+  - type: SpawnItemsOnUse
+    items:
+      - id: FoodPacketChocolateTrash
+      - id: SCP330CandyOpen
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: FoodBase
+  id: SCP330CandyOpen
+  name: candy
+  description: A completely ordinary chocolate treat. Sweet to taste, but dangerous to hands that take more than two.
+  components:
+  - type: Sprite
+    sprite: _SCP/Objects/SCP/scp330.rsi
+    state: candy-open
+  - type: Item
+    sprite: _SCP/Objects/SCP/scp330.rsi
+    heldPrefix: candy-open
+    size: Tiny
+  - type: Tag
+    tags:
+    - FoodSnack
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Sugar
+        Quantity: 5
+  - type: FlavorProfile
+    flavors:
+    - sweet
