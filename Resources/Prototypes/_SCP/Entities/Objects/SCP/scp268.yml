@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSCP268
+  name: newsboy cap
+  description: A classic newsboy cap made of dense tweed wool. The fabric is slightly worn around the brim, and the stiff, short visor firmly holds its shape. It gives off a faint scent of an old factory and dampness.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/beret_french.rsi # Временный спрайт. Я хз, где взять другой
+  - type: Clothing
+    sprite: Clothing/Head/Hats/beret_french.rsi
+    slots:
+    - Head
+    equipDelay: 1
+    unequipDelay: 1
+  - type: SCP268
