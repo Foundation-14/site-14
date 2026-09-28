@@ -8,11 +8,11 @@
   },
   "states": [
     {
-      "name": "d-cook-equipped-NECK",
+      "name": "dcook-equipped-NECK",
       "directions": 4
     },
     {
-      "name": "d-equiped-NECK",
+      "name": "d-equipped-NECK",
       "directions": 4
     },
     {
