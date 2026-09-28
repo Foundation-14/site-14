@@ -25,9 +25,8 @@ public sealed partial class SCP458System : EntitySystem
         Subs.BuiEvents<SCP458Component>(StorageComponent.StorageUiKey.Key, subs =>
         {
             subs.Event<BoundUIClosedEvent>(OnBoundUIClosed);
+            subs.Event<BoundUIOpenedEvent>(OnBoundUIOpen);
         });
-
-        SubscribeLocalEvent<SCP458Component, BoundUIOpenedEvent>(OnBoundUIOpen);
     }
 
     private void OnBoundUIOpen(Entity<SCP458Component> ent, ref BoundUIOpenedEvent args)
