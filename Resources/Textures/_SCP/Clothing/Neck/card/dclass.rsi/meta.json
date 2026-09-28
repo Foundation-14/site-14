@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "Sprited by 784795496622718986 (discrod)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "d-cook-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "d-equiped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "djan-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "dmine-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "icon-d"
+    },
+    {
+      "name": "icon-dcook"
+    },
+    {
+      "name": "icon-djan"
+    },
+    {
+      "name": "icon-dmine"
+    }
+  ]
+}

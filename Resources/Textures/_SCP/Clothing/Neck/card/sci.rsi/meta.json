@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "Sprited by 784795496622718986 (discrod)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon-sci1"
+    },
+    {
+      "name": "icon-sci2"
+    },
+    {
+      "name": "icon-sci3"
+    },
+    {
+      "name": "icon-sci4"
+    },
+    {
+      "name": "icon-sci5"
+    },
+    {
+      "name": "sci1-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "sci2-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "sci3-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "sci4-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "sci5-equipped-NECK",
+      "directions": 4
+    }
+  ]
+}

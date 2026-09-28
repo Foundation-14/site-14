@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "Sprited by 784795496622718986 (discrod)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "ci-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "ethics-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "goc-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "icon-ci"
+    },
+    {
+      "name": "icon-ethics"
+    },
+    {
+      "name": "icon-goc"
+    },
+    {
+      "name": "icon-o5"
+    },
+    {
+      "name": "icon-trib"
+    },
+    {
+      "name": "o5-equipped-NECK",
+      "directions": 4
+    },
+    {
+      "name": "trib-equipped-NECK",
+      "directions": 4
+    }
+  ]
+}

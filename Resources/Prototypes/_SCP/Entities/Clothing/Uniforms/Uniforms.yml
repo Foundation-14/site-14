@@ -4,7 +4,10 @@
   id: SCPClothingUniformBase
   categories: [ ForkFiltered ]
 
-# Fond
+#region Foundation
+#region Foundation
+#region Foundation
+#region Foundation
 - type: entity
   parent: [ SCPClothingUniformBase, ClothingUniformFoldableBase]
   id: SCPClothingUniformClassD
@@ -16,6 +19,7 @@
   - type: Clothing
     sprite: _SCP/Clothing/Uniforms/classD.rsi
 
+#region Sub Medical
 - type: entity
   parent: SCPClothingUniformBase
   id: SCPClothingUniformDoctor
@@ -49,6 +53,7 @@
   - type: Clothing
     sprite: _SCP/Clothing/Uniforms/janitor.rsi
 
+#region Sub SCI
 - type: entity
   parent: SCPClothingUniformBase
   id: SCPClothingUniformScientist
@@ -71,6 +76,7 @@
   - type: Clothing
     sprite: _SCP/Clothing/Uniforms/researcher-skirt.rsi
 
+#region Sub Administrative
 - type: entity
   parent: SCPClothingUniformBase
   id: SCPClothingUniformAdministrative
@@ -93,6 +99,18 @@
   - type: Clothing
     sprite: _SCP/Clothing/Uniforms/administrative-skirt.rsi
 
+- type: entity
+  parent: SCPClothingUniformBase
+  id: SCPClothingUniformSecurityCaptine
+  name: security captain's uniform
+  description: The so called "Boss".
+  components:
+  - type: Sprite
+    sprite: _SCP/Clothing/Uniforms/security_cap.rsi
+  - type: Clothing
+    sprite: _SCP/Clothing/Uniforms/security_cap.rsi
+
+#region Sub Engineering
 - type: entity
   parent: SCPClothingUniformBase
   id: SCPClothingUniformITS
@@ -126,6 +144,7 @@
   - type: Clothing
     sprite: _SCP/Clothing/Uniforms/ITS-supervisor.rsi
 
+#region Sub Force
 - type: entity
   parent: SCPClothingUniformBase
   id: SCPClothingUniformSecurity
@@ -136,6 +155,17 @@
     sprite: _SCP/Clothing/Uniforms/security.rsi
   - type: Clothing
     sprite: _SCP/Clothing/Uniforms/security.rsi
+
+- type: entity
+  parent: SCPClothingUniformBase
+  id: SCPClothingUniformSecuritySergant
+  name: security sergante's uniform
+  description: The so called little "Boss".
+  components:
+  - type: Sprite
+    sprite: _SCP/Clothing/Uniforms/security_sgt.rsi
+  - type: Clothing
+    sprite: _SCP/Clothing/Uniforms/security_sgt.rsi
 
 - type: entity
   parent: SCPClothingUniformBase
@@ -159,7 +189,10 @@
   - type: Clothing
     sprite: _SCP/Clothing/Uniforms/MTF.rsi
 
-# GOC
+#region GOC
+#region GOC
+#region GOC
+#region GOC
 - type: entity
   parent: SCPClothingUniformBase
   id: SCPClothingUniformGOC
@@ -171,7 +204,10 @@
   - type: Clothing
     sprite: _SCP/Clothing/Uniforms/GOC.rsi
 
-# CI
+#region CI
+#region CI
+#region CI
+#region CI
 - type: entity
   parent: SCPClothingUniformBase
   id: SCPClothingUniformCI
