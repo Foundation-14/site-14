@@ -18,10 +18,10 @@
   - type: Sprite
     sprite: _SCP/Clothing/Head/Helmets/medium_helmet.rsi
     layers:
-    - state: icon_open
+    - state: icon
       map: [ "unfoldedLayer" ]
       visible: false
-    - state: icon
+    - state: icon_open
       map: ["foldedLayer"]
   - type: Clothing
     sprite: _SCP/Clothing/Head/Helmets/medium_helmet.rsi

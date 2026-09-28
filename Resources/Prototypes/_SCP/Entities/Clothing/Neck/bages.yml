@@ -1,0 +1,121 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: SCPClothingNeckBageBase
+  abstract: true
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _SCP/Clothing/Neck/badges.rsi
+  - type: Clothing
+    sprite: _SCP/Clothing/Neck/badges.rsi
+  - type: Badge
+    typeLoc: badge-type-badge
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+
+- type: entity
+  parent: SCPClothingNeckBageBase
+  id: SCPClothingNeckPrivateBadge
+  name: private's badge
+  description: A small metal badge of the security service.
+  components:
+  - type: Sprite
+    state: icon-blu
+  - type: Badge
+    rankLoc: badge-rank-sb-recruit
+  - type: Clothing
+    equippedPrefix: blu
+
+- type: entity
+  parent: SCPClothingNeckBageBase
+  id: SCPClothingNeckCorporalBadge
+  name: corporal's badge
+  description: A small metal badge of the security service.
+  components:
+  - type: Sprite
+    state: icon-blugre
+  - type: Badge
+    rankLoc: badge-rank-sb-corporal
+  - type: Clothing
+    equippedPrefix: blugre
+
+- type: entity
+  parent: SCPClothingNeckBageBase
+  id: SCPClothingNeckSergeantBadge
+  name: sergeant's badge
+  description: A small metal badge of the security service.
+  components:
+  - type: Sprite
+    state: icon-gre
+  - type: Badge
+    rankLoc: badge-rank-sb-sergeant
+  - type: Clothing
+    equippedPrefix: gre
+
+- type: entity
+  parent: SCPClothingNeckBageBase
+  id: SCPClothingNeckLieutenantBadge
+  name: lieutenant's badge
+  description: A small metal badge of the security service.
+  components:
+  - type: Sprite
+    state: icon-oran
+  - type: Badge
+    rankLoc: badge-rank-sb-lieutenant
+  - type: Clothing
+    equippedPrefix: oran
+
+- type: entity
+  parent: SCPClothingNeckBageBase
+  id: SCPClothingNeckCaptainBadge
+  name: captain's badge
+  description: A small metal badge of the security service.
+  components:
+  - type: Sprite
+    state: icon-yel
+  - type: Badge
+    rankLoc: badge-rank-sb-captain
+  - type: Clothing
+    equippedPrefix: yel
+
+- type: entity
+  parent: SCPClothingNeckBageBase
+  id: SCPClothingNeckOperativeBadge
+  name: operative's badge
+  description: A small metal badge of the group of operational control.
+  components:
+  - type: Sprite
+    state: icon-whi
+  - type: Badge
+    rankLoc: badge-rank-fx-operative
+  - type: Clothing
+    equippedPrefix: whi
+
+- type: entity
+  parent: SCPClothingNeckBageBase
+  id: SCPClothingNeckSpecialistBadge
+  name: specialist's badge
+  description: A small metal badge of the group of operational control.
+  components:
+  - type: Sprite
+    state: icon-whipur
+  - type: Badge
+    rankLoc: badge-rank-fx-specialist
+  - type: Clothing
+    equippedPrefix: whipur
+
+- type: entity
+  parent: SCPClothingNeckBageBase
+  id: SCPClothingNeckCommanderBadge
+  name: commander's badge
+  description: A small metal badge of the group of operational control.
+  components:
+  - type: Sprite
+    state: icon-whiblu
+  - type: Badge
+    rankLoc: badge-rank-fx-commander
+  - type: Clothing
+    equippedPrefix: whiblu
