@@ -1,3 +1,4 @@
+using Content.Shared.Bed.Sleep; // SCP-Foundation
 using Content.Shared.Body.Events;
 using Content.Shared.Atmos;
 using Content.Shared.Chat;
@@ -71,6 +72,8 @@ public sealed partial class StatusEffectsSystem
 
         SubscribeLocalEvent<StatusEffectContainerComponent, CatchAttemptEvent>(RefRelayStatusEffectEvent);
         SubscribeLocalEvent<StatusEffectContainerComponent, SelfBeforeGunShotEvent>(RelayStatusEffectEvent);
+
+        SubscribeLocalEvent<StatusEffectContainerComponent, TryingToSleepEvent>(RefRelayStatusEffectEvent); // SCP-Foundation
 
         SubscribeLocalEvent<StatusEffectContainerComponent, TargetHandcuffedEvent>(RefRelayStatusEffectEvent);
         SubscribeLocalEvent<StatusEffectContainerComponent, BeforeTargetHandcuffedEvent>(RefRelayStatusEffectEvent);

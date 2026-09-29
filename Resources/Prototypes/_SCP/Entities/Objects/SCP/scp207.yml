@@ -1,0 +1,50 @@
+# SCP-207 by Aeish: https://scp-wiki.wikidot.com/scp-207 (CC BY-SA 3.0).
+- type: entity
+  parent: [DrinkVisualsAllFilled, DrinkBottleGlassSmallBaseFull]
+  id: SCP207Bottle
+  name: SCP-207
+  description: An old glass bottle of cola with a numbered containment label.
+  suffix: SCP-207
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/colabottle.rsi
+  - type: Label
+    localizedLabel: reagent-name-scp207
+  - type: Edible
+    transferAmount: 10
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: ReagentScp207
+        Quantity: 30
+
+- type: entity
+  parent: CrateScienceSecure
+  id: SCP207Crate
+  name: SCP-207 containment crate
+  description: A locked metal crate containing twenty-three bottles of anomalous cola.
+  suffix: SCP-207
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: SCP207Bottle
+        amount: 23
+
+- type: entity
+  parent: StatusEffectSpeed
+  id: StatusEffectScp207
+  name: SCP-207 stimulation
+  components:
+  - type: SCP207
+    damage:
+      types:
+        Poison: 0.3
+        Bloodloss: 0.2
+  - type: MovementModStatusEffect
+    walkSpeedModifier: 1.15
+    sprintSpeedModifier: 1.15
+  - type: RejuvenateRemovedStatusEffect
+  - type: ExaminableStatusEffect
+    messageId: scp207-examine

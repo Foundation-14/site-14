@@ -1,0 +1,18 @@
+- type: reagent
+  id: ReagentScp207
+  parent: Cola
+  name: reagent-name-scp207
+  desc: reagent-desc-scp207
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:Satiate
+        satiationType: Thirst
+        factor: 2
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectScp207
+        time: null
+        conditions:
+        - !type:ReagentCondition
+          reagent: ReagentScp207
+          min: 5.01
