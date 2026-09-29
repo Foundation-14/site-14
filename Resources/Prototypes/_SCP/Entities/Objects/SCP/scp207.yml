@@ -1,4 +1,3 @@
-# SCP-207 by Aeish: https://scp-wiki.wikidot.com/scp-207 (CC BY-SA 3.0).
 - type: entity
   parent: [DrinkVisualsAllFilled, DrinkBottleGlassSmallBaseFull]
   id: SCP207Bottle
