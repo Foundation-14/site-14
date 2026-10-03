@@ -1,0 +1,10 @@
+- type: entity
+  parent: PuddleTemporary
+  id: SCPPuddleSlime
+  suffix: Slime (30u)
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Slime
+        Quantity: 30
