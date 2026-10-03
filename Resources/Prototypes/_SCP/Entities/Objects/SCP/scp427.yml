@@ -1,0 +1,140 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: SCP427
+  name: amulet
+  description: A small, ornately carved locket made out of polished silver material.
+  components:
+  - type: Sprite
+    sprite: _SCP/Objects/SCP/scp427.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Clothing
+    sprite: _SCP/Objects/SCP/scp427.rsi
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: ToggleableVisuals
+    spriteLayer: enum.ToggleableVisuals.Layer
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK-open
+    inhandVisuals:
+      left:
+      - state: inhand-left-open
+      right:
+      - state: inhand-right-open
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True:  { state: icon-open }
+          False: { state: icon }
+  - type: ItemToggle
+    predictable: true
+  - type: SCP427
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_SCP/Effects/SCP427/effect.ogg
+      params:
+        volume: -5
+        maxDistance: 7
+        variation: 0.128
+
+- type: entity
+  parent: [ SimpleMobBase, MobCombat, BaseSlicingRefinable, BaseMobDestructible ]
+  id: SCP427-1
+  name: flesh beasts
+  description: A shambling mass of flesh, animated through anomalous energy.
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _SCP/Objects/SCP/scp427-1.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: abomination
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: abomination
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: MovementAlwaysTouching
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.5
+    baseSprintSpeed: 2
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      75: Dead
+  - type: Stamina
+    baseCritThreshold: 50
+    animationThreshold: 25
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      25: 0.95
+      30: 0.75
+      35: 0.6
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMeat
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 100
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 12
+        Blunt: 5
+        Stamina: 5
+  - type: ReplacementAccent
+    accent: genericAggressive
+
+- type: polymorph
+  id: SCP427Transform
+  configuration:
+    entity: SCP427-1
+    forced: true
+    transferDamage: true
+    transferName: false
+    transferHumanoidAppearance: false
+    inventory: Drop
+    revertOnCrit: false
+    revertOnDeath: false
+    revertOnDelete: false
+    allowRepeatedMorphs: false
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/_SCP/Effects/SCP427/transform.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/_SCP/Effects/SCP427/transform.ogg
