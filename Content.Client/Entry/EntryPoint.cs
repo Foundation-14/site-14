@@ -96,6 +96,7 @@ namespace Content.Client.Entry
         {
             Dependencies.BuildGraph();
             Dependencies.InjectDependencies(this);
+            Initialize(); // Foundation-14
 
             _contentLoc.Initialize();
             _componentFactory.DoAutoRegistrations();

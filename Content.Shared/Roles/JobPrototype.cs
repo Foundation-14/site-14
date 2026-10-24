@@ -134,6 +134,20 @@ public sealed partial class JobPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<ProtoId<GuideEntryPrototype>>? Guides;
+
+    // Foundation-14 start
+    /// <summary>
+    /// If true, joining this job costs tickets. Used for ticket-only roles.
+    /// </summary>
+    [DataField]
+    public bool TicketOnly { get; private set; } = false;
+
+    /// <summary>
+    /// Number of tickets required to join this job (if TicketOnly is true).
+    /// </summary>
+    [DataField]
+    public int TicketCost { get; private set; } = 0;
+    // Foundation-14 end
 }
 
 /// <summary>

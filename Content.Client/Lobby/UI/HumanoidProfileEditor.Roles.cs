@@ -15,6 +15,7 @@ namespace Content.Client.Lobby.UI;
 
 public sealed partial class HumanoidProfileEditor
 {
+    [Dependency] private _SCP.Tickets.ClientTicketManager _ticketManager = default!; // Foundation-14
 
     /// <summary>
     /// Temporary override of their selected job, used to preview roles.
@@ -208,12 +209,24 @@ public sealed partial class HumanoidProfileEditor
                 };
                 var jobIcon = _prototypeManager.Index(job.Icon);
                 icon.Texture = _sprite.Frame0(jobIcon.Icon);
-                selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
+
+                // Foundation-14 start
+                var description = job.TicketOnly && job.TicketCost > 0
+                    ? job.LocalizedDescription + "\n" + Loc.GetString("scp-tickets-job-cost", ("cost", job.TicketCost.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)))
+                    : job.LocalizedDescription;
+                selector.Setup(items, job.LocalizedName, 200, description, icon, job.Guides);
+                // Foundation-14 end
 
                 if (!_requirements.IsAllowed(job, (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, out var reason))
                 {
                     selector.LockRequirements(reason);
                 }
+                // Foundation-14 start
+                else if (job.TicketOnly && _ticketManager.Balance < job.TicketCost)
+                {
+                    selector.LockRequirements(Robust.Shared.Utility.FormattedMessage.FromMarkupOrThrow(Loc.GetString("scp-tickets-insufficient", ("cost", job.TicketCost.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)))));
+                }
+                // Foundation-14 end
                 else
                 {
                     selector.UnlockRequirements();

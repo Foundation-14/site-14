@@ -90,6 +90,7 @@ namespace Content.Client.Lobby.UI
             MarkingManager markings)
         {
             RobustXamlLoader.Load(this);
+            IoCManager.InjectDependencies(this); // Foundation-14
             _sawmill = logManager.GetSawmill("profile.editor");
             _cfgManager = configurationManager;
             _entManager = entManager;
@@ -100,6 +101,7 @@ namespace Content.Client.Lobby.UI
             _preferencesManager = preferencesManager;
             _resManager = resManager;
             _requirements = requirements;
+            _ticketManager.TicketInfoUpdated += RefreshJobs; // Foundation-14
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
             _sprite = _entManager.System<SpriteSystem>();
 
@@ -425,6 +427,7 @@ namespace Content.Client.Lobby.UI
             if (!disposing)
                 return;
 
+            _ticketManager.TicketInfoUpdated -= RefreshJobs; // Foundation-14
             _loadoutWindow?.Dispose();
             _loadoutWindow = null;
         }

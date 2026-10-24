@@ -592,7 +592,132 @@ namespace Content.Server.Database
         }
 
         #endregion
+        // Foundation-14 start
+        #region Tickets
+        /*
+         * TICKETS
+         */
+        public async Task<(float balance, float autoMod, float bonusMod, int paidHours)> GetTicketsAsync(NetUserId userId, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
 
+            var record = await db.DbContext.Player
+                .Where(p => p.UserId == userId.UserId)
+                .Select(p => new
+                {
+                    p.TicketBalance,
+                    p.TicketAutoModifier,
+                    p.TicketModifierBonus,
+                    p.TicketPaidHours
+                })
+                .SingleOrDefaultAsync(cancel);
+
+            if (record == null)
+                return default;
+
+            return (record.TicketBalance, record.TicketAutoModifier, record.TicketModifierBonus, record.TicketPaidHours);
+        }
+
+        public async Task<int> AddTicketsAndSetPaidHoursAsync(NetUserId userId, float amount, int expectedPaidHours, int newPaidHours, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+
+            var rows = await db.DbContext.Player
+                .Where(p => p.UserId == userId.UserId && p.TicketPaidHours == expectedPaidHours)
+                .ExecuteUpdateAsync(p => p
+                        .SetProperty(pp => pp.TicketBalance, pp => pp.TicketBalance + amount)
+                        .SetProperty(pp => pp.TicketPaidHours, newPaidHours),
+                    cancellationToken: cancel);
+
+            return rows;
+        }
+
+        public async Task<int> AddTicketsAtomicAsync(NetUserId userId, float amount, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+
+            var rows = await db.DbContext.Player
+                .Where(p => p.UserId == userId.UserId)
+                .ExecuteUpdateAsync(p => p.SetProperty(
+                    pp => pp.TicketBalance,
+                    pp => pp.TicketBalance + amount),
+                    cancellationToken: cancel);
+
+            return rows;
+        }
+
+        public async Task<bool> TrySpendTicketsAsync(NetUserId userId, float cost, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+
+            var rows = await db.DbContext.Player
+                .Where(p => p.UserId == userId.UserId && p.TicketBalance >= cost)
+                .ExecuteUpdateAsync(p => p.SetProperty(
+                    pp => pp.TicketBalance,
+                    pp => pp.TicketBalance - cost),
+                    cancellationToken: cancel);
+
+            return rows > 0;
+        }
+
+        public async Task<bool> SetTicketBonusModifierAsync(NetUserId userId, float bonus, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+
+            var rows = await db.DbContext.Player
+                .Where(p => p.UserId == userId.UserId)
+                .ExecuteUpdateAsync(p => p.SetProperty(
+                    pp => pp.TicketModifierBonus,
+                    bonus),
+                    cancellationToken: cancel);
+
+            return rows > 0;
+        }
+
+        public async Task<bool> SetTicketAutoModifierAsync(NetUserId userId, float autoMod, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+
+            var rows = await db.DbContext.Player
+                .Where(p => p.UserId == userId.UserId)
+                .ExecuteUpdateAsync(p => p.SetProperty(
+                    pp => pp.TicketAutoModifier,
+                    autoMod),
+                    cancellationToken: cancel);
+
+            return rows > 0;
+        }
+
+        public async Task<bool> SetTicketBalanceAsync(NetUserId userId, float balance, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+
+            var rows = await db.DbContext.Player
+                .Where(p => p.UserId == userId.UserId)
+                .ExecuteUpdateAsync(p => p.SetProperty(
+                    pp => pp.TicketBalance,
+                    balance),
+                    cancellationToken: cancel);
+
+            return rows > 0;
+        }
+
+        public async Task<bool> SetTicketPaidHoursAsync(NetUserId userId, int hours, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+
+            var rows = await db.DbContext.Player
+                .Where(p => p.UserId == userId.UserId)
+                .ExecuteUpdateAsync(p => p.SetProperty(
+                    pp => pp.TicketPaidHours,
+                    hours),
+                    cancellationToken: cancel);
+
+            return rows > 0;
+        }
+
+        #endregion
+        // Foundation-14 end
         #region Connection Logs
         /*
          * CONNECTION LOG

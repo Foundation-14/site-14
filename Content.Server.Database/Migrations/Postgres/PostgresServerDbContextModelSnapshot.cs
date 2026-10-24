@@ -1042,6 +1042,22 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("last_seen_user_name");
 
+                    b.Property<float>("TicketAutoModifier")
+                        .HasColumnType("real")
+                        .HasColumnName("ticket_auto_modifier");
+
+                    b.Property<float>("TicketBalance")
+                        .HasColumnType("real")
+                        .HasColumnName("ticket_balance");
+
+                    b.Property<float>("TicketModifierBonus")
+                        .HasColumnType("real")
+                        .HasColumnName("ticket_modifier_bonus");
+
+                    b.Property<int>("TicketPaidHours")
+                        .HasColumnType("integer")
+                        .HasColumnName("ticket_paid_hours");
+
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid")
                         .HasColumnName("user_id");

@@ -523,6 +523,13 @@ namespace Content.Server.Database
         public List<Ban> AdminServerBansCreated { get; set; } = null!;
         public List<Ban> AdminServerBansLastEdited { get; set; } = null!;
         public List<RoleWhitelist> JobWhitelists { get; set; } = null!;
+
+        // Foundation-14 start
+        public float TicketBalance { get; set; } = 0f;
+        public float TicketModifierBonus { get; set; } = 0f;
+        public float TicketAutoModifier { get; set; } = 1f;
+        public int TicketPaidHours { get; set; }
+        // Foundation-14 end
     }
 
     [Table("whitelist")]

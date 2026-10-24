@@ -23,6 +23,7 @@ namespace Content.Client.LateJoin
 {
     public sealed partial class LateJoinGui : DefaultWindow
     {
+        [Dependency] private _SCP.Tickets.ClientTicketManager _ticketManager = default!; // Foundation-14
         [Dependency] private IPrototypeManager _prototypeManager = default!;
         [Dependency] private IClientConsoleHost _consoleHost = default!;
         [Dependency] private IConfigurationManager _configManager = default!;
@@ -64,6 +65,7 @@ namespace Content.Client.LateJoin
             ContentsContainer.AddChild(_base);
 
             _jobRequirements.Updated += RebuildUI;
+            _ticketManager.TicketInfoUpdated += RebuildUI; // Foundation-14
             RebuildUI();
 
             SelectedId += x =>
@@ -265,12 +267,16 @@ namespace Content.Client.LateJoin
                         category.AddChild(jobButton);
 
                         jobButton.OnPressed += _ => SelectedId.Invoke((id, jobButton.JobId));
-
-                        if (!_jobRequirements.IsAllowed(prototype, (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, out var reason))
+                        // Foundation-14 start
+                        if (!_jobRequirements.IsAllowed(prototype, (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, out var reason)
+                            || (prototype.TicketOnly && prototype.TicketCost > _ticketManager.Balance
+                                && (reason = FormattedMessage.FromMarkupOrThrow(Loc.GetString("scp-tickets-insufficient",
+                                    ("cost", prototype.TicketCost.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture))))) != null))
+                        // Foundation-14 end
                         {
                             jobButton.Disabled = true;
 
-                            if (!reason.IsEmpty)
+                            if (reason != null && !reason.IsEmpty) // Foundation-14: add reason != null &&
                             {
                                 var tooltip = new Tooltip();
                                 tooltip.SetMessage(reason);
@@ -336,6 +342,7 @@ namespace Content.Client.LateJoin
 
             if (disposing)
             {
+                _ticketManager.TicketInfoUpdated -= RebuildUI; // Foundation-14
                 _jobRequirements.Updated -= RebuildUI;
                 _gameTicker.LobbyJobsAvailableUpdated -= JobsAvailableUpdated;
                 _jobButtons.Clear();

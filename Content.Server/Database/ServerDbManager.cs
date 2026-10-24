@@ -300,7 +300,27 @@ namespace Content.Server.Database
         Task<bool> RemoveJobWhitelist(Guid player, ProtoId<JobPrototype> job);
 
         #endregion
+        // Foundation-14 start
+        #region Tickets
 
+        Task<(float balance, float autoMod, float bonusMod, int paidHours)> GetTicketsAsync(NetUserId userId, CancellationToken cancel = default);
+
+        Task<int> AddTicketsAndSetPaidHoursAsync(NetUserId userId, float amount, int expectedPaidHours, int newPaidHours, CancellationToken cancel = default);
+
+        Task<int> AddTicketsAtomicAsync(NetUserId userId, float amount, CancellationToken cancel = default);
+
+        Task<bool> TrySpendTicketsAsync(NetUserId userId, float cost, CancellationToken cancel = default);
+
+        Task<bool> SetTicketBonusModifierAsync(NetUserId userId, float bonus, CancellationToken cancel = default);
+
+        Task<bool> SetTicketAutoModifierAsync(NetUserId userId, float autoMod, CancellationToken cancel = default);
+
+        Task<bool> SetTicketBalanceAsync(NetUserId userId, float balance, CancellationToken cancel = default);
+
+        Task<bool> SetTicketPaidHoursAsync(NetUserId userId, int hours, CancellationToken cancel = default);
+
+        #endregion
+        // Foundation-14 end
         #region IPintel
 
         Task<bool> UpsertIPIntelCache(DateTime time, IPAddress ip, float score);
@@ -1002,7 +1022,55 @@ namespace Content.Server.Database
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.RemoveJobWhitelist(player, job));
         }
+        // Foundation-14 start
+        public Task<(float balance, float autoMod, float bonusMod, int paidHours)> GetTicketsAsync(NetUserId userId, CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetTicketsAsync(userId, cancel));
+        }
 
+        public Task<int> AddTicketsAndSetPaidHoursAsync(NetUserId userId, float amount, int expectedPaidHours, int newPaidHours, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddTicketsAndSetPaidHoursAsync(userId, amount, expectedPaidHours, newPaidHours, cancel));
+        }
+
+        public Task<int> AddTicketsAtomicAsync(NetUserId userId, float amount, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddTicketsAtomicAsync(userId, amount, cancel));
+        }
+
+        public Task<bool> TrySpendTicketsAsync(NetUserId userId, float cost, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.TrySpendTicketsAsync(userId, cost, cancel));
+        }
+
+        public Task<bool> SetTicketBonusModifierAsync(NetUserId userId, float bonus, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetTicketBonusModifierAsync(userId, bonus, cancel));
+        }
+
+        public Task<bool> SetTicketAutoModifierAsync(NetUserId userId, float autoMod, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetTicketAutoModifierAsync(userId, autoMod, cancel));
+        }
+
+        public Task<bool> SetTicketBalanceAsync(NetUserId userId, float balance, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetTicketBalanceAsync(userId, balance, cancel));
+        }
+
+        public Task<bool> SetTicketPaidHoursAsync(NetUserId userId, int hours, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetTicketPaidHoursAsync(userId, hours, cancel));
+        }
+        // Foundation-14 end
         public Task<bool> UpsertIPIntelCache(DateTime time, IPAddress ip, float score)
         {
             DbWriteOpsMetric.Inc();
